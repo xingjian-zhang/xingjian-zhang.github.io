@@ -1316,7 +1316,7 @@ input, select, textarea {
 	}
 
 	body {
-		background-image: url("images/overlay.png"), url("images/bg.jpg");
+		background-image: url("images/overlay.png"), url("images/pic09.jpg");
 		background-repeat: repeat, no-repeat;
 		background-size: auto, 100% 100%;
 		background-attachment: fixed;
@@ -1990,8 +1990,8 @@ input, select, textarea {
 
 			#main > .panel.intro {
 				padding: 0;
-				height: 33em;
-				font-size: 18pt;
+				height: 40em;
+				font-size: 14pt;
 				display: -moz-flex;
 				display: -webkit-flex;
 				display: -ms-flex;
