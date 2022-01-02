@@ -33,6 +33,7 @@ a {
 	font: inherit;
 	color: #008a8f;
 	vertical-align: baseline;
+	text-decoration: none;
 }
 
 article, aside, details, figcaption, figure,
