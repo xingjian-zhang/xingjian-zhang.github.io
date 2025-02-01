@@ -1,0 +1,747 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Raleway:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600&display=swap');
+
+:root {
+    /* Colors */
+    --color-primary: #00274c;
+    --color-secondary: #465d85;
+    --color-text: #333333;
+    --color-background: #ffffff;
+    
+    /* Color variants */
+    --color-primary-light: rgba(0, 39, 76, 0.02);  /* For subtle backgrounds */
+    --color-primary-light-hover: rgba(0, 39, 76, 0.04);  /* For hover states */
+    --color-primary-medium: rgba(0, 39, 76, 0.06);  /* For highlights */
+    --color-primary-shadow: rgba(0, 39, 76, 0.12);  /* For shadows */
+    
+    /* Border colors */
+    --color-border: rgba(0, 0, 0, 0.1);
+    --color-border-light: #eaeaea;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, #2c3e50, #3498db);
+    
+    /* Shadow values */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 12px var(--color-primary-shadow);
+    
+    /* Layout */
+    --width-max: 1200px;
+    
+    /* Spacing */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Typography */
+    --font-body: 'Raleway', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Raleway', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-chinese: 'Noto Serif SC', serif;
+    
+    /* Typography sizes - slightly larger for home page */
+    --font-size-sm: 1rem;     /* Increased from 0.85rem */
+    --font-size-base: 1.05rem;  /* Increased from 1rem */
+    --font-size-lg: 1.2rem;     /* Increased from 1.15rem */
+    --font-size-xl: 2rem;       /* Keep the same */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.profile-info h1 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-size: var(--font-size-xl);
+}
+
+.chinese-name {
+    font-family: var(--font-chinese);
+    font-weight: 500;
+    font-optical-sizing: auto;
+    margin-left: var(--spacing-sm);
+}
+
+header {
+    background-color: var(--color-background);
+    padding: var(--spacing-md) var(--spacing-lg);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--width-max);
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.nav-links a {
+    color: var(--color-text);
+    text-decoration: none;
+    margin-left: var(--spacing-lg);
+    font-weight: 600;
+}
+
+.nav-links a.active {
+    color: var(--color-primary);
+}
+
+.hero {
+    background: var(--gradient-hero);
+    min-height: 300px;
+    padding: 6rem var(--spacing-lg) 2rem;
+    color: var(--color-background);
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.profile-container {
+    max-width: var(--width-max);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-md) var(--spacing-lg);
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.profile-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--color-background);
+    box-shadow: var(--shadow-md);
+    flex-shrink: 0;
+}
+
+.profile-info {
+    flex: 1;
+    padding-top: 0;
+}
+
+.profile-info p {
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-base);
+}
+
+.social-links {
+    margin-top: var(--spacing-md);
+}
+
+.social-links a {
+    color: var(--color-background);
+    margin-right: var(--spacing-md);
+    font-size: var(--font-size-lg);
+}
+
+main {
+    max-width: var(--width-max);
+    margin: var(--spacing-lg) auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;  /* Keep the same ratio but now news will be in the narrower column */
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+}
+
+/* Ensure proper spacing between sections in left column */
+.column-left section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.column-left section:last-child {
+    margin-bottom: 0;
+}
+
+/* Make news section sticky to keep it visible while scrolling */
+.column-right .news {
+    position: sticky;
+    top: calc(var(--spacing-xl) + 60px); /* Account for header height */
+}
+
+.column-left, .column-right {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+section {
+    background: var(--color-background);
+    padding: var(--spacing-md);  /* Consistent padding */
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+section:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+    background-color: var(--color-primary-light);
+}
+
+section h2 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+}
+
+section ul {
+    list-style-type: none;
+}
+
+section li {
+    margin-bottom: var(--spacing-sm);
+}
+
+section a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+section a:hover {
+    text-decoration: underline;
+}
+
+.news-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    border-radius: 4px;
+    background: var(--color-primary-light);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    font-size: var(--font-size-sm);
+}
+
+.news-emoji {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;  /* Slightly smaller emoji container */
+    height: 1.5rem;
+    background: var(--color-background);
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.news-content {
+    flex: 1;
+    line-height: 1.4;
+    font-size: var(--font-size-sm);
+}
+
+.news-date {
+    color: var(--color-primary);
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+    font-weight: 600;
+    padding-top: 2px;
+}
+
+.news-content a {
+    color: var(--color-primary);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.news-content a:hover {
+    border-bottom-color: var(--color-primary);
+    text-decoration: none;
+}
+
+/* Custom styling for different news types */
+.news-list li[data-type="paper"] {
+    border-left: 3px solid #4CAF50;  /* Green for papers */
+}
+
+.news-list li[data-type="event"] {
+    border-left: 3px solid #2196F3;  /* Blue for events/workshops */
+}
+
+.news-list li[data-type="award"] {
+    border-left: 3px solid #FFC107;  /* Gold for achievements */
+}
+
+.news-list li[data-type="work"] {
+    border-left: 3px solid #9C27B0;  /* Purple for work experience */
+}
+
+.honors, .service, .about, .news {
+    grid-column: auto;
+}
+
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;  /* Stack columns on mobile */
+    }
+    
+    .hero {
+        padding-top: 5rem;
+    }
+    
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: var(--spacing-md);
+    }
+    
+    .profile-info {
+        padding-top: var(--spacing-md);
+    }
+    
+    .nav-links a {
+        margin-left: var(--spacing-md);
+    }
+}
+
+.about p, .about ul li {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+}
+
+.about ul {
+    margin: var(--spacing-md) 0;
+    list-style: none;
+    padding-left: var(--spacing-lg);
+}
+
+.about ul li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.about ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+    transform: rotate(-45deg);
+    transition: transform 0.2s ease;
+}
+
+.about ul li:hover::before {
+    transform: rotate(-45deg) translateX(3px);
+}
+
+.about a {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-primary);
+    transition: opacity 0.2s ease;
+}
+
+.about a:hover {
+    opacity: 0.8;
+}
+
+.highlight {
+    background: var(--color-primary-medium);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+/* Update honors and service items styling */
+.honors ul li, 
+.service ul li {
+    position: relative;
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    background: var(--color-primary-light);
+    border-radius: 4px;
+    border-left: 3px solid var(--color-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-md);
+    font-size: var(--font-size-sm);
+}
+
+/* Remove the ::after pseudo-element and use a span instead */
+.honors ul li::after,
+.service ul li::after {
+    display: none;
+}
+
+/* Add date styling to match news items */
+.honors .date,
+.service .date {
+    color: var(--color-primary);
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+    font-weight: 600;
+    padding-top: 2px;
+}
+
+/* Add content wrapper to allow proper flex layout */
+.honors .content,
+.service .content {
+    flex: 1;
+    line-height: 1.4;
+    font-size: var(--font-size-sm);
+}
+
+.honors, .service {
+    margin-bottom: 0;
+}
+
+/* Publications styling */
+.publications {
+    margin-top: var(--spacing-sm);
+}
+
+/* Enhanced publication styling */
+.publication {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm);
+    margin-bottom: 1rem;
+    background: var(--color-primary-light);
+    border-radius: 4px;
+    border-left: 3px solid var(--color-primary);
+    transition: background-color 0.2s ease;
+}
+
+.publication:hover {
+    background: var(--color-primary-light-hover);
+}
+
+.publication:last-child {
+    margin-bottom: 0;
+}
+
+/* Update paper type indicators */
+.publication[data-type="preprint"] {
+    border-left-color: #b31b1b;  /* arXiv's official brand color */
+}
+
+/* Update paper type indicators */
+.publication[data-type="conference"] {
+    border-left-color: #4CAF50;  /* Keep green for conference papers */
+}
+
+/* Update paper type indicators */
+.publication[data-type="journal"] {
+    border-left-color: #2196F3;  /* Keep blue for journal papers */
+}
+
+/* Update paper type indicators */
+.publication[data-type="workshop"] {
+    border-left-color: #9C27B0;  /* Keep purple for workshop papers */
+}
+
+/* Publication content layout */
+.pub-content {
+    flex: 1;
+}
+
+.publication h3 {
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+    margin-bottom: calc(var(--spacing-sm) / 2);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.publication .authors {
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
+    margin-bottom: calc(var(--spacing-sm) / 2);
+    line-height: 1.4;
+}
+
+.publication .venue {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+}
+
+.publication .year {
+    color: var(--color-primary);
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+    font-weight: 600;
+    padding-top: 2px;
+}
+
+.pub-links {
+    margin-top: calc(var(--spacing-sm) / 2);
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.pub-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    transition: all 0.2s ease;
+}
+
+.pub-links a i {
+    font-size: 1rem;
+}
+
+.pub-links a:hover {
+    opacity: 0.8;
+}
+
+/* Research page specific styles */
+.research-container {
+    max-width: var(--width-max);
+    margin: 8rem auto var(--spacing-lg);
+    padding: 0 var(--spacing-lg);
+    --font-size-sm: 0.85rem;    /* Smaller for research page */
+    --font-size-base: 1rem;     /* Smaller for research page */
+    --font-size-lg: 1.15rem;    /* Smaller for research page */
+}
+
+.research-container .research {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.research-container .publication {
+    padding: var(--spacing-lg);  /* Larger padding for standalone page */
+}
+
+.asterisk-note {
+    color: var(--color-text);
+    font-size: calc(var(--font-size-sm) * 0.9);
+    font-style: italic;
+    margin-bottom: var(--spacing-sm);
+    opacity: 0.8;
+}
+
+/* Add footer styles */
+.footer {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    margin-top: var(--spacing-xl);
+    color: var(--color-text);
+    opacity: 0.7;
+    font-size: var(--font-size-sm);
+    font-style: italic;
+}
+
+.footer a {
+    color: var(--color-primary);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.footer a:hover {
+    border-bottom-color: var(--color-primary);
+}
+
+/* Experience page styles */
+.experience-container {
+    max-width: var(--width-max);
+    margin: 8rem auto var(--spacing-lg);
+    padding: 0 var(--spacing-lg);
+    --font-size-sm: 0.85rem;    /* Smaller for experience page */
+    --font-size-base: 1rem;     /* Smaller for experience page */
+    --font-size-lg: 1.15rem;    /* Smaller for experience page */
+}
+
+.experience {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.experience h2 {
+    color: var(--color-primary);
+    margin: var(--spacing-xl) 0 var(--spacing-lg);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+}
+
+.experience h2:first-child {
+    margin-top: 0;
+}
+
+.experience-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: rgba(0,39,76,0.02);
+    border-left: 3px solid var(--color-primary);
+    border-radius: 0 4px 4px 0;
+    margin-bottom: var(--spacing-md);
+    transition: all 0.2s ease;
+}
+
+.experience-item:hover {
+    background: rgba(0,39,76,0.04);
+    transform: translateX(4px);
+}
+
+.institution-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.experience-content h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.experience-content .institution {
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-sm);
+}
+
+.experience-content .duration {
+    font-size: var(--font-size-sm);
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.teaching-list {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.teaching-item {
+    padding: var(--spacing-md);
+    background: rgba(0,39,76,0.02);
+    border-left: 3px solid var(--color-primary);
+    border-radius: 0 4px 4px 0;
+    transition: all 0.2s ease;
+}
+
+.teaching-item:hover {
+    background: rgba(0,39,76,0.04);
+    transform: translateX(4px);
+}
+
+.teaching-item h3 {
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+/* Adjust research item spacing */
+.research-item {
+    margin-bottom: 2rem; /* Reduce from likely 3rem or 4rem */
+    padding-bottom: 1.5rem; /* Add some padding before the border */
+    border-bottom: 1px solid #eaeaea; /* Optional: adds a subtle separator */
+}
+
+.research-item:last-child {
+    border-bottom: none; /* Remove border from last item */
+    margin-bottom: 0; /* Remove margin from last item */
+}
+
+/* Publication section styling */
+.publication-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.publication-section:last-child {
+    margin-bottom: 0;
+}
+
+.section-title {
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: calc(var(--spacing-sm) / 2);
+    border-bottom: 2px solid var(--color-primary-light);
+}
+
+.section-papers {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+/* Update research container spacing */
+.research-container .research {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.research-container .publication-section:first-child .section-title {
+    margin-top: 0;
+}
+
+/* Add subtle animation for section titles */
+.section-title {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.section-title:hover::after {
+    transform: scaleX(1);
+}
