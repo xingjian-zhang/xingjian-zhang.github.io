@@ -107,9 +107,8 @@ function formatAuthors(authors) {
     return authors.split(' and ')
         .map(author => {
             // Bold both regular name and name with asterisk
-            if (author.includes('Zhang, Xingjian') || 
-                author.includes('Zhang*, Xingjian') || 
-                author.includes('Zhang,* Xingjian')) {
+            if (author.includes('Xingjian Zhang') || 
+                author.includes('Xingjian Zhang*')) {
                 // Remove any asterisk and add it back after the name
                 const cleanName = author.replace(/[*]/g, '').trim();
                 const hasAsterisk = author.includes('*');

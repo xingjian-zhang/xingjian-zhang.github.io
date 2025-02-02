@@ -3,25 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xingjian Zhang - Homepage</title>
+    <title>Xingjian Zhang - Home</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="assets/js/loadComponents.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <!-- Using a blue-colored placeholder for University of Michigan logo -->
-                <img src="assets/images/logo.png" alt="University of Michigan Logo" class="logo">
-                <span class="site-title">Xingjian Zhang's Homepage</span>
-            </div>
-            <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="pages/research.html">Research</a>
-                <a href="pages/experience.html">Experience</a>
-            </div>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
 
     <div class="hero">
         <div class="profile-container">
@@ -53,6 +41,62 @@
                     </ul>
                     <p>Prior to my Ph.D., I received my bachelor's degree in Computer Science from the University of Michigan.</p>
                     <br>
+                </section>
+
+                <section class="papers">
+                    <h2>SELECTED PAPERS</h2>
+                    <div class="paper-list">
+                        <!-- Map2Text -->
+                        <div class="paper-item">
+                            <div class="paper-title">
+                                Map2Text: New Content Generation from Low-Dimensional Visualizations
+                            </div>
+                            <div class="paper-authors">
+                                Xingjian Zhang, Ziyang Xiong, Shixuan Liu, Yutong Xie, Tolga Ergen, Dongsub Shim, Hua Xu, Honglak Lee, Qiaozhu Mei
+                            </div>
+                            <div class="paper-venue">
+                                arXiv preprint, 2024
+                                <div class="paper-links">
+                                    <a href="https://arxiv.org/abs/2412.18673" target="_blank">paper</a>
+                                    <a href="https://github.com/xingjian-zhang/map2text" target="_blank">code</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MASSW -->
+                        <div class="paper-item">
+                            <div class="paper-title">
+                                MASSW: A New Dataset and Benchmark Tasks for AI-Assisted Scientific Workflows
+                            </div>
+                            <div class="paper-authors">
+                                Xingjian Zhang*, Yutong Xie*, Jin Huang, Jinge Ma, Zhaoying Pan, Qijia Liu, Ziyang Xiong, Tolga Ergen, Dongsub Shim, Honglak Lee, et al.
+                            </div>
+                            <div class="paper-venue">
+                                NAACL Findings, 2025
+                                <div class="paper-links">
+                                    <a href="https://arxiv.org/abs/2406.06357" target="_blank">paper</a>
+                                    <a href="https://github.com/xingjian-zhang/massw" target="_blank">code</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LLM Graph -->
+                        <div class="paper-item">
+                            <div class="paper-title">
+                                Can LLMs effectively leverage graph structural information: when and why
+                            </div>
+                            <div class="paper-authors">
+                                Jin Huang, Xingjian Zhang, Qiaozhu Mei, Jiaqi Ma
+                            </div>
+                            <div class="paper-venue">
+                                TMLR, 2024
+                                <div class="paper-links">
+                                    <a href="https://arxiv.org/pdf/2309.16595.pdf" target="_blank">paper</a>
+                                    <a href="https://github.com/TRAIS-Lab/LLM-Structured-Data" target="_blank">code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <p><i>For more details about my research, please visit my <a href="pages/research.html">research page</a>.</i></p>
                 </section>
 
@@ -119,20 +163,10 @@
                             <span class="news-content">Paper accepted by NAACL 2025!</span>
                             <span class="news-date">(Jan 25)</span>
                         </li>
-                        <li data-type="event">
-                            <span class="news-emoji">🎯</span>
-                            <span class="news-content">We are organizing the 1st Workshop on Large Language Models for Individuals, Groups, and Society (LLMIGS 2024) in conjunction with WSDM 2024!</span>
-                            <span class="news-date">(Dec 23)</span>
-                        </li>
-                        <li data-type="work">
-                            <span class="news-emoji">💼</span>
-                            <span class="news-content">Interning @ Google DeepMind!</span>
-                            <span class="news-date">(May 23 - Nov 23)</span>
-                        </li>
                         <li data-type="paper">
                             <span class="news-emoji">📝</span>
-                            <span class="news-content">Paper accepted by NeurIPS 2024 D&B Track as a spotlight!</span>
-                            <span class="news-date">(Oct 24)</span>
+                            <span class="news-content">Paper accepted by ICLR 2024 5th Workshop on practical ML for limited/low resource settings!</span>
+                            <span class="news-date">(May 24)</span>
                         </li>
                         <li data-type="paper">
                             <span class="news-emoji">📝</span>
@@ -141,13 +175,23 @@
                         </li>
                         <li data-type="paper">
                             <span class="news-emoji">📝</span>
-                            <span class="news-content">Paper accepted by ICLR 2024 5th Workshop on practical ML for limited/low resource settings!</span>
-                            <span class="news-date">(May 24)</span>
+                            <span class="news-content">Paper accepted by NeurIPS 2024 D&B Track as a spotlight!</span>
+                            <span class="news-date">(Oct 24)</span>
+                        </li>
+                        <li data-type="event">
+                            <span class="news-emoji">🎯</span>
+                            <span class="news-content">We are organizing the 1st Workshop on Large Language Models for Individuals, Groups, and Society (LLMIGS 2024) in conjunction with WSDM 2024!</span>
+                            <span class="news-date">(Dec 23)</span>
                         </li>
                         <li data-type="paper">
                             <span class="news-emoji">📝</span>
                             <span class="news-content">Paper accepted by Neurips 2023 Workshop New Frontiers in Graph Learning!</span>
                             <span class="news-date">(Nov 23)</span>
+                        </li>
+                        <li data-type="work">
+                            <span class="news-emoji">💼</span>
+                            <span class="news-content">Interning @ Google DeepMind!</span>
+                            <span class="news-date">(May 23)</span>
                         </li>
                         <li data-type="event">
                             <span class="news-emoji">🎯</span>
@@ -170,7 +214,7 @@
         </div>
     </main>
     <footer class="footer">
-        This website was created by prompting <a href="https://cursor.sh/" target="_blank">Cursor AI</a> in 1 hour
+        Made with <img src="assets/images/cursor.png" alt="Cursor AI" title="Made with Cursor AI"> <a href="https://cursor.sh" target="_blank">Cursor AI</a>
     </footer>
     <script src="assets/js/main.js"></script>
 </body>
