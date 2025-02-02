@@ -1420,3 +1420,18 @@ section a:hover::after,
         padding: calc(var(--spacing-sm) * 0.8);
     }
 }
+
+.social-embeds {
+    margin-top: var(--spacing-lg);
+}
+
+.social-embeds .twitter-tweet {
+    margin: 0 auto !important;
+}
+
+/* Responsive adjustments for twitter embed */
+@media (max-width: 550px) {
+    .social-embeds {
+        display: none; /* Hide on very small screens */
+    }
+}
