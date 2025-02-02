@@ -2,28 +2,30 @@
 
 :root {
     /* Colors */
-    --color-primary: #00274c;
-    --color-secondary: #465d85;
-    --color-text: #333333;
-    --color-background: #ffffff;
+    --color-primary: #000000;
+    --color-secondary: #1a1a1a;
+    --color-text: #1a1a1a;  /* Slightly softer than pure black */
+    --color-text-light: #666666;  /* For secondary text */
+    --color-background: #f2f0eb;  /* Warm beige background */
+    --color-white: #ffffff;  /* For card backgrounds */
     
     /* Color variants */
-    --color-primary-light: rgba(0, 39, 76, 0.02);  /* For subtle backgrounds */
-    --color-primary-light-hover: rgba(0, 39, 76, 0.04);  /* For hover states */
-    --color-primary-medium: rgba(0, 39, 76, 0.06);  /* For highlights */
-    --color-primary-shadow: rgba(0, 39, 76, 0.12);  /* For shadows */
+    --color-primary-light: rgba(0, 39, 76, 0.04);  /* Slightly darker for subtle backgrounds */
+    --color-primary-light-hover: rgba(0, 39, 76, 0.08);  /* Darker hover state */
+    --color-primary-medium: rgba(0, 39, 76, 0.1);  /* Darker highlights */
+    --color-primary-shadow: rgba(0, 39, 76, 0.15);  /* Darker shadows */
     
     /* Border colors */
     --color-border: rgba(0, 0, 0, 0.1);
-    --color-border-light: #eaeaea;
+    --color-border-light: #e0e0e0;  /* Darker light border */
     
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, #2c3e50, #3498db);
     
     /* Shadow values */
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 4px 12px var(--color-primary-shadow);
+    --shadow-sm: none;
+    --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.08);
     
     /* Layout */
     --width-max: 1200px;
@@ -35,8 +37,8 @@
     --spacing-xl: 3rem;
     
     /* Typography */
-    --font-body: 'Raleway', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-heading: 'Raleway', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-chinese: 'Noto Serif SC', serif;
     
     /* Typography sizes - slightly larger for home page */
@@ -44,6 +46,18 @@
     --font-size-base: 1.05rem;  /* Increased from 1rem */
     --font-size-lg: 1.2rem;     /* Increased from 1.15rem */
     --font-size-xl: 2rem;       /* Keep the same */
+
+    /* New color palette */
+    --rich-black: #001219;
+    --midnight-green: #005f73;
+    --dark-cyan: #0a9396;
+    --tiffany-blue: #94d2bd;
+    --vanilla: #e9d8a6;
+    --gamboge: #ee9b00;
+    --alloy-orange: #ca6702;
+    --rust: #bb3e03;
+    --rufous: #ae2012;
+    --auburn: #9b2226;
 }
 
 * {
@@ -58,11 +72,27 @@ body {
     color: var(--color-text);
     font-size: var(--font-size-base);
     font-weight: 500;
+    background-color: var(--color-background);
+}
+
+/* Add subtle grain texture to background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/png;base64,/* noise texture base64 */');
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: -1;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: -0.02em;
 }
 
 .profile-info h1 {
@@ -86,7 +116,8 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: var(--shadow-md);
+    box-shadow: none;
+    border-bottom: none;
 }
 
 nav {
@@ -97,9 +128,21 @@ nav {
     margin: 0 auto;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
 .logo img {
     height: 50px;
     width: auto;
+}
+
+.site-title {
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: var(--font-size-base);
 }
 
 .nav-links a {
@@ -114,10 +157,11 @@ nav {
 }
 
 .hero {
-    background: var(--gradient-hero);
+    background: var(--color-background);
+    border-bottom: none;
     min-height: 300px;
-    padding: 6rem var(--spacing-lg) 2rem;
-    color: var(--color-background);
+    padding: 6rem var(--spacing-lg) 0rem var(--spacing-lg);
+    color: var(--color-text);
     position: relative;
     display: flex;
     align-items: center;
@@ -128,20 +172,26 @@ nav {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: var(--spacing-xl);
+    gap: calc(var(--spacing-xl) * 1.5);  /* Increased gap */
     padding: var(--spacing-md) var(--spacing-lg);
     width: 100%;
     justify-content: flex-start;
 }
 
 .profile-image {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
+    width: 300px;  /* Increased from 160px */
+    height: 300px;  /* Increased from 160px */
+    border-radius: 0;
     object-fit: cover;
-    border: 4px solid var(--color-background);
-    box-shadow: var(--shadow-md);
+    border: 2px solid var(--color-text);  /* Added solid border */
+    box-shadow: none;
     flex-shrink: 0;
+    transition: border-color 0.5s ease;  /* Smooth transition for border color */
+}
+
+/* Optional: add hover effect */
+.profile-image:hover {
+    border-color: var(--color-text-light);
 }
 
 .profile-info {
@@ -152,6 +202,7 @@ nav {
 .profile-info p {
     margin-bottom: var(--spacing-sm);
     font-size: var(--font-size-base);
+    color: var(--color-text-light);
 }
 
 .social-links {
@@ -159,7 +210,7 @@ nav {
 }
 
 .social-links a {
-    color: var(--color-background);
+    color: var(--color-text);
     margin-right: var(--spacing-md);
     font-size: var(--font-size-lg);
 }
@@ -179,7 +230,7 @@ main {
 
 /* Ensure proper spacing between sections in left column */
 .column-left section {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
 .column-left section:last-child {
@@ -199,26 +250,38 @@ main {
 }
 
 section {
-    background: var(--color-background);
-    padding: var(--spacing-md);  /* Consistent padding */
-    border-radius: 8px;
-    border: 1px solid var(--color-border);
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
+    background: var(--color-white);
+    border-radius: 0;
+    padding: var(--spacing-lg);
+    border: 2px solid var(--color-border);  /* Remove the section border */
+    transition: none;
+    color: var(--color-text);
 }
 
 section:hover {
-    border-color: var(--color-primary);
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-2px);
-    background-color: var(--color-primary-light);
+    border-color: var(--color-text);
+    box-shadow: none;
+    transform: none;
+    background-color: var(--color-white);
+    transition: border-color 0.5s ease;
 }
 
 section h2 {
-    color: var(--color-primary);
+    color: var(--color-text);
     margin-bottom: var(--spacing-sm);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-lg);  /* Keep h2 at current size */
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+section h3 {
+    color: var(--color-text);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-base);  /* Make h3 smaller than h2 */
+    font-weight: 600;  /* Slightly lighter weight */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 section ul {
@@ -230,12 +293,14 @@ section li {
 }
 
 section a {
-    color: var(--color-primary);
+    color: var(--color-text);
     text-decoration: none;
+    border-bottom: 1px solid var(--color-text);
+    transition: border-color 0.2s ease;
 }
 
 section a:hover {
-    text-decoration: underline;
+    opacity: 0.7;
 }
 
 .news-list li {
@@ -244,9 +309,11 @@ section a:hover {
     gap: var(--spacing-sm);
     margin-bottom: var(--spacing-sm);
     padding: var(--spacing-sm);
-    border-radius: 4px;
-    background: var(--color-primary-light);
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    border-radius: 0;
+    background: var(--color-white);
+    border: none;
+    border-left: 4px solid var(--color-text);
+    transition: none;
     font-size: var(--font-size-sm);
 }
 
@@ -254,11 +321,11 @@ section a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 1.5rem;  /* Slightly smaller emoji container */
+    width: 1.5rem;
     height: 1.5rem;
-    background: var(--color-background);
-    border-radius: 50%;
-    box-shadow: var(--shadow-sm);
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
     font-size: 1rem;
     flex-shrink: 0;
 }
@@ -270,7 +337,7 @@ section a:hover {
 }
 
 .news-date {
-    color: var(--color-primary);
+    color: var(--color-text-light);
     font-size: var(--font-size-sm);
     white-space: nowrap;
     font-weight: 600;
@@ -291,19 +358,36 @@ section a:hover {
 
 /* Custom styling for different news types */
 .news-list li[data-type="paper"] {
-    border-left: 3px solid #4CAF50;  /* Green for papers */
+    border-left: 4px solid var(--dark-cyan);  /* Using dark-cyan for papers */
 }
 
 .news-list li[data-type="event"] {
-    border-left: 3px solid #2196F3;  /* Blue for events/workshops */
+    border-left: 4px solid var(--midnight-green);  /* Using midnight-green for events */
 }
 
 .news-list li[data-type="award"] {
-    border-left: 3px solid #FFC107;  /* Gold for achievements */
+    border-left: 4px solid var(--gamboge);  /* Using gamboge for achievements */
 }
 
 .news-list li[data-type="work"] {
-    border-left: 3px solid #9C27B0;  /* Purple for work experience */
+    border-left: 4px solid var(--rust);  /* Using rust for work experience */
+}
+
+/* Add colors for honors and service items */
+.honors ul li {
+    border-left: 4px solid #FFC107;  /* Gold for honors/awards */
+}
+
+.service ul li {
+    border-left: 4px solid #2196F3;  /* Blue for service items */
+}
+
+/* Remove the general border override */
+.news-list li[data-type="paper"],
+.news-list li[data-type="event"],
+.news-list li[data-type="award"],
+.news-list li[data-type="work"] {
+    border-left-width: 4px;  /* Just ensure consistent width */
 }
 
 .honors, .service, .about, .news {
@@ -385,15 +469,15 @@ section a:hover {
     font-weight: 600;
 }
 
-/* Update honors and service items styling */
+/* Update honors and service items styling to match news items */
 .honors ul li, 
 .service ul li {
     position: relative;
     padding: var(--spacing-sm);
     margin-bottom: var(--spacing-sm);
-    background: var(--color-primary-light);
-    border-radius: 4px;
-    border-left: 3px solid var(--color-primary);
+    background: var(--color-white);
+    border: none;
+    border-left: 4px solid var(--color-text);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -401,23 +485,24 @@ section a:hover {
     font-size: var(--font-size-sm);
 }
 
-/* Remove the ::after pseudo-element and use a span instead */
-.honors ul li::after,
-.service ul li::after {
-    display: none;
+/* Remove hover effects */
+.honors ul li:hover,
+.service ul li:hover {
+    transform: none;
+    background-color: var(--color-white);
 }
 
-/* Add date styling to match news items */
+/* Update date styling to match news items */
 .honors .date,
 .service .date {
-    color: var(--color-primary);
+    color: var(--color-text-light);
     font-size: var(--font-size-sm);
     white-space: nowrap;
     font-weight: 600;
     padding-top: 2px;
 }
 
-/* Add content wrapper to allow proper flex layout */
+/* Update content wrapper to match news items */
 .honors .content,
 .service .content {
     flex: 1;
@@ -440,66 +525,60 @@ section a:hover {
     align-items: flex-start;
     gap: var(--spacing-md);
     padding: var(--spacing-sm);
-    margin-bottom: 1rem;
-    background: var(--color-primary-light);
-    border-radius: 4px;
-    border-left: 3px solid var(--color-primary);
-    transition: background-color 0.2s ease;
+    margin-bottom: var(--spacing-sm);
+    background: var(--color-white);
+    border-radius: 0;
+    border: none;
+    border-left: 4px solid var(--color-text);
+    transition: none;
 }
 
+/* Remove hover effect */
 .publication:hover {
-    background: var(--color-primary-light-hover);
+    background: var(--color-white);
 }
 
-.publication:last-child {
-    margin-bottom: 0;
-}
-
-/* Update paper type indicators */
+/* Add different colors for publication types */
 .publication[data-type="preprint"] {
-    border-left-color: #b31b1b;  /* arXiv's official brand color */
+    border-left: 4px solid var(--auburn);  /* Using auburn for preprints */
 }
 
-/* Update paper type indicators */
 .publication[data-type="conference"] {
-    border-left-color: #4CAF50;  /* Keep green for conference papers */
+    border-left: 4px solid var(--dark-cyan);  /* Using dark-cyan for conference papers */
 }
 
-/* Update paper type indicators */
 .publication[data-type="journal"] {
-    border-left-color: #2196F3;  /* Keep blue for journal papers */
+    border-left: 4px solid var(--midnight-green);  /* Using midnight-green for journal papers */
 }
 
-/* Update paper type indicators */
 .publication[data-type="workshop"] {
-    border-left-color: #9C27B0;  /* Keep purple for workshop papers */
+    border-left: 4px solid var(--alloy-orange);  /* Using alloy-orange for workshop papers */
 }
 
-/* Publication content layout */
+/* Update publication content styling */
 .pub-content {
     flex: 1;
 }
 
 .publication h3 {
     color: var(--color-text);
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-base);  /* Keep consistent with other h3s */
     margin-bottom: calc(var(--spacing-sm) / 2);
     font-weight: 600;
     line-height: 1.3;
+    text-transform: none;  /* Don't uppercase publication titles */
+    letter-spacing: 0;
 }
 
 .publication .authors {
-    color: var(--color-text);
+    color: var(--color-text-light);
     font-size: var(--font-size-sm);
     margin-bottom: calc(var(--spacing-sm) / 2);
     line-height: 1.4;
 }
 
 .publication .venue {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--color-primary);
+    color: var(--color-text-light);
     font-weight: 600;
     font-size: var(--font-size-sm);
 }
@@ -552,7 +631,7 @@ section a:hover {
 }
 
 .research-container .publication {
-    padding: var(--spacing-lg);  /* Larger padding for standalone page */
+    padding: var(--spacing-sm) var(--spacing-md);
 }
 
 .asterisk-note {
@@ -600,24 +679,13 @@ section a:hover {
     margin: 0 auto;
 }
 
-.experience h2 {
-    color: var(--color-primary);
-    margin: var(--spacing-xl) 0 var(--spacing-lg);
-    font-size: var(--font-size-xl);
-    font-weight: 700;
-}
-
-.experience h2:first-child {
-    margin-top: 0;
-}
-
 .experience-item {
     display: flex;
     align-items: flex-start;
-    gap: var(--spacing-lg);
-    padding: var(--spacing-lg);
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
     background: rgba(0,39,76,0.02);
-    border-left: 3px solid var(--color-primary);
+    border-left: 4px solid var(--midnight-green);  /* Updated to midnight-green */
     border-radius: 0 4px 4px 0;
     margin-bottom: var(--spacing-md);
     transition: all 0.2s ease;
@@ -636,10 +704,11 @@ section a:hover {
 }
 
 .experience-content h3 {
-    font-size: var(--font-size-lg);
-    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-base);
     color: var(--color-text);
     font-weight: 600;
+    text-transform: none;  /* Don't uppercase experience titles */
+    letter-spacing: 0;
 }
 
 .experience-content .institution {
@@ -662,7 +731,7 @@ section a:hover {
 .teaching-item {
     padding: var(--spacing-md);
     background: rgba(0,39,76,0.02);
-    border-left: 3px solid var(--color-primary);
+    border-left: 4px solid var(--dark-cyan);  /* Updated to dark-cyan */
     border-radius: 0 4px 4px 0;
     transition: all 0.2s ease;
 }
@@ -676,6 +745,8 @@ section a:hover {
     font-size: var(--font-size-base);
     color: var(--color-text);
     font-weight: 600;
+    text-transform: none;  /* Don't uppercase teaching titles */
+    letter-spacing: 0;
 }
 
 /* Adjust research item spacing */
@@ -744,4 +815,18 @@ section a:hover {
 
 .section-title:hover::after {
     transform: scaleX(1);
+}
+
+/* Update publication border width */
+.publication[data-type="preprint"],
+.publication[data-type="conference"],
+.publication[data-type="journal"],
+.publication[data-type="workshop"] {
+    border-left-width: 4px;  /* Increased from 2px */
+}
+
+/* Update honors and service items border width */
+.honors ul li,
+.service ul li {
+    border-left-width: 4px;  /* Increased from 2px */
 }
