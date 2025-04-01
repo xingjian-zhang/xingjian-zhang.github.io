@@ -33,10 +33,11 @@
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-chinese: 'Noto Serif SC', serif;
-    
+    --font-vinyl: 'Raleway', sans-serif;
+
     /* Font sizes */
-    --font-size-xxs: 0.6rem;
-    --font-size-xs: 0.8rem;
+    --font-size-xxs: 0.4rem;
+    --font-size-xs: 0.6rem;
     --font-size-sm: 1rem;
     --font-size-base: 1.05rem;
     --font-size-lg: 1.2rem;
@@ -1470,19 +1471,56 @@ section a:hover::after,
     gap: var(--spacing-lg);
 }
 
+/* Common info styles for game items */
+.gallery-item:not(.album) .item-info {
+    padding: var(--spacing-sm);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    z-index: 3;
+}
+
+.gallery-item:not(.album):hover .item-info {
+    transform: translateY(0);
+}
+
 /* Base gallery item styles */
 .gallery-item {
     border-radius: var(--border-radius);
-    border: 1px solid var(--rich-black);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 
-.gallery-item:hover {
-    transform: translateY(-1px);
+.gallery-item:not(.album):hover {
+    transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Keep album-specific styles as they are */
+.gallery-item.album {
+    overflow: visible;
+}
+
+.gallery-item h4 {
+    margin: 0;
+    font-size: var(--font-size-xs);
+    margin-bottom: 0.2rem;
+    font-weight: 400;
+    color: white;
+}
+
+.gallery-item p {
+    margin: 0;
+    font-size: var(--font-size-xs);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
 }
 
 /* Standard image style (for games and other items) */
@@ -1498,14 +1536,13 @@ section a:hover::after,
     perspective: 1000px;
     transform-style: preserve-3d;
     position: relative;
-    overflow: visible; /* Allow the vinyl to extend outside the container */
-    z-index: 1; /* Base z-index for all albums */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Remove z-index from transition */
+    overflow: visible;
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Increase z-index on hover to appear above other items */
 .gallery-item.album:hover {
-    z-index: 100; /* Much higher z-index when hovered */
+    z-index: 100;
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -1532,25 +1569,10 @@ section a:hover::after,
     transform: translateX(0);
     transition: transform 0.5s ease;
     overflow: hidden;
-    pointer-events: none; /* Prevent vinyl from interfering with hover states */
-    opacity: 1; /* Ensure the vinyl is visible */
-}
-
-/* Remove this problematic transition rule */
-.gallery-item.album:not(:hover) {
-    z-index: 1; /* Reset to base z-index */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s linear 0.5s; /* Delay z-index change */
-}
-
-/* Adjust the vinyl position to properly slide out */
-.gallery-item.album:hover .vinyl-record {
-    transform: translateX(70%);
-}
-
-/* Add transition for vinyl sliding back in */
-.gallery-item.album:not(:hover) .vinyl-record {
-    transform: translateX(0);
-    transition: transform 0.5s ease;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .vinyl-record::before {
@@ -1558,12 +1580,12 @@ section a:hover::after,
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 20%;
-    height: 20%;
+    width: 30%;
+    height: 30%;
     background-color: #555;
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2;
+    z-index: 1;
 }
 
 .vinyl-record::after {
@@ -1584,51 +1606,49 @@ section a:hover::after,
     border-radius: 50%;
 }
 
-/* Common info styles for all gallery items */
-.gallery-item .item-info {
-    padding: var(--spacing-sm);
+/* Style for album info on vinyl */
+.vinyl-info {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    transition: transform 0.3s ease, opacity 0.3s;
-    background-color: rgba(0, 0, 0, 0.7);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
     color: white;
-    z-index: 3;
-    opacity: 0; /* Start with zero opacity */
+    z-index: 2;
+    width: 40%;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    opacity: 0;
 }
 
-.gallery-item {
-    border-radius: var(--border-radius);
-    overflow: hidden; /* Keep this for the album info */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-/* Only make the album items overflow visible, not all gallery items */
-.gallery-item.album {
-    overflow: visible; /* Allow only the vinyl to extend outside */
-}
-
-.gallery-item:hover .item-info {
-    transform: translateY(0);
+.gallery-item.album:hover .vinyl-info {
     opacity: 1;
 }
 
-.gallery-item h4 {
+.vinyl-info h4 {
     margin: 0;
+    font-family: var(--font-vinyl);
     font-size: var(--font-size-xs);
-    margin-bottom: 0.2rem;
     font-weight: 400;
+    line-height: 1;
     color: white;
 }
 
-.gallery-item p {
+.vinyl-info p {
     margin: 0;
-    font-size: var(--font-size-xs);
+    font-family: var(--font-vinyl);
+    font-size: var(--font-size-xxs);
     color: rgba(255, 255, 255, 0.8);
     font-weight: 300;
+}
+
+.gallery-item.album:hover .vinyl-record {
+    transform: translateX(80%);
+}
+
+/* Remove the old info overlay */
+.gallery-item.album .item-info {
+    display: none;
 }
 
 /* Responsive adjustments for misc page */
