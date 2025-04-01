@@ -1559,10 +1559,10 @@ section a:hover::after,
 
 .vinyl-record {
     position: absolute;
-    top: 10%;
-    left: 10%;
-    width: 80%;
-    height: 80%;
+    top: 1%;
+    left: 1%;
+    width: 98%;
+    height: 98%;
     background-color: #111;
     border-radius: 50%;
     z-index: 1;
@@ -1598,9 +1598,9 @@ section a:hover::after,
     background: repeating-radial-gradient(
         circle at center,
         #111,
-        #111 5px,
-        #333 6px,
-        #333 7px
+        #111 10px,
+        #333 11px,
+        #333 12px
     );
     opacity: 0.5;
     border-radius: 50%;
@@ -1643,7 +1643,7 @@ section a:hover::after,
 }
 
 .gallery-item.album:hover .vinyl-record {
-    transform: translateX(80%);
+    transform: translateX(60%);
 }
 
 /* Remove the old info overlay */
