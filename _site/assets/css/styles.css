@@ -214,7 +214,8 @@ nav {
     background: var(--color-primary-light);
     z-index: -1;
     transition: all 0.3s ease;
-    transform: rotate(-1deg); /* Rotate shadow slightly in opposite direction */
+    transform: rotate(-1deg);
+    /* Rotate shadow slightly in opposite direction */
 }
 
 .profile-info {
@@ -242,7 +243,8 @@ nav {
     font-size: 1.5em;
     transition: all 0.3s ease;
     transform-origin: center center;
-    display: inline-block; /* Required for transform to work */
+    display: inline-block;
+    /* Required for transform to work */
 }
 
 .social-links a:hover {
@@ -1258,7 +1260,8 @@ section a,
     color: var(--color-text);
     padding: 8px 8px;
     /* margin: -2px -4px; */
-    transition: color 0.3s ease; /* Add transition for text color */
+    transition: color 0.3s ease;
+    /* Add transition for text color */
 }
 
 .nav-links a::after,
@@ -1271,7 +1274,8 @@ section a::after,
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--color-text); /* Change to black */
+    background-color: var(--color-text);
+    /* Change to black */
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
@@ -1283,7 +1287,8 @@ section a::after,
 section a:hover,
 .news-content a:hover,
 .about a:hover {
-    color: var(--color-white); /* Change text to white on hover */
+    color: var(--color-white);
+    /* Change text to white on hover */
 }
 
 .nav-links a:hover::after,
@@ -1435,7 +1440,8 @@ section a:hover::after,
 /* Responsive adjustments for twitter embed */
 @media (max-width: 550px) {
     .social-embeds {
-        display: none; /* Hide on very small screens */
+        display: none;
+        /* Hide on very small screens */
     }
 }
 
@@ -1595,13 +1601,11 @@ section a:hover::after,
     left: 0;
     right: 0;
     bottom: 0;
-    background: repeating-radial-gradient(
-        circle at center,
-        #111,
-        #111 10px,
-        #333 11px,
-        #333 12px
-    );
+    background: repeating-radial-gradient(circle at center,
+            #111,
+            #111 10px,
+            #333 11px,
+            #333 12px);
     opacity: 0.5;
     border-radius: 50%;
 }
@@ -1664,4 +1668,27 @@ section a:hover::after,
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-sm);
     }
+}
+
+/* Book gallery item styles */
+.gallery-item.book {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item.book:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item.book img {
+    width: 100%;
+    aspect-ratio: 2/3;  /* Standard book aspect ratio */
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: var(--shadow-md);
+    transition: box-shadow 0.3s ease;
+}
+
+.gallery-item.book:hover img {
+    box-shadow: var(--shadow-lg);
 }
