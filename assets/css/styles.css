@@ -1692,3 +1692,129 @@ section a:hover::after,
 .gallery-item.book:hover img {
     box-shadow: var(--shadow-lg);
 }
+
+/* Modal styles */
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-background);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--color-white);
+    margin: 15% auto;
+    padding: var(--spacing-lg);
+    border: 2px solid var(--color-text);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.modal-content h2 {
+    color: var(--color-text);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.modal-content p {
+    color: var(--color-text-light);
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+}
+
+.modal input {
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    width: 80%;
+    max-width: 300px;
+    border: 2px solid var(--color-text);
+    background: var(--color-white);
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    transition: all 0.3s ease;
+}
+
+.modal input:focus {
+    outline: none;
+    border-color: var(--midnight-green);
+    box-shadow: 0 0 0 2px rgba(10, 147, 150, 0.1);
+}
+
+.modal button {
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--color-text);
+    color: var(--color-white);
+    border: none;
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.modal button:hover {
+    background-color: var(--midnight-green);
+    transform: translateY(-2px);
+}
+
+.error-message {
+    color: var(--auburn);
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-sm);
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+.error-message.show {
+    display: block;
+    opacity: 1;
+}
+
+.success-message {
+    color: var(--midnight-green);
+    font-size: var(--font-size-base);
+    margin-top: var(--spacing-md);
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+.success-message.show {
+    display: block;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 30% auto;
+        padding: var(--spacing-md);
+        width: 95%;
+    }
+    .modal-content h2 {
+        font-size: var(--font-size-base);
+    }
+    .modal-content p {
+        font-size: var(--font-size-sm);
+    }
+    .modal input {
+        width: 90%;
+        padding: var(--spacing-sm);
+    }
+    .modal button {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+}
