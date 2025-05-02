@@ -1,0 +1,93 @@
+/* Typography Styles */
+
+/* Headings */
+h1 {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-lg);
+}
+
+h2 {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-md);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+h3 {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+h4 {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: var(--spacing-md);
+  line-height: var(--line-height-normal);
+}
+
+/* Special text elements */
+.chinese-name {
+  font-family: var(--font-chinese);
+  font-weight: 500;
+  font-optical-sizing: auto;
+  margin-left: var(--spacing-sm);
+}
+
+/* Text utilities */
+.text-small {
+  font-size: var(--font-size-sm);
+}
+
+.text-xs {
+  font-size: var(--font-size-xs);
+}
+
+.text-xxs {
+  font-size: var(--font-size-xxs);
+}
+
+.text-light {
+  color: var(--color-text-light);
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Links */
+.text-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-primary);
+  transition: border-color var(--transition-normal);
+}
+
+.text-link:hover {
+  border-bottom-color: transparent;
+}
+
+/* Highlight text */
+.highlight {
+  background: var(--color-primary-medium);
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+} 

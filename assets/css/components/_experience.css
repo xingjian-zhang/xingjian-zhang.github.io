@@ -1,0 +1,159 @@
+/* Experience Component */
+
+.experience-container {
+  max-width: var(--width-max);
+  margin: 8rem auto var(--spacing-lg);
+  padding: 0 var(--spacing-lg);
+}
+
+.experience {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.experience-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--color-primary-light);
+  border-left: 4px solid var(--midnight-green);
+  border-radius: 0 4px 4px 0;
+  margin-bottom: var(--spacing-md);
+  transition: all var(--transition-normal);
+}
+
+.experience-item:hover {
+  background: var(--color-primary-light-hover);
+  transform: translateX(4px);
+}
+
+.institution-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.experience-content h3 {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.experience-content .institution {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+}
+
+.experience-content .duration {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Teaching Section */
+.teaching-list {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.teaching-item {
+  padding: var(--spacing-md);
+  background: var(--color-primary-light);
+  border-left: 4px solid var(--dark-cyan);
+  border-radius: 0 4px 4px 0;
+  transition: all var(--transition-normal);
+}
+
+.teaching-item:hover {
+  background: var(--color-primary-light-hover);
+  transform: translateX(4px);
+}
+
+.teaching-item h3 {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Timeline */
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.timeline-date {
+  position: relative;
+  width: 100%;
+  font-weight: bold;
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+  width: 100%;
+  padding-left: 0;
+}
+
+/* Responsive Experience */
+@media (max-width: 768px) {
+  .experience-container {
+    margin: 4rem auto var(--spacing-lg);
+    padding: 0 var(--spacing-md);
+  }
+
+  .experience-item {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: var(--spacing-sm);
+  }
+
+  .institution-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .timeline-date {
+    position: relative;
+    width: 100%;
+    font-weight: bold;
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-content {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--color-primary);
+  }
+
+  .timeline-item::after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+  }
+} 

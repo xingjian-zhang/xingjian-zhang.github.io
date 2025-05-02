@@ -1,0 +1,97 @@
+/* Design Tokens */
+
+/* Colors */
+:root {
+  /* Core colors */
+  --color-primary: #000000;
+  --color-secondary: #1a1a1a;
+  --color-text: #1a1a1a;
+  --color-text-light: #666666;
+  --color-background: #f2f0eb;
+  --color-white: #ffffff;
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-border-light: #e0e0e0;
+
+  /* Color variants */
+  --color-primary-light: rgba(0, 39, 76, 0.04);
+  --color-primary-light-hover: rgba(0, 39, 76, 0.08);
+  --color-primary-medium: rgba(0, 39, 76, 0.1);
+  --color-primary-shadow: rgba(0, 39, 76, 0.15);
+
+  /* Color palette */
+  --rich-black: #001219;
+  --midnight-green: #005f73;
+  --dark-cyan: #0a9396;
+  --tiffany-blue: #94d2bd;
+  --vanilla: #e9d8a6;
+  --gamboge: #ee9b00;
+  --alloy-orange: #ca6702;
+  --rust: #bb3e03;
+  --rufous: #ae2012;
+  --auburn: #9b2226;
+}
+
+/* Typography */
+:root {
+  /* Font families */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-chinese: 'Noto Serif SC', serif;
+  --font-vinyl: 'Raleway', sans-serif;
+
+  /* Font sizes */
+  --font-size-xxs: 0.4rem;
+  --font-size-xs: 0.6rem;
+  --font-size-sm: 1rem;
+  --font-size-base: 1.05rem;
+  --font-size-lg: 1.2rem;
+  --font-size-xl: 2rem;
+
+  /* Line heights */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.6;
+  --line-height-loose: 1.8;
+}
+
+/* Spacing */
+:root {
+  --spacing-xxs: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 4rem;
+}
+
+/* Layout */
+:root {
+  --width-max: 1200px;
+  --border-radius: 4px;
+}
+
+/* Shadows */
+:root {
+  --shadow-sm: none;
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Transitions */
+:root {
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Z-index */
+:root {
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+} 

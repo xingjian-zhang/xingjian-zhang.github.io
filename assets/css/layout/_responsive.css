@@ -1,0 +1,155 @@
+/* Responsive Design */
+
+/* Mobile First Base Styles */
+:root {
+  /* Base mobile font sizes */
+  --font-size-xxs: 0.4rem;
+  --font-size-xs: 0.6rem;
+  --font-size-sm: 0.9rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.1rem;
+  --font-size-xl: 1.6rem;
+
+  /* Base mobile spacing */
+  --spacing-sm: 0.4rem;
+  --spacing-md: 0.8rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+}
+
+/* Tablet and Up */
+@media (min-width: 769px) {
+  :root {
+    --font-size-sm: 1rem;
+    --font-size-base: 1.05rem;
+    --font-size-lg: 1.2rem;
+    --font-size-xl: 2rem;
+
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+  }
+}
+
+/* Header Responsive */
+@media (max-width: 768px) {
+  header {
+    padding: var(--spacing-sm);
+  }
+
+  nav {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: center;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+    justify-content: center;
+    width: 100%;
+  }
+
+  .site-title {
+    text-align: center;
+  }
+}
+
+/* Profile Section Responsive */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    align-self: center;
+  }
+}
+
+/* Social Links Responsive */
+@media (max-width: 768px) {
+  .social-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 8px 12px;
+    gap: 15px;
+    width: 100%;
+  }
+}
+
+/* Main Content Responsive */
+@media (max-width: 768px) {
+  main {
+    padding: 0 var(--spacing-md);
+    margin: var(--spacing-md) auto;
+  }
+}
+
+/* Experience Items Responsive */
+@media (max-width: 768px) {
+  .experience-item {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: var(--spacing-sm);
+  }
+
+  .institution-logo {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Research Items Responsive */
+@media (max-width: 768px) {
+  .publication {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .pub-links {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+/* Landscape Orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero {
+    padding: 4rem var(--spacing-md) 1rem;
+  }
+
+  .profile-container {
+    flex-direction: row;
+    gap: var(--spacing-lg);
+  }
+
+  .profile-image {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* Tablet Specific */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .content-grid {
+    gap: var(--spacing-lg);
+  }
+
+  section {
+    padding: var(--spacing-lg);
+  }
+
+  .profile-image {
+    width: 240px;
+    height: 240px;
+  }
+} 

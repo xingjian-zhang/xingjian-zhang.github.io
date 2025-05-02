@@ -1,0 +1,23 @@
+/* Main CSS File */
+
+/* Base */
+@import 'base/variables.css';
+@import 'base/reset.css';
+@import 'base/typography.css';
+
+/* Components */
+@import 'components/header.css';
+@import 'components/profile.css';
+@import 'components/news.css';
+@import 'components/publications.css';
+@import 'components/experience.css';
+@import 'components/gallery.css';
+@import 'components/modal.css';
+
+/* Layout */
+@import 'layout/grid.css';
+@import 'layout/responsive.css';
+
+/* Utilities */
+@import 'utilities/animations.css';
+@import 'utilities/helpers.css'; 
