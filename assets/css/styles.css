@@ -786,7 +786,12 @@ section a:hover {
 /* Update hover effects for all list items */
 .news-list li,
 .honors ul li,
-.service ul li,
+.service ul li {
+    transition: all 0.2s ease;
+    padding: 4px var(--spacing-sm);
+    margin-bottom: 2px;
+}
+
 .experience-item,
 .teaching-item {
     transition: all 0.2s ease;
@@ -822,6 +827,17 @@ section a:hover {
 .honors,
 .service {
     margin-bottom: 0;
+    padding: var(--spacing-md);
+}
+
+.honors ul,
+.service ul {
+    margin-bottom: var(--spacing-xs);
+}
+
+.service h3 {
+    margin-top: var(--spacing-sm);
+    margin-bottom: 4px;
 }
 
 /* Publications styling */
