@@ -38,3 +38,4 @@ yarn-error.log*
 # Optional: Ignore local development files
 *.local
 *.dev 
+.playwright-mcp
