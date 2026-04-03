@@ -1275,7 +1275,7 @@ section a,
 
 /* Add new growing box animation */
 .nav-links a,
-section a,
+section a:not(.project-card),
 .news-content a,
 .about a {
     position: relative;
@@ -1288,7 +1288,7 @@ section a,
 }
 
 .nav-links a::after,
-section a::after,
+section a:not(.project-card)::after,
 .news-content a::after,
 .about a::after {
     content: '';
@@ -1307,7 +1307,7 @@ section a::after,
 
 /* Show box on hover and change text color */
 .nav-links a:hover,
-section a:hover,
+section a:hover:not(.project-card),
 .news-content a:hover,
 .about a:hover {
     color: var(--color-white);
@@ -1315,7 +1315,7 @@ section a:hover,
 }
 
 .nav-links a:hover::after,
-section a:hover::after,
+section a:hover:not(.project-card)::after,
 .news-content a:hover::after,
 .about a:hover::after {
     transform: scaleX(1);
@@ -1714,6 +1714,111 @@ section a:hover::after,
 
 .gallery-item.book:hover img {
     box-shadow: var(--shadow-lg);
+}
+
+/* Project Cards */
+.projects-container {
+    max-width: var(--width-max);
+    margin: 8rem auto var(--spacing-lg);
+    padding: 0 var(--spacing-lg);
+}
+
+.projects-container .projects {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.projects .intro-text {
+    margin-bottom: var(--spacing-lg);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--color-border);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: border-color 0.5s ease;
+    background: var(--color-white);
+}
+
+.project-card:hover {
+    border-color: var(--color-text);
+}
+
+.project-thumbnail {
+    overflow: hidden;
+}
+
+.project-thumbnail img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+}
+
+.project-info {
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    flex: 1;
+}
+
+.project-info h3 {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    margin: 0;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.project-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.project-link {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-top: auto;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--color-border);
+    transition: color var(--transition-fast);
+}
+
+.project-card:hover .project-link {
+    color: var(--midnight-green);
+}
+
+.project-link i {
+    margin-right: var(--spacing-xxs);
+    font-size: 0.85em;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
 }
 
 /* Modal styles */
