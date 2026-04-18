@@ -38,5 +38,10 @@ yarn-error.log*
 
 # Optional: Ignore local development files
 *.local
-*.dev 
+*.dev
 .playwright-mcp
+
+# Playwright / ad-hoc screenshots at repo root
+/test-results/
+/*.png
+!/apple-touch-icon.png

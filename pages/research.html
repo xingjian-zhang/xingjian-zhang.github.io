@@ -3,31 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xingjian Zhang - Research</title>
+    <title>xingjianz / research.sh</title>
     <link rel="icon" type="image/png" href="../assets/images/notion_profile.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
     <link rel="stylesheet" href="../assets/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="../assets/js/loadComponents.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <script defer src="../assets/js/loadComponents.js"></script>
 </head>
-<body>
+<body data-page="research">
     <div id="header-placeholder"></div>
+    <div class="t-page">
+        <div class="t-frame">
+            <div id="topnav-placeholder"></div>
 
-    <main>
-        <div class="research-container">
-            <section class="research">
-                <h2>RESEARCH</h2>
-                <p class="asterisk-note">* denotes equal contribution</p>
-                <div class="publications">
-                    <div id="publications-list">
-                        <!-- Publications will be inserted here by JavaScript -->
-                    </div>
-                </div>
-            </section>
+            <div class="t-pagehead">
+                <h2>research.list()</h2>
+                <p>Publications sorted by year. * denotes equal contribution.</p>
+            </div>
+
+            <div class="t-filter">
+                <button type="button" data-filter="all" class="active">all</button>
+                <button type="button" data-filter="journal">journal</button>
+                <button type="button" data-filter="conference">conference</button>
+                <button type="button" data-filter="workshop">workshop</button>
+                <button type="button" data-filter="preprint">preprint</button>
+            </div>
+
+            <div id="publications-list"></div>
+
+            <div id="footer-placeholder"></div>
         </div>
-    </main>
-    <footer class="footer">
-        Built with <img src="../assets/images/claude-code.svg" alt="Claude Code" title="Built with Claude Code"> <a href="https://claude.ai/code" target="_blank">Claude Code</a>
-    </footer>
+    </div>
     <script src="../assets/js/main.js"></script>
 </body>
 </html>

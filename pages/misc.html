@@ -1,331 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xingjian Zhang - Miscellaneous</title>
+    <title>xingjianz / misc.sh</title>
     <link rel="icon" type="image/png" href="../assets/images/notion_profile.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
     <link rel="stylesheet" href="../assets/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="../assets/js/loadComponents.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <script defer src="../assets/js/loadComponents.js"></script>
 </head>
+<body data-page="misc">
+    <!-- 42 gate -->
+    <div id="t-gate" class="t-gate">
+        <p class="t-gate-prompt">▶ access required</p>
+        <h2>misc.unlock()</h2>
+        <p>What is the answer to life, the universe, and everything?</p>
+        <div class="t-gate-row">
+            <input type="text" id="answer-input" placeholder="> ___" autocomplete="off" autofocus>
+            <button type="button" id="gate-submit">enter</button>
+        </div>
+        <div id="gate-msg" class="t-gate-msg" data-ok=""></div>
+        <div class="t-gate-hint">hint: douglas adams</div>
+    </div>
 
-<body>
-    <div id="qa-modal" class="modal">
-        <div class="modal-content">
-            <h2>Answer the Question for Access</h2>
-            <p>What is the answer to life, the universe, and everything?</p>
-            <input type="number" id="answer-input" placeholder="Enter your answer">
-            <div id="error-message" class="error-message">That's not the correct answer. Try again!</div>
-            <div id="success-message" class="success-message">Correct! Welcome to the Miscellaneous Section.</div>
-            <button onclick="checkAnswer()">Submit</button>
+    <div id="main-content" class="t-hidden">
+        <div id="header-placeholder"></div>
+        <div class="t-page">
+            <div class="t-frame">
+                <div id="topnav-placeholder"></div>
+
+                <div class="t-pagehead">
+                    <h2>misc.unlock()</h2>
+                    <p>A collection of favorite things outside of research.</p>
+                </div>
+
+                <div class="t-divider">
+                    <div class="t-divider-label">— <span>books[reading]</span></div>
+                    <div class="t-divider-right">reading group · since 2024/01</div>
+                </div>
+                <div class="t-gallery-grid">
+                    <div class="t-tile t-tile-book">
+                        <div class="t-book-cover" style="background-image:url('../assets/images/misc/love_cholera.jpg')"><div class="t-book-spine"></div></div>
+                    </div>
+                    <div class="t-tile t-tile-book">
+                        <div class="t-book-cover" style="background-image:url('../assets/images/misc/never_let_me_go.jpg')"><div class="t-book-spine"></div></div>
+                    </div>
+                    <div class="t-tile t-tile-book">
+                        <div class="t-book-cover" style="background-image:url('../assets/images/misc/demian.jpg')"><div class="t-book-spine"></div></div>
+                    </div>
+                    <div class="t-tile t-tile-book">
+                        <div class="t-book-cover" style="background-image:url('../assets/images/misc/human_acts.jpeg')"><div class="t-book-spine"></div></div>
+                    </div>
+                    <div class="t-tile t-tile-book">
+                        <div class="t-book-cover" style="background-image:url('../assets/images/misc/gold.jpg')"><div class="t-book-spine"></div></div>
+                    </div>
+                    <div class="t-tile t-tile-book">
+                        <div class="t-book-cover" style="background-image:url('../assets/images/misc/wine.jpg')"><div class="t-book-spine"></div></div>
+                    </div>
+                    <div class="t-tile t-tile-book">
+                        <div class="t-book-cover" style="background-image:url('../assets/images/misc/new_yorkers.jpg')"><div class="t-book-spine"></div></div>
+                    </div>
+                    <div class="t-tile t-tile-book">
+                        <div class="t-book-cover" style="background-image:url('../assets/images/misc/accidental_death.jpg')"><div class="t-book-spine"></div></div>
+                    </div>
+                    <div class="t-tile t-tile-book">
+                        <div class="t-book-cover" style="background-image:url('../assets/images/misc/pillowman.jpg')"><div class="t-book-spine"></div></div>
+                    </div>
+                    <div class="t-tile t-tile-book">
+                        <div class="t-book-cover" style="background-image:url('../assets/images/misc/gun_germs_steel.jpg')"><div class="t-book-spine"></div></div>
+                    </div>
+                    <div class="t-tile t-tile-book">
+                        <div class="t-book-cover" style="background-image:url('../assets/images/misc/in_cold_blood.jpg')"><div class="t-book-spine"></div></div>
+                    </div>
+                    <div class="t-tile t-tile-book">
+                        <div class="t-book-cover" style="background-image:url('../assets/images/misc/netochka.jpg')"><div class="t-book-spine"></div></div>
+                    </div>
+                    <div class="t-tile t-tile-book">
+                        <div class="t-book-cover" style="background-image:url('../assets/images/misc/deep.png')"><div class="t-book-spine"></div></div>
+                    </div>
+                    <div class="t-tile t-tile-book">
+                        <div class="t-book-cover" style="background-image:url('../assets/images/misc/city.jpg')"><div class="t-book-spine"></div></div>
+                    </div>
+                    <div class="t-tile t-tile-book">
+                        <div class="t-book-cover" style="background-image:url('../assets/images/misc/lem.jpg')"><div class="t-book-spine"></div></div>
+                    </div>
+                    <div class="t-tile t-tile-book">
+                        <div class="t-book-cover" style="background-image:url('../assets/images/misc/limit.jpg')"><div class="t-book-spine"></div></div>
+                    </div>
+                </div>
+
+                <div class="t-divider">
+                    <div class="t-divider-label">— <span>vinyl[rotation]</span></div>
+                </div>
+                <div class="t-gallery-grid">
+                    <div class="t-tile t-tile-album">
+                        <div class="t-album-cover" style="background-image:url('../assets/images/misc/better_world.jpg')">
+                            <div class="t-album-overlay">
+                                <div class="t-album-title">这个世界会好吗</div>
+                                <div class="t-album-artist">李志</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t-tile t-tile-album">
+                        <div class="t-album-cover" style="background-image:url('../assets/images/misc/classic_objects.jpg')">
+                            <div class="t-album-overlay">
+                                <div class="t-album-title">Classic Objects</div>
+                                <div class="t-album-artist">Jenny Hval</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t-tile t-tile-album">
+                        <div class="t-album-cover" style="background-image:url('../assets/images/misc/eye_in_the_sky.jpg')">
+                            <div class="t-album-overlay">
+                                <div class="t-album-title">Eye in the Sky</div>
+                                <div class="t-album-artist">Alan Parsons Project</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t-tile t-tile-album">
+                        <div class="t-album-cover" style="background-image:url('../assets/images/misc/green.jpg')">
+                            <div class="t-album-overlay">
+                                <div class="t-album-title">Green</div>
+                                <div class="t-album-artist">Hiroshi Yoshimura</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t-tile t-tile-album">
+                        <div class="t-album-cover" style="background-image:url('../assets/images/misc/in_colours.jpg')">
+                            <div class="t-album-overlay">
+                                <div class="t-album-title">In Colours</div>
+                                <div class="t-album-artist">Jamie xx</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t-tile t-tile-album">
+                        <div class="t-album-cover" style="background-image:url('../assets/images/misc/in_waves.jpg')">
+                            <div class="t-album-overlay">
+                                <div class="t-album-title">In Waves</div>
+                                <div class="t-album-artist">Jamie xx</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t-tile t-tile-album">
+                        <div class="t-album-cover" style="background-image:url('../assets/images/misc/menn.jpg')">
+                            <div class="t-album-overlay">
+                                <div class="t-album-title">Menneskekollektivet</div>
+                                <div class="t-album-artist">Lost Girls</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t-tile t-tile-album">
+                        <div class="t-album-cover" style="background-image:url('../assets/images/misc/nanjing.jpg')">
+                            <div class="t-album-overlay">
+                                <div class="t-album-title">我爱南京</div>
+                                <div class="t-album-artist">李志</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t-tile t-tile-album">
+                        <div class="t-album-cover" style="background-image:url('../assets/images/misc/ram.jpg')">
+                            <div class="t-album-overlay">
+                                <div class="t-album-title">Random Access Memories</div>
+                                <div class="t-album-artist">Daft Punk</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t-tile t-tile-album">
+                        <div class="t-album-cover" style="background-image:url('../assets/images/misc/talkie_walkie.jpg')">
+                            <div class="t-album-overlay">
+                                <div class="t-album-title">Talkie Walkie</div>
+                                <div class="t-album-artist">Air</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="t-divider">
+                    <div class="t-divider-label">— <span>games[played]</span></div>
+                </div>
+                <div class="t-gallery-grid">
+                    <div class="t-tile t-tile-game">
+                        <div class="t-game-cover" style="background-image:url('../assets/images/misc/ds.webp')">
+                            <div class="t-game-overlay">
+                                <div class="t-game-title">Death Stranding</div>
+                                <div class="t-game-studio">Kojima Productions</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t-tile t-tile-game">
+                        <div class="t-game-cover" style="background-image:url('../assets/images/misc/hades.avif')">
+                            <div class="t-game-overlay">
+                                <div class="t-game-title">Hades</div>
+                                <div class="t-game-studio">Supergiant Games</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t-tile t-tile-game">
+                        <div class="t-game-cover" style="background-image:url('../assets/images/misc/va11.jpeg')">
+                            <div class="t-game-overlay">
+                                <div class="t-game-title">VA-11 Hall-A</div>
+                                <div class="t-game-studio">Sukeban Games</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="t-tile t-tile-game">
+                        <div class="t-game-cover" style="background-image:url('../assets/images/misc/ror.jpg')">
+                            <div class="t-game-overlay">
+                                <div class="t-game-title">Risk of Rain 2</div>
+                                <div class="t-game-studio">Hopoo Games</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="footer-placeholder"></div>
+            </div>
         </div>
     </div>
 
-    <div id="main-content" class="hidden">
-        <div id="header-placeholder"></div>
-
-        <main>
-            <div class="misc-container">
-                <section class="misc">
-                    <h2>MISCELLANEOUS</h2>
-                    <p class="intro-text">A collection of some of my favorite things outside of research.</p>
-
-                    <!-- Music Albums Section -->
-                    <div class="gallery-section">
-                        <h3>Albums</h3>
-                        <div class="gallery-grid">
-                            <!-- Album items with vinyl record effect -->
-                            <div class="gallery-item album">
-                                <img src="../assets/images/misc/better_world.jpg" alt="A Better World"
-                                    class="album-cover">
-                                <div class="vinyl-record">
-                                    <div class="vinyl-info">
-                                        <h4>这个世界会好吗</h4>
-                                        <p>李志</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="gallery-item album">
-                                <img src="../assets/images/misc/classic_objects.jpg" alt="Classic Objects"
-                                    class="album-cover">
-                                <div class="vinyl-record">
-                                    <div class="vinyl-info">
-                                        <h4>Classic Objects</h4>
-                                        <p>Jenny Hval</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="gallery-item album">
-                                <img src="../assets/images/misc/eye_in_the_sky.jpg" alt="Eye in the Sky"
-                                    class="album-cover">
-                                <div class="vinyl-record">
-                                    <div class="vinyl-info">
-                                        <h4>Eye in the Sky</h4>
-                                        <p>The Alan Parsons Project</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="gallery-item album">
-                                <img src="../assets/images/misc/green.jpg" alt="Green Album" class="album-cover">
-                                <div class="vinyl-record">
-                                    <div class="vinyl-info">
-                                        <h4>Green</h4>
-                                        <p>Hiroshi Yoshimura</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="gallery-item album">
-                                <img src="../assets/images/misc/in_colours.jpg" alt="In Colours" class="album-cover">
-                                <div class="vinyl-record">
-                                    <div class="vinyl-info">
-                                        <h4>In Colours</h4>
-                                        <p>Jamie xx</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="gallery-item album">
-                                <img src="../assets/images/misc/in_waves.jpg" alt="In Waves" class="album-cover">
-                                <div class="vinyl-record">
-                                    <div class="vinyl-info">
-                                        <h4>In Waves</h4>
-                                        <p>Jamie xx</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="gallery-item album">
-                                <img src="../assets/images/misc/menn.jpg" alt="Menn" class="album-cover">
-                                <div class="vinyl-record">
-                                    <div class="vinyl-info">
-                                        <h4>Menneskekollektivet</h4>
-                                        <p>Lost Girls</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="gallery-item album">
-                                <img src="../assets/images/misc/nanjing.jpg" alt="Nanjing" class="album-cover">
-                                <div class="vinyl-record">
-                                    <div class="vinyl-info">
-                                        <h4>我爱南京</h4>
-                                        <p>李志</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="gallery-item album">
-                                <img src="../assets/images/misc/ram.jpg" alt="RAM" class="album-cover">
-                                <div class="vinyl-record">
-                                    <div class="vinyl-info">
-                                        <h4>Random Access Memories</h4>
-                                        <p>Daft Punk</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="gallery-item album">
-                                <img src="../assets/images/misc/talkie_walkie.jpg" alt="Talkie Walkie"
-                                    class="album-cover">
-                                <div class="vinyl-record">
-                                    <div class="vinyl-info">
-                                        <h4>Talkie Walkie</h4>
-                                        <p>Air</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Games Section -->
-                    <div class="gallery-section">
-                        <h3>Games</h3>
-                        <div class="gallery-grid">
-                            <!-- Game items without vinyl record effect -->
-                            <div class="gallery-item game">
-                                <img src="../assets/images/misc/ds.webp" alt="Death Stranding">
-                                <div class="item-info">
-                                    <h4>Death Stranding</h4>
-                                    <p>Kojima Productions</p>
-                                </div>
-                            </div>
-                            <div class="gallery-item game">
-                                <img src="../assets/images/misc/hades.avif" alt="Hades">
-                                <div class="item-info">
-                                    <h4>Hades</h4>
-                                    <p>Supergiant Games</p>
-                                </div>
-                            </div>
-                            <div class="gallery-item game">
-                                <img src="../assets/images/misc/va11.jpeg" alt="VA-11 Hall-A">
-                                <div class="item-info">
-                                    <h4>VA-11 Hall-A: Cyberpunk Bartender Action</h4>
-                                    <p>Sukeban Games</p>
-                                </div>
-                            </div>
-                            <div class="gallery-item game">
-                                <img src="../assets/images/misc/ror.jpg" alt="Risk of Rain 2">
-                                <div class="item-info">
-                                    <h4>Risk of Rain 2</h4>
-                                    <p>Hopoo Games</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Books Section -->
-                    <div class="gallery-section">
-                        <h3>Books</h3>
-                        <p>A curated collection of books from our reading group's journey since 2024/1.</p>
-                        <br>
-                        <div class="gallery-grid">
-                            <div class="gallery-item book">
-                                <img src="../assets/images/misc/love_cholera.jpg" alt="霍乱时期的爱情">
-                                <div class="item-info">
-                                    <h4>El amor en los tiempos del cólera (Love in the Time of Cholera)</h4>
-                                    <p>Gabriel García Márquez</p>
-                                </div>
-                            </div>
-                            <div class="gallery-item book">
-                                <img src="../assets/images/misc/never_let_me_go.jpg" alt="Never Let Me Go">
-                                <div class="item-info">
-                                    <h4>Never Let Me Go</h4>
-                                    <p>Kazuo Ishiguro</p>
-                                </div>
-                            </div>
-                            <div class="gallery-item book">
-                                <img src="../assets/images/misc/demian.jpg" alt="Demian">
-                                <div class="item-info">
-                                    <h4>Demian: Die Geschichte Einer Jugend (Demian: The Story of a Boyhood)</h4>
-                                    <p>Hermann Hesse</p>
-                                </div>
-                            </div>
-                            <div class="gallery-item book">
-                                <img src="../assets/images/misc/human_acts.jpeg" alt="Human Acts">
-                                <div class="item-info">
-                                    <h4>소년이 온다 (Human Acts)</h4>
-                                    <p>한강 (Han Kang)</p>
-                                </div>
-                            </div>
-                            <div class="gallery-item book">
-                                <img src="../assets/images/misc/gold.jpg" alt="黄金时代">
-                                <div class="item-info">
-                                    <h4>黄金时代 (The Golden Age)</h4>
-                                    <p>王小波</p>
-                                </div>
-                            </div>
-                            <div class="gallery-item book">
-                                <img src="../assets/images/misc/wine.jpg" alt="酒国">
-                                <div class="item-info">
-                                    <h4>酒国 (The Republic of Wine)</h4>
-                                    <p>莫言</p>
-                                </div>
-                            </div>
-                            <div class="gallery-item book">
-                                <img src="../assets/images/misc/new_yorkers.jpg" alt="New Yorkers">
-                                <div class="item-info">
-                                    <h4>New Yorkers: A City and Its People in Our Time</h4>
-                                    <p>Craig Taylor</p>
-                                </div>
-                            </div>
-                            <div class="gallery-item book">
-                                <img src="../assets/images/misc/accidental_death.jpg"
-                                    alt="Accidental Death of an Anarchist">
-                                <div class="item-info">
-                                    <h4>Accidental Death of an Anarchist</h4>
-                                    <p>Dario Fo</p>
-                                </div>
-                            </div>
-                            <div class="gallery-item book">
-                                <img src="../assets/images/misc/pillowman.jpg" alt="The Pillowman">
-                                <div class="item-info">
-                                    <h4>The Pillowman</h4>
-                                    <p>Martin McDonagh</p>
-                                </div>
-                            </div>
-                            <div class="gallery-item book">
-                                <img src="../assets/images/misc/gun_germs_steel.jpg" alt="The Gun, Germs, and Steel">
-                                <div class="item-info">
-                                    <h4>Guns, Germs, and Steel</h4>
-                                    <p>Jared Diamond</p>
-                                </div>
-                            </div>
-                            <div class="gallery-item book">
-                                <img src="../assets/images/misc/in_cold_blood.jpg" alt="In Cold Blood">
-                                <div class="item-info">
-                                    <h4>In Cold Blood</h4>
-                                    <p>Truman Capote</p>
-                                </div>
-                            </div>
-                            <div class="gallery-item book">
-                                <img src="../assets/images/misc/netochka.jpg" alt="Netochka Nezvanova">
-                                <div class="item-info">
-                                    <h4>Не́точка Незва́нова (Netochka Nezvanova)</h4>
-                                    <p>Фёдор Достоевский (Fyodor Dostoevsky)</p>
-                                </div>
-                            </div>
-                            <div class="gallery-item book">
-                                <img src="../assets/images/misc/deep.png" alt="深度关系">
-                                <div class="item-info">
-                                    <h4>深度关系 (Deep Relations)</h4>
-                                    <p>武志红</p>
-                                </div>
-                            </div>
-                            <div class="gallery-item book">
-                                <img src="../assets/images/misc/city.jpg" alt="倾城之恋">
-                                <div class="item-info">
-                                    <h4>倾城之恋 (Love in a Fallen City)</h4>
-                                    <p>张爱玲</p>
-                                </div>
-                            </div>
-                            <div class="gallery-item book">
-                                <img src="../assets/images/misc/lem.jpg" alt="Lem Imaginary Magnitude">
-                                <div class="item-info">
-                                    <h4>Imaginary Magnitude</h4>
-                                    <p>Stanisław Lem</p>
-                                </div>
-                            </div>
-                            <div class="gallery-item book">
-                                <img src="../assets/images/misc/limit.jpg" alt="始于极限">
-                                <div class="item-info">
-                                    <h4>往復書簡 限界から始まる (Letters Between Chizuko Ueno and Ryomi Suzuki)</h4>
-                                    <p>上野千鶴子 (Chizuko Ueno), 鈴木涼美 (Ryomi Suzuki)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- You can add more categories as needed -->
-                </section>
-            </div>
-        </main>
-
-        <footer class="footer">
-            Built with <img src="../assets/images/claude-code.svg" alt="Claude Code" title="Built with Claude Code"> <a
-                href="https://claude.ai/code" target="_blank">Claude Code</a>
-        </footer>
-    </div>
-
     <script>
-        function checkAnswer() {
-            const answer = document.getElementById('answer-input').value;
-            const errorMessage = document.getElementById('error-message');
-            const successMessage = document.getElementById('success-message');
+        (function () {
+            const input = document.getElementById('answer-input');
+            const btn = document.getElementById('gate-submit');
+            const msg = document.getElementById('gate-msg');
+            const gate = document.getElementById('t-gate');
+            const main = document.getElementById('main-content');
 
-            if (answer === '42') {
-                successMessage.classList.add('show');
-                // Hide modal and show content after 1.5 seconds
-                setTimeout(() => {
-                    document.getElementById('qa-modal').style.display = 'none';
-                    document.getElementById('main-content').classList.remove('hidden');
-                }, 1500);
-            } else {
-                errorMessage.classList.add('show');
-                // Hide error message after 3 seconds
-                setTimeout(() => {
-                    errorMessage.classList.remove('show');
-                }, 3000);
+            function attempt() {
+                const val = (input.value || '').trim();
+                if (val === '42') {
+                    msg.dataset.ok = 'true';
+                    msg.textContent = '// access granted';
+                    setTimeout(() => {
+                        gate.classList.add('t-hidden');
+                        main.classList.remove('t-hidden');
+                    }, 600);
+                } else {
+                    msg.dataset.ok = '';
+                    msg.textContent = "// that's not the answer — try again";
+                    input.select();
+                }
             }
-        }
+            btn.addEventListener('click', attempt);
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') attempt();
+            });
+        })();
     </script>
-    <script src="../assets/js/main.js"></script>
 </body>
-
 </html>
