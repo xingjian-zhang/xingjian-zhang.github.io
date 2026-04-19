@@ -2,7 +2,7 @@
    Xingjian Zhang — Terminal redesign
    Monospace, print-zine, warm cream paper, ledger-rule lines.
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600&display=swap');
 
 :root {
   --t-bg:       #f4efe3;
@@ -22,8 +22,8 @@
 
   --t-line-h: 28px; /* vertical ledger rhythm; keep all content snapped */
 
-  --t-mono:   'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
-  --t-sans:   'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --t-mono:   'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --t-sans:   'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --t-cjk:    'Noto Serif SC', serif;
 }
 
