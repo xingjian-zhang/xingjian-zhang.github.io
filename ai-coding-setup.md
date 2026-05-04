@@ -171,26 +171,6 @@ require("lazy").setup({
 },
 ```
 
-### 4c. Claude Code in a Neovim split (optional but handy)
-
-```lua
-{
-  "coder/claudecode.nvim",
-  opts = { terminal_cmd = "claude --dangerously-skip-permissions" },
-  keys = {
-    { "<leader>a",  nil,                                 desc = "AI/Claude Code" },
-    { "<leader>ac", "<cmd>ClaudeCode<cr>",               desc = "Toggle Claude" },
-    { "<leader>ar", "<cmd>ClaudeCode --resume<cr>",      desc = "Resume Claude" },
-    { "<leader>aC", "<cmd>ClaudeCode --continue<cr>",    desc = "Continue Claude" },
-    { "<leader>ab", "<cmd>ClaudeCodeAdd %<cr>",          desc = "Add current buffer" },
-    { "<leader>as", "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Send to Claude" },
-  },
-},
-```
-
-> The `claudecode.nvim` integration is a self-contained nvim-side Claude. It's
-> independent of the cmux bridge below; use whichever surface you prefer.
-
 ## 5. The cmux ↔ Neovim send-selection bridge
 
 This is the piece that makes the screenshot's workflow work: visually select a
@@ -439,9 +419,9 @@ fresh session inside your dotfiles repo:
 > 1. Check whether `cmux`, `tinymist`, `typst`, and `nvim` are on my `PATH`.
 >    Tell me what's missing and the install command for my OS.
 > 2. Find my Neovim config (`~/.config/nvim/init.lua` or equivalent). If I
->    already use `lazy.nvim`, merge the `typst-preview.nvim` and (optionally)
->    `claudecode.nvim` plugin specs from sections 4b and 4c of `dev-setup.md`
->    into my existing plugin list. Do not duplicate plugins I already have.
+>    already use `lazy.nvim`, merge the `typst-preview.nvim` plugin spec from
+>    section 4b of `dev-setup.md` into my existing plugin list. Do not
+>    duplicate plugins I already have.
 > 3. Append the cmux ↔ Neovim bridge from section 5 verbatim, but only if it
 >    isn't already present. Preserve my current `<leader>` and `<localleader>`
 >    if I've set them; otherwise add the defaults (`<space>` and `,`).
