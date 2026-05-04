@@ -1,6 +1,8 @@
 ---
+layout: default
 title: "AI Coding Workshop — Dev Setup"
 description: "How to reproduce the cmux + Typst + Neovim + Claude Code workflow."
+permalink: /ai-coding-setup/
 ---
 
 # Dev setup: cmux + Typst + Neovim + Claude Code
@@ -9,6 +11,9 @@ A self-contained recipe to reproduce the workflow shown in the appendix slide:
 **Neovim editing a Typst slide deck, live preview rendered inside cmux's built-in
 browser pane, and a sibling Claude Code (or Codex) pane that can be fed visual
 selections from the editor with one keystroke.**
+
+![cmux window with Neovim editing slides.typ on the left, Typst Preview rendered in cmux's built-in browser on the right, and a Claude Code pane below.](/assets/images/dev-setup.png)
+{: .markdown-figure}
 
 This file is structured so you can also paste the whole thing into a fresh Claude
 Code session and ask it to merge the snippets into your existing config. There's

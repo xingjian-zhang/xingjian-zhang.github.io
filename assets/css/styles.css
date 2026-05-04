@@ -886,3 +886,206 @@ a { color: inherit; }
   .t-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .t-thesis { font-size: 15px; }
 }
+
+/* ============================================================
+   Markdown body — for Jekyll-rendered pages using layout: default.
+   Inherits the terminal/print-zine palette from :root above.
+   ============================================================ */
+.markdown-body {
+  max-width: 760px;
+  margin: 24px auto 80px;
+  padding: 0 8px;
+  color: var(--t-ink);
+  font-family: var(--t-sans);
+  font-size: 15px;
+  line-height: 1.65;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4 {
+  font-family: var(--t-mono);
+  color: var(--t-ink);
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 1.6em 0 0.6em;
+}
+.markdown-body h1 {
+  font-size: 28px;
+  border-bottom: 1.5px solid var(--t-ink);
+  padding-bottom: 6px;
+  margin-top: 0.4em;
+}
+.markdown-body h2 {
+  font-size: 20px;
+  color: var(--t-rust);
+  border-bottom: 1px solid var(--t-rule);
+  padding-bottom: 4px;
+}
+.markdown-body h3 { font-size: 16px; color: var(--t-ink-2); }
+.markdown-body h4 { font-size: 14px; color: var(--t-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.markdown-body p { margin: 0.7em 0; }
+.markdown-body a { color: var(--t-cyan); text-decoration: underline; text-underline-offset: 2px; }
+.markdown-body a:hover { color: var(--t-rust); }
+.markdown-body strong { color: var(--t-ink); font-weight: 600; }
+.markdown-body em { color: var(--t-ink-2); }
+.markdown-body ul,
+.markdown-body ol { padding-left: 1.4em; margin: 0.6em 0; }
+.markdown-body li { margin: 0.25em 0; }
+.markdown-body blockquote {
+  border-left: 3px solid var(--t-rust);
+  background: var(--t-paper);
+  margin: 1em 0;
+  padding: 0.6em 1em;
+  color: var(--t-ink-2);
+}
+.markdown-body code {
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.92em;
+  background: var(--t-paper);
+  border: 1px solid var(--t-rule);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+.markdown-body pre {
+  background: var(--t-paper);
+  border: 1px solid var(--t-rule);
+  border-radius: 4px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.markdown-body pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-size: inherit;
+}
+.markdown-body hr {
+  border: 0;
+  border-top: 1px solid var(--t-rule);
+  margin: 2em 0;
+}
+.markdown-body table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 14px;
+}
+.markdown-body th,
+.markdown-body td {
+  border: 1px solid var(--t-rule);
+  padding: 6px 10px;
+}
+.markdown-body th {
+  background: var(--t-paper);
+  font-weight: 600;
+}
+@media (max-width: 720px) {
+  .markdown-body { font-size: 14px; padding: 0 14px; }
+  .markdown-body pre { font-size: 12px; }
+}
+
+/* ============================================================
+   Markdown body — figure (image with caption-style border).
+   ============================================================ */
+.markdown-body img,
+.markdown-body p > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.2em auto;
+  border: 1px solid var(--t-rule);
+  border-radius: 6px;
+  background: var(--t-paper);
+}
+.markdown-body p:has(> img) { text-align: center; }
+.markdown-body p:has(> img) + p { margin-top: 1.6em; }
+
+/* ============================================================
+   Rouge syntax highlighting — terminal/print palette mapping.
+   Active for Jekyll fenced code blocks (```lang ... ```).
+   Class reference: https://rouge.jneen.net/
+   ============================================================ */
+.markdown-body .highlight,
+.markdown-body .highlighter-rouge .highlight {
+  background: transparent;
+}
+.markdown-body .highlight pre,
+.markdown-body pre.highlight {
+  background: #fbf6e8;
+  border: 1px solid var(--t-rule);
+  border-radius: 4px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--t-ink);
+}
+.markdown-body .highlight code,
+.markdown-body pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Rouge token classes — warm, restrained palette */
+.markdown-body .highlight .c,    /* Comment */
+.markdown-body .highlight .c1,
+.markdown-body .highlight .cm,
+.markdown-body .highlight .cp,
+.markdown-body .highlight .cs    { color: var(--t-muted); font-style: italic; }
+
+.markdown-body .highlight .k,    /* Keyword */
+.markdown-body .highlight .kc,
+.markdown-body .highlight .kd,
+.markdown-body .highlight .kn,
+.markdown-body .highlight .kp,
+.markdown-body .highlight .kr,
+.markdown-body .highlight .kt    { color: var(--t-rust); font-weight: 600; }
+
+.markdown-body .highlight .s,    /* String */
+.markdown-body .highlight .s1,
+.markdown-body .highlight .s2,
+.markdown-body .highlight .sb,
+.markdown-body .highlight .sc,
+.markdown-body .highlight .sd,
+.markdown-body .highlight .se,
+.markdown-body .highlight .sh,
+.markdown-body .highlight .si,
+.markdown-body .highlight .sx,
+.markdown-body .highlight .sr,
+.markdown-body .highlight .ss    { color: var(--t-olive); }
+
+.markdown-body .highlight .m,    /* Number */
+.markdown-body .highlight .mi,
+.markdown-body .highlight .mf,
+.markdown-body .highlight .mo,
+.markdown-body .highlight .mh,
+.markdown-body .highlight .il    { color: var(--t-gamboge); }
+
+.markdown-body .highlight .n,    /* Name (default identifier) */
+.markdown-body .highlight .na,   /* Name.Attribute */
+.markdown-body .highlight .nx    { color: var(--t-ink); }
+
+.markdown-body .highlight .nb,   /* Name.Builtin */
+.markdown-body .highlight .nc,   /* Name.Class */
+.markdown-body .highlight .nf,   /* Name.Function */
+.markdown-body .highlight .nn    { color: var(--t-cyan); }
+
+.markdown-body .highlight .nt    { color: var(--t-rust); }            /* Name.Tag (e.g. CLI flags in bash) */
+.markdown-body .highlight .nv,   /* Name.Variable */
+.markdown-body .highlight .vi,
+.markdown-body .highlight .vg    { color: var(--t-auburn); }
+
+.markdown-body .highlight .o,    /* Operator */
+.markdown-body .highlight .ow    { color: var(--t-ink-2); }
+.markdown-body .highlight .p     { color: var(--t-ink-2); }            /* Punctuation */
+
+.markdown-body .highlight .err   { color: var(--t-auburn); background: rgba(138,28,31,0.08); }
+.markdown-body .highlight .gd    { color: var(--t-auburn); }           /* Generic.Deleted */
+.markdown-body .highlight .gi    { color: var(--t-olive); }            /* Generic.Inserted */
+.markdown-body .highlight .gh,   /* Generic.Heading */
+.markdown-body .highlight .gu    { color: var(--t-rust); font-weight: 600; }

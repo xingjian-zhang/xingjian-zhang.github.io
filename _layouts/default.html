@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title | default: "xingjianz" }}</title>
+    <link rel="icon" type="image/png" href="/assets/images/notion_profile.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <script defer src="/assets/js/loadComponents.js"></script>
+
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="author" content="Xingjian Zhang">
+</head>
+<body data-page="{{ page.slug | default: 'doc' }}">
+    <div id="header-placeholder"></div>
+    <div class="t-page">
+        <div class="t-frame">
+            <div id="topnav-placeholder"></div>
+            <main class="markdown-body">
+                {{ content }}
+            </main>
+        </div>
+    </div>
+</body>
+</html>
