@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>xingjianz / home.sh</title>
+    <title>xingjianz</title>
     <link rel="icon" type="image/png" href="assets/images/notion_profile.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -16,213 +16,178 @@
 </head>
 <body data-page="home">
     <div id="header-placeholder"></div>
-    <div class="t-page">
-        <div class="t-frame">
-            <div id="topnav-placeholder"></div>
 
-            <section class="t-hero t-hero-with-photo">
-                <div>
-                    <img src="assets/images/profile-photo.jpg" alt="Xingjian Zhang" class="t-portrait">
-                    <div class="t-portrait-cap">Ann Arbor · <span>2025</span></div>
-                </div>
-                <div>
-                    <h1>Xingjian Zhang<span class="t-cjk">张行健</span></h1>
-                    <p class="t-thesis" data-typing>
-                        <span class="t-thesis-text">I build and evaluate AI that reasons over <em>hard-to-verify</em> tasks.</span>
-                    </p>
-                    <dl class="t-kv">
-                        <dt>role</dt>
-                        <dd>4th-year Ph.D.</dd>
+    <main class="site-shell">
+        <div id="topnav-placeholder"></div>
 
-                        <dt>affiliation</dt>
-                        <dd>University of Michigan, School of Information</dd>
-
-                        <dt>internship</dt>
-                        <dd class="t-kv-logos">
-                            <span class="t-logo-inline"><img src="assets/images/gdm.png" alt=""> GDM <span class="t-logo-count">×2</span></span>
-                            <span class="t-logo-inline"><img src="assets/images/meta.png" alt=""> MSL</span>
-                        </dd>
-
-                        <dt>links</dt>
-                        <dd class="t-kv-links">
-                            <a href="https://github.com/xingjian-zhang" target="_blank" rel="noopener" title="GitHub"><i class="bi bi-github"></i></a>
-                            <a href="https://scholar.google.com/citations?user=XBCg5DwAAAAJ" target="_blank" rel="noopener" title="Google Scholar"><i class="bi bi-mortarboard-fill"></i></a>
-                            <a href="https://twitter.com/_Jimmy_Zhang_" target="_blank" rel="noopener" title="Twitter / X"><i class="bi bi-twitter-x"></i></a>
-                            <a href="https://www.linkedin.com/in/xingjian-jimmy-zhang/" target="_blank" rel="noopener" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                            <a href="https://drive.google.com/file/d/19vEP8NQwoPaj7HOtbFIDJ2_F-JHCVmDj/view?usp=sharing" target="_blank" rel="noopener" title="CV"><i class="bi bi-file-earmark-text"></i></a>
-                            <a href="mailto:jimmyzxj@umich.edu" title="Email"><i class="bi bi-envelope"></i></a>
-                        </dd>
-                    </dl>
-                </div>
-            </section>
-
-            <div class="t-divider">
-                <div class="t-divider-label">— <span>research.focus</span></div>
-                <div class="t-divider-right">3 threads</div>
+        <section class="intro" id="top" aria-labelledby="intro-title">
+            <div class="intro-photo">
+                <img src="assets/images/profile-photo.jpg" alt="Xingjian Zhang" class="avatar">
+                <span>Ann Arbor · 2025</span>
             </div>
-            <ul class="t-focus-list">
-                <li><span class="t-caret">&gt;</span><span>Quantitative evaluation of AI systems' innovative ability.</span></li>
-                <li><span class="t-caret">&gt;</span><span>Reasoning capabilities of AI in non-standard tasks.</span></li>
-                <li><span class="t-caret">&gt;</span><span>AI agents that automate scientific research workflows (computer science, neuroscience, behavioral science).</span></li>
+            <div>
+                <h1 id="intro-title">Xingjian Zhang <span>张行健</span></h1>
+                <p class="intro-copy">I build and evaluate AI that reasons over <em>hard-to-verify</em> tasks.</p>
+
+                <dl class="meta-list">
+                    <dt>role</dt>
+                    <dd>4th-year Ph.D.</dd>
+
+                    <dt>affiliation</dt>
+                    <dd>University of Michigan, School of Information</dd>
+
+                    <dt>internship</dt>
+                    <dd>Google DeepMind ×2 · Meta Superintelligence Lab <a class="meta-detail" href="#internships">details ↓</a></dd>
+
+                    <dt>status</dt>
+                    <dd>Open to Late 2026 to Early 2027 Full Time</dd>
+                </dl>
+
+                <div class="button-row" aria-label="Profile links">
+                    <a class="green-button" href="/assets/files/main-niw.pdf" target="_blank" rel="noopener">cv.pdf ↗</a>
+                    <a class="cmd-button" href="https://www.linkedin.com/in/xingjian-jimmy-zhang/" target="_blank" rel="noopener">linkedin ↗</a>
+                    <a class="plain-link" href="mailto:jimmyzxj@umich.edu">email ↗</a>
+                    <a class="plain-link" href="https://github.com/xingjian-zhang" target="_blank" rel="noopener">github ↗</a>
+                    <a class="plain-link" href="https://scholar.google.com/citations?user=XBCg5DwAAAAJ" target="_blank" rel="noopener">scholar ↗</a>
+                    <a class="plain-link" href="https://twitter.com/_Jimmy_Zhang_" target="_blank" rel="noopener">twitter ↗</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="internships" aria-labelledby="internships-title">
+            <div class="section-heading">
+                <h2 id="internships-title">Research Internship</h2>
+            </div>
+            <div class="timeline">
+                <article>
+                    <time>May 2026 — Oct 2026</time>
+                    <div>
+                        <h3>Meta Superintelligence Lab</h3>
+                        <p>Muse Product Post-Training</p>
+                        <div class="task-tags" aria-label="Research topics">
+                            <span class="task-tag">Post-Training</span>
+                            <span class="task-tag">Recursive Improvement</span>
+                        </div>
+                        <ul class="timeline-points">
+                            <li>Developed Monte Carlo guided tree search (MCGTS) to generate on-policy SFT trajectories for recursive self-improvement.</li>
+                            <li>Delivered a personal-productivity SFT dataset for Muse post-training from the MCGTS-generated trajectories.</li>
+                        </ul>
+                    </div>
+                </article>
+                <article>
+                    <time>May 2025 — Aug 2025</time>
+                    <div>
+                        <h3>Google DeepMind &amp; YouTube Shorts</h3>
+                        <p>Gemini Personalization</p>
+                        <div class="task-tags" aria-label="Research topics">
+                            <span class="task-tag">Multimodal</span>
+                            <span class="task-tag">Agentic</span>
+                            <span class="task-tag">Reinforcement Learning</span>
+                        </div>
+                        <ul class="timeline-points">
+                            <li>Built agentic reinforcement learning components in <a href="https://github.com/google-deepmind/simply" target="_blank" rel="noopener">simply ↗</a> for a multimodal tool-using agent for video event retrieval.</li>
+                            <li>Implemented JAX/TPU training and benchmark and tool-use infrastructure.</li>
+                        </ul>
+                    </div>
+                </article>
+                <article>
+                    <time>May 2023 — Aug 2023</time>
+                    <div>
+                        <h3>Google DeepMind &amp; YouTube</h3>
+                        <p>Gemini Personalization</p>
+                        <div class="task-tags" aria-label="Research topics">
+                            <span class="task-tag">Efficient Training</span>
+                            <span class="task-tag">Recommender Systems</span>
+                        </div>
+                        <ul class="timeline-points">
+                            <li>Developed adaptive layer skipping for efficient Transformer fine-tuning and serving.</li>
+                            <li>Implemented TensorFlow/TPU training, matched model quality with 60% compute, and checked the component into TensorFlow Recommenders (TFRS). <a href="https://openreview.net/forum?id=Rd0lJC3c9a" target="_blank" rel="noopener">paper ↗</a></li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section" id="education" aria-labelledby="education-title">
+            <div class="section-heading">
+                <h2 id="education-title">Education</h2>
+            </div>
+            <div class="timeline">
+                <article>
+                    <time>Sep 2022 — present</time>
+                    <div>
+                        <h3>Ph.D. in Information Science</h3>
+                        <p>University of Michigan, School of Information · advised by <a class="text-link" href="https://www.si.umich.edu/people/qiaozhu-mei/" target="_blank" rel="noopener">Prof. Qiaozhu Mei</a></p>
+                    </div>
+                    <span>Ann Arbor</span>
+                </article>
+                <article>
+                    <time>Sep 2020 — Apr 2022</time>
+                    <div>
+                        <h3>B.S. in Computer Science; Minor in Mathematics</h3>
+                        <p>University of Michigan, EECS Department</p>
+                    </div>
+                    <span>Ann Arbor</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section" id="publications" aria-labelledby="publications-title">
+            <div class="section-heading">
+                <h2 id="publications-title">Publications</h2>
+            </div>
+            <div class="t-filter">
+                <button type="button" data-filter="all" class="active">all</button>
+                <button type="button" data-filter="journal">journal</button>
+                <button type="button" data-filter="conference">conference</button>
+                <button type="button" data-filter="workshop">workshop</button>
+                <button type="button" data-filter="preprint">preprint</button>
+            </div>
+            <div id="publications-list"></div>
+        </section>
+
+        <section class="content-section" id="honors" aria-labelledby="honors-title">
+            <div class="section-heading">
+                <h2 id="honors-title">Honors</h2>
+            </div>
+            <ul class="compact-list">
+                <li><time>2024</time> Rackham Graduate Student Research Grant</li>
+                <li><time>2022</time> Rackham PhD Fellowship, University of Michigan</li>
+                <li><time>2020</time> Tang Junyuan Scholarship</li>
+                <li><time>2019</time> John Wun &amp; Jan Sun Sunshine Scholarship</li>
             </ul>
+        </section>
 
-            <div class="t-divider">
-                <div class="t-divider-label">— <span>publications[selected]</span></div>
-                <div class="t-divider-right"><a href="pages/research.html">view all →</a></div>
+        <section class="content-section" id="service" aria-labelledby="service-title">
+            <div class="section-heading">
+                <h2 id="service-title">Service</h2>
             </div>
-
-            <div class="t-pub">
-                <div class="t-pub-year">2026</div>
-                <div class="t-pub-venue" data-kind="journal">TMLR</div>
-                <div>
-                    <div class="t-pub-title">Through the Judge's Eyes: Inferred Thinking Traces Improve Reliability of LLM Raters</div>
-                    <div class="t-pub-authors"><span class="me">Xingjian Zhang</span>, Tianhong Gao, Suliang Jin, Tianhao Wang, Teng Ye, Eytan Adar, Qiaozhu Mei</div>
-                    <div class="t-pub-links">
-                        <a href="https://openreview.net/forum?id=1jLQ629Yps" target="_blank" rel="noopener">paper</a>
-                        <a href="https://github.com/xingjian-zhang/thru_judge_eye" target="_blank" rel="noopener">code</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="t-pub">
-                <div class="t-pub-year">2025</div>
-                <div class="t-pub-venue" data-kind="conference">KDD</div>
-                <div>
-                    <div class="t-pub-title">MapExplorer: New Content Generation from Low-Dimensional Visualizations</div>
-                    <div class="t-pub-authors"><span class="me">Xingjian Zhang</span>, Ziyang Xiong, Shixuan Liu, Yutong Xie, Tolga Ergen, Dongsub Shim, Hua Xu, Honglak Lee, Qiaozhu Mei</div>
-                    <div class="t-pub-links">
-                        <a href="https://arxiv.org/abs/2412.18673" target="_blank" rel="noopener">paper</a>
-                        <a href="https://github.com/xingjian-zhang/map2text" target="_blank" rel="noopener">code</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="t-pub">
-                <div class="t-pub-year">2025</div>
-                <div class="t-pub-venue" data-kind="conference">NAACL</div>
-                <div>
-                    <div class="t-pub-title">MASSW: A New Dataset and Benchmark Tasks for AI-Assisted Scientific Workflows</div>
-                    <div class="t-pub-authors"><span class="me">Xingjian Zhang</span>*, Yutong Xie*, Jin Huang, Jinge Ma, Zhaoying Pan, Qijia Liu, Ziyang Xiong, Tolga Ergen, Dongsub Shim, Honglak Lee, and others</div>
-                    <div class="t-pub-links">
-                        <a href="https://arxiv.org/abs/2406.06357" target="_blank" rel="noopener">paper</a>
-                        <a href="https://github.com/xingjian-zhang/massw" target="_blank" rel="noopener">code</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="t-pub">
-                <div class="t-pub-year">2024</div>
-                <div class="t-pub-venue" data-kind="journal">TMLR</div>
-                <div>
-                    <div class="t-pub-title">Can LLMs Effectively Leverage Graph Structural Information: When and Why</div>
-                    <div class="t-pub-authors">Jin Huang, <span class="me">Xingjian Zhang</span>, Qiaozhu Mei, Jiaqi Ma</div>
-                    <div class="t-pub-links">
-                        <a href="https://arxiv.org/pdf/2309.16595.pdf" target="_blank" rel="noopener">paper</a>
-                        <a href="https://github.com/TRAIS-Lab/LLM-Structured-Data" target="_blank" rel="noopener">code</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="t-divider">
-                <div class="t-divider-label">— <span>news[latest]</span></div>
-            </div>
-            <ul class="t-news">
-                <li>
-                    <span class="t-news-date">2026-05</span>
-                    <span class="t-news-tag" data-kind="work">work</span>
-                    <span class="t-news-text">Joining Meta Superintelligence Lab as Research Intern</span>
-                </li>
-                <li>
-                    <span class="t-news-date">2026-04</span>
-                    <span class="t-news-tag" data-kind="event">event</span>
-                    <span class="t-news-text"><a href="assets/talks/ai-coding-workshop.pdf" target="_blank" rel="noopener">AI coding workshop slides</a></span>
-                </li>
-                <li>
-                    <span class="t-news-date">2026-04</span>
-                    <span class="t-news-tag" data-kind="paper">paper</span>
-                    <span class="t-news-text">Paper accepted to ACL</span>
-                </li>
-                <li>
-                    <span class="t-news-date">2026-02</span>
-                    <span class="t-news-tag" data-kind="paper">paper</span>
-                    <span class="t-news-text">Paper accepted to TMLR</span>
-                </li>
-                <li>
-                    <span class="t-news-date">2025-10</span>
-                    <span class="t-news-tag" data-kind="event">event</span>
-                    <span class="t-news-text">Invited to present at Meta PhD Forum</span>
-                </li>
-                <li>
-                    <span class="t-news-date">2025-05</span>
-                    <span class="t-news-tag" data-kind="paper">paper</span>
-                    <span class="t-news-text">Two papers accepted to KDD</span>
-                </li>
-                <li>
-                    <span class="t-news-date">2025-05</span>
-                    <span class="t-news-tag" data-kind="work">work</span>
-                    <span class="t-news-text">Returning to Google DeepMind as Research Intern</span>
-                </li>
-                <li>
-                    <span class="t-news-date">2025-01</span>
-                    <span class="t-news-tag" data-kind="paper">paper</span>
-                    <span class="t-news-text">Paper accepted to NAACL</span>
-                </li>
-                <li>
-                    <span class="t-news-date">2024-10</span>
-                    <span class="t-news-tag" data-kind="event">event</span>
-                    <span class="t-news-text">Spotlight paper at NeurIPS D&amp;B Track</span>
-                </li>
+            <ul class="compact-list">
+                <li><time>2024</time><span>Co-organizer — <a href="https://llm-for-individuals-groups-and-society.github.io/2024" target="_blank" rel="noopener">Workshop on LLMs for Individuals, Groups, and Society</a> @ WSDM</span></li>
+                <li><time>2023</time><span>Co-organizer — <a href="https://logconference.org/" target="_blank" rel="noopener">Learning on Graphs Local Meetup</a></span></li>
+                <li><time>2023</time><span>Co-organizer — <a href="https://graph-learning-benchmarks.github.io/glb2023" target="_blank" rel="noopener">Workshop on Graph Learning Benchmarks</a> @ KDD</span></li>
+                <li><time>22 — 26</time><span>Reviewer — NeurIPS · ICML · ICLR · KDD · ACL · EMNLP · TMLR</span></li>
             </ul>
+        </section>
 
-            <div id="footer-placeholder"></div>
-        </div>
-    </div>
-    <script>
-      (function () {
-        const host = document.querySelector('.t-thesis[data-typing]');
-        if (!host) return;
-        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const segments = [
-          { text: 'I build and evaluate AI that reasons over ', em: false },
-          { text: 'hard-to-verify', em: true },
-          { text: ' tasks.', em: false },
-        ];
-        const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        host.innerHTML = '<span class="t-thesis-text"></span><span class="t-thesis-caret" aria-hidden="true"></span>';
-        const textEl = host.querySelector('.t-thesis-text');
-        if (reduce) {
-          textEl.innerHTML = segments.map(s => s.em ? `<em>${esc(s.text)}</em>` : esc(s.text)).join('');
-          return;
-        }
-        let seg = 0, i = 0;
-        function render() {
-          let html = '';
-          for (let k = 0; k < seg; k++) {
-            const s = segments[k];
-            html += s.em ? `<em>${esc(s.text)}</em>` : esc(s.text);
-          }
-          if (seg < segments.length) {
-            const s = segments[seg];
-            const partial = esc(s.text.slice(0, i));
-            html += s.em ? `<em>${partial}</em>` : partial;
-          }
-          textEl.innerHTML = html;
-        }
-        function tick() {
-          if (seg >= segments.length) {
-            host.classList.add('t-thesis-done');
-            return;
-          }
-          i++;
-          render();
-          if (i >= segments[seg].text.length) { seg++; i = 0; }
-          const ch = segments[Math.min(seg, segments.length - 1)].text.slice(Math.max(0, i - 1), i);
-          const delay = /[,.]/.test(ch) ? 180 : 32 + Math.random() * 40;
-          setTimeout(tick, delay);
-        }
-        render();
-        setTimeout(tick, 350);
-      })();
-    </script>
+        <section class="content-section" id="contact" aria-labelledby="news-title">
+            <div class="section-heading">
+                <h2 id="news-title">News</h2>
+            </div>
+            <ul class="news-list">
+                <li><time>2026-05</time><span>work</span><p>Joining Meta Superintelligence Lab as Research Intern <a class="inline-pointer" href="#internships">details ↓</a></p></li>
+                <li><time>2026-04</time><span>event</span><p><a href="assets/talks/ai-coding-workshop.pdf" target="_blank" rel="noopener">AI coding workshop slides</a></p></li>
+                <li><time>2026-04</time><span>paper</span><p>Paper accepted to ACL <a class="inline-pointer" href="https://arxiv.org/abs/2512.21329" target="_blank" rel="noopener">paper ↗</a></p></li>
+                <li><time>2026-02</time><span>paper</span><p>Paper accepted to TMLR <a class="inline-pointer" href="https://openreview.net/forum?id=1jLQ629Yps" target="_blank" rel="noopener">paper ↗</a></p></li>
+                <li><time>2025-10</time><span>event</span><p>Invited to present at Meta PhD Forum</p></li>
+                <li><time>2025-05</time><span>paper</span><p>Two papers accepted to KDD <a class="inline-pointer" href="https://arxiv.org/abs/2406.07275" target="_blank" rel="noopener">DCA-Bench ↗</a> · <a class="inline-pointer" href="https://arxiv.org/abs/2412.18673" target="_blank" rel="noopener">MapExplorer ↗</a></p></li>
+                <li><time>2025-05</time><span>work</span><p>Returning to Google DeepMind as Research Intern <a class="inline-pointer" href="#internships">details ↓</a></p></li>
+                <li><time>2025-01</time><span>paper</span><p>Paper accepted to NAACL <a class="inline-pointer" href="https://arxiv.org/abs/2406.06357" target="_blank" rel="noopener">paper ↗</a></p></li>
+                <li><time>2024-10</time><span>event</span><p>Spotlight paper at NeurIPS <a class="inline-pointer" href="https://neurips.cc/virtual/2024/poster/97763" target="_blank" rel="noopener">paper ↗</a></p></li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
