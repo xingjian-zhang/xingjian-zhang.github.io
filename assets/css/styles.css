@@ -449,6 +449,23 @@ h3 {
   grid-template-columns: 170px minmax(0, 1fr);
 }
 
+.timeline-aside {
+  min-width: 0;
+}
+
+.internship-sketch {
+  width: 148px;
+  aspect-ratio: 1;
+  margin: 12px 0 0;
+}
+
+.internship-sketch img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .timeline h3,
 .timeline p,
 .news-list p,
@@ -819,6 +836,10 @@ h3 {
 
   #internships .timeline article {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .internship-sketch {
+    display: none;
   }
 
   .timeline article > div,
