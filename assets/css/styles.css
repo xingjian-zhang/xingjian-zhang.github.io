@@ -170,12 +170,13 @@ h3 {
 }
 
 .intro-copy {
-  max-width: 680px;
+  max-width: none;
   margin: 18px 0 0;
   color: var(--ink);
   font-family: var(--font-mono);
   font-size: 18px;
   line-height: 1.5;
+  white-space: nowrap;
 }
 
 .intro-copy em {
@@ -499,8 +500,7 @@ h3 {
 .timeline-points a:hover,
 .text-link:hover { text-decoration: underline; }
 
-.timeline > article > span,
-.news-list span {
+.timeline > article > span {
   text-align: right;
   text-transform: uppercase;
 }
@@ -513,7 +513,7 @@ h3 {
 }
 
 .news-list li {
-  grid-template-columns: 100px 74px 1fr;
+  grid-template-columns: 100px minmax(0, 1fr);
   align-items: baseline;
 }
 
@@ -797,7 +797,10 @@ h3 {
 
   .intro h1 { font-size: clamp(30px, 10vw, 42px); }
   .intro h1 span { display: block; margin: 4px 0 0; }
-  .intro-copy { font-size: 16px; }
+  .intro-copy {
+    font-size: 16px;
+    white-space: normal;
+  }
 
   .t-pub {
     grid-template-columns: 64px minmax(0, 1fr);
@@ -831,18 +834,8 @@ h3 {
   }
 
   .news-list li {
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: 80px minmax(0, 1fr);
     gap: 5px 12px;
-  }
-
-  .news-list p {
-    grid-column: 1 / -1;
-  }
-
-  .news-list span {
-    grid-column: 2;
-    grid-row: 1;
-    text-align: right;
   }
 
   .two-column {

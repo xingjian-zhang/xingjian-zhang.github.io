@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <script defer src="assets/js/loadComponents.js"></script>
 
-    <meta name="description" content="Xingjian (Jimmy) Zhang is a 4th-year Ph.D. candidate at the University of Michigan. I build and evaluate AI that reasons over hard-to-verify tasks.">
+    <meta name="description" content="Xingjian (Jimmy) Zhang is a 4th-year Ph.D. candidate at the University of Michigan. I train and evaluate LLM that reasons over hard-to-verify tasks.">
     <meta name="keywords" content="Xingjian Zhang, Jimmy Zhang, AI for Science, University of Michigan, Machine Learning, LLM evaluation, AI agents">
     <meta name="author" content="Xingjian Zhang">
 </head>
@@ -29,24 +29,21 @@
             </div>
             <div>
                 <h1 id="intro-title">Xingjian Zhang <span>张行健</span></h1>
-                <p class="intro-copy">I build and evaluate AI that reasons over <em>hard-to-verify</em> tasks.</p>
+                <p class="intro-copy">I train and evaluate LLM that reasons over <em>hard-to-verify</em> tasks.</p>
 
                 <dl class="meta-list">
                     <dt>role</dt>
-                    <dd>4th-year Ph.D.</dd>
-
-                    <dt>affiliation</dt>
-                    <dd>University of Michigan, School of Information</dd>
+                    <dd>4th-year Ph.D. · University of Michigan</dd>
 
                     <dt>internship</dt>
-                    <dd>Google DeepMind ×2 · Meta Superintelligence Lab <a class="meta-detail" href="#internships">details ↓</a></dd>
+                    <dd>Google DeepMind ×2 · Meta Superintelligence Labs <a class="meta-detail" href="#internships">details ↓</a></dd>
 
                     <dt>status</dt>
                     <dd>Open to Late 2026 to Early 2027 Full Time</dd>
                 </dl>
 
                 <div class="button-row" aria-label="Profile links">
-                    <a class="green-button" href="/assets/files/main-niw.pdf" target="_blank" rel="noopener">cv.pdf ↗</a>
+                    <a class="green-button" href="/assets/files/xingjian-zhang-resume.pdf" target="_blank" rel="noopener">cv.pdf ↗</a>
                     <a class="cmd-button" href="https://www.linkedin.com/in/xingjian-jimmy-zhang/" target="_blank" rel="noopener">linkedin ↗</a>
                     <a class="plain-link" href="mailto:jimmyzxj@umich.edu">email ↗</a>
                     <a class="plain-link" href="https://github.com/xingjian-zhang" target="_blank" rel="noopener">github ↗</a>
@@ -62,48 +59,52 @@
             </div>
             <div class="timeline">
                 <article>
-                    <time>May 2026 — Oct 2026</time>
+                    <time>May 2026 — Present</time>
                     <div>
-                        <h3>Meta Superintelligence Lab</h3>
+                        <h3>Meta Superintelligence Labs</h3>
                         <p>Muse Product Post-Training</p>
                         <div class="task-tags" aria-label="Research topics">
+                            <span class="task-tag">Benchmark</span>
+                            <span class="task-tag">Guided Synthetic Data</span>
                             <span class="task-tag">Post-Training</span>
-                            <span class="task-tag">Recursive Improvement</span>
+                            <span class="task-tag">Personal Agents</span>
                         </div>
                         <ul class="timeline-points">
-                            <li>Developed Monte Carlo guided tree search (MCGTS) to generate on-policy SFT trajectories for recursive self-improvement.</li>
-                            <li>Delivered a personal-productivity SFT dataset for Muse post-training from the MCGTS-generated trajectories.</li>
+                            <li>Co-developed steering mechanisms to guide agent rollout towards desired behavior, including reflection, plan-and-execute, and adaptive replanning.</li>
+                            <li>Contributed personalized-research SFT data to Muse Spark post-training; the trained model improved by 3pp across three internal agent benchmarks.</li>
+                            <li>Migrated the rollout environment from a fast-evolving production black box to a controlled white-box sandbox, enabling reproducible experiments and faster team iteration.</li>
                         </ul>
                     </div>
                 </article>
                 <article>
                     <time>May 2025 — Aug 2025</time>
                     <div>
-                        <h3>Google DeepMind &amp; YouTube Shorts</h3>
-                        <p>Gemini Personalization</p>
+                        <h3>Google DeepMind</h3>
+                        <p>Gemini Post-Training</p>
                         <div class="task-tags" aria-label="Research topics">
+                            <span class="task-tag">Benchmark</span>
                             <span class="task-tag">Multimodal</span>
-                            <span class="task-tag">Agentic</span>
-                            <span class="task-tag">Reinforcement Learning</span>
+                            <span class="task-tag">Agentic RL</span>
                         </div>
                         <ul class="timeline-points">
-                            <li>Built agentic reinforcement learning components in <a href="https://github.com/google-deepmind/simply" target="_blank" rel="noopener">simply ↗</a> for a multimodal tool-using agent for video event retrieval.</li>
-                            <li>Implemented JAX/TPU training and benchmark and tool-use infrastructure.</li>
+                            <li>Curated a benchmark linking YouTube Shorts to real-world events to evaluate video grounding through web search.</li>
+                            <li>Contributed agentic RL and multimodal-input support to <a href="https://github.com/google-deepmind/simply" target="_blank" rel="noopener">simply ↗</a>, a minimal JAX codebase used broadly within DeepMind with 500+ GitHub stars.</li>
                         </ul>
                     </div>
                 </article>
                 <article>
                     <time>May 2023 — Aug 2023</time>
                     <div>
-                        <h3>Google DeepMind &amp; YouTube</h3>
-                        <p>Gemini Personalization</p>
+                        <h3>Google DeepMind</h3>
+                        <p>Gemini Post-Training</p>
                         <div class="task-tags" aria-label="Research topics">
+                            <span class="task-tag">Adaptive Computation</span>
                             <span class="task-tag">Efficient Training</span>
                             <span class="task-tag">Recommender Systems</span>
                         </div>
                         <ul class="timeline-points">
-                            <li>Developed adaptive layer skipping for efficient Transformer fine-tuning and serving.</li>
-                            <li>Implemented TensorFlow/TPU training, matched model quality with 60% compute, and checked the component into TensorFlow Recommenders (TFRS). <a href="https://openreview.net/forum?id=Rd0lJC3c9a" target="_blank" rel="noopener">paper ↗</a></li>
+                            <li>Proposed GPU/TPU-friendly adaptive Transformer layer skipping based on input-sequence complexity.</li>
+                            <li>Matched full-compute performance on language and sequential user modeling at 60% compute; integrated the method into TensorFlow Recommenders. <a href="https://openreview.net/forum?id=Rd0lJC3c9a" target="_blank" rel="noopener">paper ↗</a></li>
                         </ul>
                     </div>
                 </article>
@@ -165,10 +166,9 @@
                 <h2 id="service-title">Service</h2>
             </div>
             <ul class="compact-list">
-                <li><time>2024</time><span>Co-organizer — <a href="https://llm-for-individuals-groups-and-society.github.io/2024" target="_blank" rel="noopener">Workshop on LLMs for Individuals, Groups, and Society</a> @ WSDM</span></li>
-                <li><time>2023</time><span>Co-organizer — <a href="https://logconference.org/" target="_blank" rel="noopener">Learning on Graphs Local Meetup</a></span></li>
-                <li><time>2023</time><span>Co-organizer — <a href="https://graph-learning-benchmarks.github.io/glb2023" target="_blank" rel="noopener">Workshop on Graph Learning Benchmarks</a> @ KDD</span></li>
-                <li><time>22 — 26</time><span>Reviewer — NeurIPS · ICML · ICLR · KDD · ACL · EMNLP · TMLR</span></li>
+                <li><time>2024</time><span>Workshop Organizer — <a href="https://llm-for-individuals-groups-and-society.github.io/2024" target="_blank" rel="noopener">LLMs for Individuals, Groups, and Society</a> @ WSDM</span></li>
+                <li><time>2023</time><span>Organizer — <a href="https://logconference.org/" target="_blank" rel="noopener">Learning on Graphs Local Meetup</a></span></li>
+                <li><time>2023</time><span>Workshop Organizer — <a href="https://graph-learning-benchmarks.github.io/glb2023" target="_blank" rel="noopener">Graph Learning Benchmarks</a> @ KDD</span></li>
             </ul>
         </section>
 
@@ -177,15 +177,15 @@
                 <h2 id="news-title">News</h2>
             </div>
             <ul class="news-list">
-                <li><time>2026-05</time><span>work</span><p>Joining Meta Superintelligence Lab as Research Intern <a class="inline-pointer" href="#internships">details ↓</a></p></li>
-                <li><time>2026-04</time><span>event</span><p><a href="assets/talks/ai-coding-workshop.pdf" target="_blank" rel="noopener">AI coding workshop slides</a></p></li>
-                <li><time>2026-04</time><span>paper</span><p>Paper accepted to ACL <a class="inline-pointer" href="https://arxiv.org/abs/2512.21329" target="_blank" rel="noopener">paper ↗</a></p></li>
-                <li><time>2026-02</time><span>paper</span><p>Paper accepted to TMLR <a class="inline-pointer" href="https://openreview.net/forum?id=1jLQ629Yps" target="_blank" rel="noopener">paper ↗</a></p></li>
-                <li><time>2025-10</time><span>event</span><p>Invited to present at Meta PhD Forum</p></li>
-                <li><time>2025-05</time><span>paper</span><p>Two papers accepted to KDD <a class="inline-pointer" href="https://arxiv.org/abs/2406.07275" target="_blank" rel="noopener">DCA-Bench ↗</a> · <a class="inline-pointer" href="https://arxiv.org/abs/2412.18673" target="_blank" rel="noopener">MapExplorer ↗</a></p></li>
-                <li><time>2025-05</time><span>work</span><p>Returning to Google DeepMind as Research Intern <a class="inline-pointer" href="#internships">details ↓</a></p></li>
-                <li><time>2025-01</time><span>paper</span><p>Paper accepted to NAACL <a class="inline-pointer" href="https://arxiv.org/abs/2406.06357" target="_blank" rel="noopener">paper ↗</a></p></li>
-                <li><time>2024-10</time><span>event</span><p>Spotlight paper at NeurIPS <a class="inline-pointer" href="https://neurips.cc/virtual/2024/poster/97763" target="_blank" rel="noopener">paper ↗</a></p></li>
+                <li><time>2026-05</time><p>Joining Meta Superintelligence Lab as Research Intern <a class="inline-pointer" href="#internships">details ↓</a></p></li>
+                <li><time>2026-04</time><p><a href="assets/talks/ai-coding-workshop.pdf" target="_blank" rel="noopener">AI coding workshop slides</a></p></li>
+                <li><time>2026-04</time><p>Paper accepted to ACL <a class="inline-pointer" href="https://arxiv.org/abs/2512.21329" target="_blank" rel="noopener">paper ↗</a></p></li>
+                <li><time>2026-02</time><p>Paper accepted to TMLR <a class="inline-pointer" href="https://openreview.net/forum?id=1jLQ629Yps" target="_blank" rel="noopener">paper ↗</a></p></li>
+                <li><time>2025-10</time><p>Invited to present at Meta PhD Forum</p></li>
+                <li><time>2025-05</time><p>Two papers accepted to KDD <a class="inline-pointer" href="https://arxiv.org/abs/2406.07275" target="_blank" rel="noopener">DCA-Bench ↗</a> · <a class="inline-pointer" href="https://arxiv.org/abs/2412.18673" target="_blank" rel="noopener">MapExplorer ↗</a></p></li>
+                <li><time>2025-05</time><p>Returning to Google DeepMind as Research Intern <a class="inline-pointer" href="#internships">details ↓</a></p></li>
+                <li><time>2025-01</time><p>Paper accepted to NAACL <a class="inline-pointer" href="https://arxiv.org/abs/2406.06357" target="_blank" rel="noopener">paper ↗</a></p></li>
+                <li><time>2024-10</time><p>Spotlight paper at NeurIPS <a class="inline-pointer" href="https://neurips.cc/virtual/2024/poster/97763" target="_blank" rel="noopener">paper ↗</a></p></li>
             </ul>
         </section>
     </main>
