@@ -11,7 +11,7 @@ const VENUE_MAP = {
   zhang2024map2text:    { venue: 'KDD',             kind: 'conference' },
   zhang2024leveraging:  { venue: 'NeurIPS',         kind: 'workshop'   },
   zhang2026thru:        { venue: 'TMLR',            kind: 'journal'    },
-  zhang2025flyaoc:      { venue: 'arXiv',           kind: 'preprint'   },
+  zhang2025flyaoc:      { venue: 'NeurIPS',         kind: 'conference' },
   wang2025reasoning:    { venue: 'ACL',             kind: 'conference' },
 };
 
