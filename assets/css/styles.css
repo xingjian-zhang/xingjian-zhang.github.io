@@ -170,22 +170,27 @@ h3 {
 }
 
 .intro-copy {
-  max-width: none;
+  max-width: 68ch;
   margin: 18px 0 0;
   color: var(--ink);
-  font-family: var(--font-mono);
-  font-size: 18px;
-  line-height: 1.5;
-  white-space: nowrap;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.intro-copy p {
+  margin: 0;
+}
+
+.intro-copy p + p {
+  margin-top: 12px;
 }
 
 .intro-copy em {
-  display: inline-block;
-  padding: 0 5px 1px;
-  border-radius: 4px;
-  background: var(--green);
-  color: var(--paper-soft);
   font-style: normal;
+  text-decoration-line: underline;
+  text-decoration-color: var(--green);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
 .meta-list {
