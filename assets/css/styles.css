@@ -18,6 +18,9 @@
   --font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
   --cjk: 'Noto Serif SC', serif;
+  --section-gap: 24px;
+  --row-space: 10px;
+  --column-gap: 16px;
 }
 
 * { box-sizing: border-box; }
@@ -62,7 +65,7 @@ h3 {
 .t-page {
   width: min(960px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 28px 0 80px;
+  padding: 24px 0 48px;
 }
 
 /* Header */
@@ -72,7 +75,7 @@ h3 {
   justify-content: space-between;
   gap: 28px;
   min-height: 47px;
-  border-bottom: 2px solid var(--line);
+  border-bottom: 1px solid var(--hairline);
 }
 
 .t-crumb {
@@ -104,8 +107,8 @@ h3 {
 .intro {
   display: grid;
   grid-template-columns: 132px minmax(0, 1fr);
-  gap: 40px;
-  padding: 78px 0 18px;
+  gap: 28px;
+  padding: 44px 0 0;
 }
 
 .intro-photo {
@@ -233,7 +236,7 @@ h3 {
   flex-wrap: wrap;
   align-items: center;
   gap: 10px 16px;
-  margin-top: 28px;
+  margin-top: 20px;
 }
 
 .cmd-button,
@@ -286,20 +289,20 @@ h3 {
 
 /* Sections */
 .content-section {
-  margin-top: 64px;
+  margin-top: var(--section-gap);
   scroll-margin-top: 28px;
 }
 
 .section-heading {
-  border-top: 2px solid var(--line);
-  padding-top: 16px;
-  margin-bottom: 18px;
+  border-top: 1px solid var(--hairline);
+  padding-top: var(--section-gap);
+  margin-bottom: 12px;
 }
 
 .section-heading h2 {
   margin: 0;
   color: var(--ink);
-  font-size: 24px;
+  font-size: 21px;
   line-height: 1.2;
   letter-spacing: 0;
 }
@@ -309,7 +312,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 22px;
+  margin-bottom: 12px;
 }
 
 .t-filter button,
@@ -323,7 +326,6 @@ h3 {
   cursor: pointer;
   font-size: 12.5px;
   font-weight: 500;
-  box-shadow: 2px 2px 0 rgba(22, 20, 15, 0.32);
 }
 
 .t-filter .active,
@@ -334,19 +336,24 @@ h3 {
 }
 
 .t-pub {
-  display: grid;
-  grid-template-columns: 72px 128px minmax(0, 1fr);
-  gap: 16px;
-  padding: 18px 0;
-  border-top: 1px solid var(--hairline);
+  padding: 12px 0;
 }
 
-.t-pub-year,
-.t-pub-venue,
+.t-pub:last-child,
+.timeline article:last-child,
+.news-list li:last-child {
+  padding-bottom: 0;
+}
+
+.t-pub-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .timeline time,
 .timeline > article > span,
 .news-list time,
-.news-list span,
 .compact-list time {
   color: var(--muted);
   font-family: var(--font-mono);
@@ -355,47 +362,40 @@ h3 {
   font-variant-numeric: tabular-nums;
 }
 
-.t-pub-venue {
-  width: fit-content;
-  min-width: 54px;
-  height: fit-content;
-  border: 1.5px solid currentColor;
-  border-radius: 999px;
-  padding: 1px 8px;
-  text-align: center;
-  text-transform: uppercase;
+.t-pub-venue,
+.t-pub-year {
+  display: inline-block;
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  background: rgba(255, 253, 248, 0.35);
+  color: var(--muted-2);
+  padding: 1px 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.5;
+  white-space: nowrap;
 }
-
-.t-pub-venue[data-kind="journal"] { color: var(--green); }
-.t-pub-venue[data-kind="conference"] { color: var(--ink); }
-.t-pub-venue[data-kind="workshop"] { color: #856400; }
-.t-pub-venue[data-kind="preprint"] { color: var(--red); }
 
 .t-pub-title {
   color: var(--ink);
-  font-family: var(--font-mono);
+  font-family: var(--font);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.45;
 }
 
 .task-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
-  margin-top: 7px;
+  gap: 4px 10px;
 }
 
 .task-tag {
   display: inline-flex;
   align-items: center;
-  min-height: 21px;
-  border: 1px solid var(--hairline);
-  border-radius: 4px;
-  background: rgba(255, 253, 248, 0.45);
   color: var(--muted);
-  padding: 1px 7px;
-  font-family: var(--font-mono);
+  font-family: var(--font);
   font-size: 11px;
   font-weight: 500;
   line-height: 1.35;
@@ -405,8 +405,8 @@ h3 {
 .t-pub-authors {
   margin-top: 4px;
   color: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 14px;
+  font-family: var(--font);
+  font-size: 13px;
   line-height: 1.5;
 }
 
@@ -415,17 +415,24 @@ h3 {
   font-weight: 700;
 }
 
+.t-pub-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  margin-top: 5px;
+}
+
 .t-pub-links {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 9px;
 }
 
 .t-pub-links a {
   color: var(--green);
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   text-decoration: none;
 }
@@ -433,25 +440,18 @@ h3 {
 .t-pub-links a::after { content: ' ↗'; }
 
 /* Timeline, lists, news */
-.timeline,
-.news-list,
-.compact-list {
-  border-top: 1px solid var(--hairline);
-}
-
 .timeline article,
 .news-list li,
 .compact-list li {
   display: grid;
   grid-template-columns: 170px minmax(0, 1fr) 95px;
-  gap: 18px;
+  gap: var(--column-gap);
   align-items: start;
-  padding: 15px 0;
-  border-bottom: 1px solid var(--hairline);
+  padding: var(--row-space) 0;
 }
 
 #internships .timeline article {
-  grid-template-columns: 170px minmax(0, 1fr);
+  grid-template-columns: 144px minmax(0, 1fr);
 }
 
 .timeline-aside {
@@ -459,9 +459,9 @@ h3 {
 }
 
 .internship-sketch {
-  width: 148px;
+  width: 112px;
   aspect-ratio: 1;
-  margin: 12px 0 0;
+  margin: 8px 0 0;
 }
 
 .internship-sketch img {
@@ -535,8 +535,10 @@ h3 {
 }
 
 .news-list li {
-  grid-template-columns: 100px minmax(0, 1fr);
+  grid-template-columns: 96px minmax(0, 1fr);
   align-items: baseline;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .news-list a,
@@ -557,9 +559,9 @@ h3 {
 
 .compact-list li {
   display: grid;
-  grid-template-columns: 86px minmax(0, 1fr);
-  gap: 14px;
-  font-size: 16px;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: var(--column-gap);
+  font-size: 14px;
   line-height: 1.5;
 }
 
@@ -569,9 +571,9 @@ h3 {
   justify-content: space-between;
   gap: 18px;
   flex-wrap: wrap;
-  margin-top: 76px;
+  margin-top: var(--section-gap);
   padding-top: 18px;
-  border-top: 2px solid var(--line);
+  border-top: 1px solid var(--hairline);
   color: var(--muted);
   font-family: var(--font-mono);
   font-size: 11px;
@@ -603,9 +605,9 @@ h3 {
 }
 
 .t-pagehead {
-  border-top: 2px solid var(--line);
-  padding-top: 32px;
-  margin: 48px 0 30px;
+  border-top: 1px solid var(--hairline);
+  padding-top: 20px;
+  margin: var(--section-gap) 0 20px;
 }
 
 .t-pagehead h2 {
@@ -625,8 +627,7 @@ h3 {
   display: grid;
   grid-template-columns: 170px minmax(0, 1fr) 95px;
   gap: 18px;
-  padding: 16px 0;
-  border-top: 1px solid var(--hairline);
+  padding: var(--row-space) 0;
 }
 
 .t-exp-role { color: var(--ink); font-weight: 700; }
@@ -636,8 +637,8 @@ h3 {
 .t-exp-type { text-align: right; text-transform: uppercase; }
 
 .t-divider {
-  margin: 42px 0 16px;
-  border-top: 2px solid var(--line);
+  margin: var(--section-gap) 0 12px;
+  border-top: 1px solid var(--hairline);
   padding-top: 12px;
   color: var(--muted);
   font-size: 12px;
@@ -814,7 +815,7 @@ h3 {
   .intro {
     grid-template-columns: 1fr;
     gap: 20px;
-    padding-top: 52px;
+    padding-top: 28px;
   }
 
   .intro h1 { font-size: clamp(30px, 10vw, 42px); }
@@ -822,15 +823,6 @@ h3 {
   .intro-copy {
     font-size: 16px;
     white-space: normal;
-  }
-
-  .t-pub {
-    grid-template-columns: 64px minmax(0, 1fr);
-    gap: 10px 12px;
-  }
-
-  .t-pub > div:last-child {
-    grid-column: 1 / -1;
   }
 
   .timeline article,
@@ -860,7 +852,12 @@ h3 {
   }
 
   .news-list li {
-    grid-template-columns: 80px minmax(0, 1fr);
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 5px 12px;
+  }
+
+  .compact-list li {
+    grid-template-columns: 76px minmax(0, 1fr);
     gap: 5px 12px;
   }
 
@@ -885,7 +882,6 @@ h3 {
     text-align: left;
   }
 
-  .t-pub-venue { margin-top: -2px; }
   .cmd-button,
   .green-button { min-height: 40px; }
   .t-gate-row { flex-direction: column; }
@@ -893,8 +889,9 @@ h3 {
 }
 
 @media (max-width: 460px) {
+  :root { --section-gap: 20px; }
   body { font-size: 16px; }
-  .button-row { align-items: stretch; flex-direction: column; }
+  .button-row { gap: 10px 14px; }
   .cmd-button,
   .green-button { justify-content: center; }
   .t-gallery-grid { grid-template-columns: repeat(2, 1fr); }

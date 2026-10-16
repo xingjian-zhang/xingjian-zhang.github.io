@@ -225,13 +225,17 @@ function renderRow(pub) {
   if (pub.code) links.push(`<a href="${pub.code}" target="_blank" rel="noopener">code</a>`);
   return `
     <div class="t-pub" data-kind="${pub.kind}">
-      <div class="t-pub-year">${pub.year || ''}</div>
-      <div class="t-pub-venue" data-kind="${pub.kind}">${escapeHtml(pub.venue)}</div>
       <div>
         <div class="t-pub-title">${escapeHtml(pub.title || '')}</div>
         <div class="t-pub-authors">${formatAuthors(pub.author || '')}</div>
-        ${renderTags(pub.tags)}
-        ${links.length ? `<div class="t-pub-links">${links.join('')}</div>` : ''}
+        <div class="t-pub-details">
+          ${links.length ? `<div class="t-pub-links">${links.join('')}</div>` : ''}
+          <div class="t-pub-meta">
+            <span class="t-pub-venue">${escapeHtml(pub.venue)}</span>
+            <span class="t-pub-year">${pub.year || ''}</span>
+          </div>
+          ${renderTags(pub.tags)}
+        </div>
       </div>
     </div>`;
 }
