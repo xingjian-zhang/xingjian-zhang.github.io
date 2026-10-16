@@ -216,17 +216,23 @@ function renderPublications(pubs) {
       '<div style="font-size:12px;color:var(--t-muted);padding:20px 0;">// no entries match this filter</div>';
     return;
   }
-  container.innerHTML = pubs.map(renderRow).join('');
+  const visibleCount = 6;
+  const recent = pubs.slice(0, visibleCount).map(renderRow).join('');
+  const older = pubs.slice(visibleCount).map(renderRow).join('');
+  container.innerHTML = recent + (older ? `
+    <details class="publications-archive">
+      <summary>Show older publications</summary>
+      ${older}
+    </details>` : '');
 }
 
 function renderRow(pub) {
   const links = [];
-  if (pub.url) links.push(`<a href="${pub.url}" target="_blank" rel="noopener">paper</a>`);
   if (pub.code) links.push(`<a href="${pub.code}" target="_blank" rel="noopener">code</a>`);
   return `
     <div class="t-pub" data-kind="${pub.kind}">
       <div>
-        <div class="t-pub-title">${escapeHtml(pub.title || '')}</div>
+        <div class="t-pub-title">${pub.url ? `<a href="${pub.url}" target="_blank" rel="noopener">${escapeHtml(pub.title || '')}</a>` : escapeHtml(pub.title || '')}</div>
         <div class="t-pub-authors">${formatAuthors(pub.author || '')}</div>
         <div class="t-pub-details">
           ${links.length ? `<div class="t-pub-links">${links.join('')}</div>` : ''}
