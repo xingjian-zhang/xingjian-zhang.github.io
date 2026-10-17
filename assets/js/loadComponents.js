@@ -49,6 +49,7 @@
   async function init() {
     await Promise.all(COMPONENTS.map(injectComponent));
     applyActiveNav();
+    document.dispatchEvent(new Event('components:loaded'));
   }
 
   if (document.readyState === 'loading') {

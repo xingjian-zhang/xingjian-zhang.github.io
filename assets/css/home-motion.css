@@ -1,0 +1,115 @@
+/* Homepage motion experiments. Keep the existing layout and hit areas stable. */
+.motion-nav {
+  position: relative;
+}
+
+.motion-nav::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--nav-width, 0px);
+  height: 2px;
+  border-radius: 2px;
+  background: var(--green);
+  opacity: var(--nav-visible, 0);
+  transform: translate(var(--nav-x, 0px), var(--nav-y, 0px));
+  transition: transform 320ms cubic-bezier(.22, 1, .36, 1),
+              width 320ms cubic-bezier(.22, 1, .36, 1), opacity 160ms ease;
+  pointer-events: none;
+}
+
+.profile-icon[data-label] { position: relative; }
+
+.profile-icon[data-label]::after {
+  content: attr(data-label);
+  position: absolute;
+  top: calc(100% - 4px);
+  left: 50%;
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-meta);
+  color: var(--green);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, -3px);
+  transition: opacity 160ms ease, transform 200ms ease;
+  pointer-events: none;
+}
+
+.profile-icon[data-label]:first-child::after {
+  left: 9px;
+  transform: translateY(-3px);
+}
+
+.profile-icon[data-label]:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.profile-icon[data-label]:first-child:focus-visible::after {
+  transform: translateY(0);
+}
+
+#publications .t-pub {
+  position: relative;
+  isolation: isolate;
+}
+
+#publications .t-pub::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 1px -8px;
+  border-radius: 6px;
+  background: linear-gradient(100deg, rgba(25, 107, 48, .055), rgba(255, 253, 248, .7));
+  opacity: 0;
+  transition: opacity 180ms ease;
+  pointer-events: none;
+}
+
+#publications .t-pub:focus-within::before { opacity: 1; }
+
+@media (hover: hover) and (pointer: fine) {
+  .profile-icon[data-label]:hover::after {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  .profile-icon[data-label]:first-child:hover::after { transform: translateY(0); }
+  #publications .t-pub:hover::before { opacity: 1; }
+}
+
+@media (min-width: 821px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .intro.has-tilt {
+    transform: perspective(1600px) translateY(0) rotateX(0) rotateY(0) scale(1);
+    transform-origin: center;
+    transition: transform 550ms cubic-bezier(.22, 1, .36, 1);
+  }
+  .intro.has-tilt.is-tilted {
+    transform: perspective(1600px) translateY(-2px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) scale(.99);
+    transition-duration: 180ms;
+  }
+  .intro.has-tilt::before {
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 400ms ease;
+  }
+  .intro.has-tilt.is-tilted::before {
+    box-shadow: var(--shadow-x, 0px) 12px 28px -16px rgba(22, 20, 15, .24),
+                inset 0 1px 0 rgba(255, 253, 248, .9);
+  }
+  .profile-icon i {
+    transform: translate(var(--mag-x, 0px), var(--mag-y, 0px));
+    transition: transform 420ms cubic-bezier(.22, 1.4, .36, 1);
+  }
+  .profile-icon:hover i {
+    transform: translate(var(--mag-x, 0px), var(--mag-y, 0px)) rotate(-8deg);
+    transition-duration: 100ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-nav::after,
+  .profile-icon[data-label]::after,
+  #publications .t-pub::before { transition: none; }
+}
