@@ -1,7 +1,8 @@
 (function () {
   const bio = document.querySelector('.intro-copy');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (!bio || reducedMotion.matches) return;
+  const phone = window.matchMedia('(max-width: 820px)');
+  if (!bio || reducedMotion.matches || phone.matches) return;
 
   let started = false;
   let timer;
@@ -25,7 +26,7 @@
   }
 
   function start() {
-    if (started || reducedMotion.matches) return;
+    if (started || reducedMotion.matches || phone.matches) return;
     started = true;
     observer?.disconnect();
     const firstSentence = bio.querySelector('p')?.textContent.match(/^.*?[.!?](?:\s+|$)/)?.[0] || '';
@@ -84,7 +85,7 @@
     });
     let cursor;
     function typeNext() {
-      if (reducedMotion.matches) return finish();
+      if (reducedMotion.matches || phone.matches) return finish();
       cursor?.classList.remove('is-cursor');
       if (index === characters.length) return;
 
@@ -107,6 +108,9 @@
   }
 
   reducedMotion.addEventListener('change', (event) => {
+    if (event.matches) finish();
+  });
+  phone.addEventListener('change', (event) => {
     if (event.matches) finish();
   });
 
