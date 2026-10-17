@@ -25,6 +25,7 @@
   --weight-regular: 400;
   --weight-strong: 600;
   --section-gap: 24px;
+  --section-outset: 20px;
   --row-space: 10px;
   --column-gap: 16px;
 }
@@ -77,13 +78,26 @@ h3 {
 
 /* Header */
 .t-top {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 28px;
   min-height: 47px;
-  border-bottom: 1px solid var(--hairline);
 }
+
+.t-top::after,
+.section-heading::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--section-outset));
+  right: calc(-1 * var(--section-outset));
+  border-top: 1px solid var(--hairline);
+  pointer-events: none;
+}
+
+.t-top::after { bottom: 0; }
+.section-heading::before { top: 0; }
 
 .t-crumb {
   font-family: var(--font-mono);
@@ -124,7 +138,7 @@ h3 {
   content: '';
   position: absolute;
   z-index: -1;
-  inset: 28px -20px -8px;
+  inset: 28px calc(-1 * var(--section-outset)) -8px;
   border-radius: var(--radius);
   background: rgba(255, 253, 248, 0.65);
   pointer-events: none;
@@ -362,7 +376,7 @@ summary:focus-visible {
 }
 
 .section-heading {
-  border-top: 1px solid var(--hairline);
+  position: relative;
   padding-top: var(--section-gap);
   margin-bottom: 12px;
 }
@@ -891,6 +905,7 @@ summary:focus-visible {
 }
 
 @media (max-width: 820px) {
+  :root { --section-outset: 8px; }
   .site-shell,
   .t-page {
     width: min(100% - 28px, 960px);
@@ -916,7 +931,7 @@ summary:focus-visible {
     padding-top: 28px;
   }
 
-  .intro::before { inset: 16px -8px -8px; }
+  .intro::before { inset-block-start: 16px; }
 
   .intro-photo { grid-row: 1; }
   .intro-heading { align-self: center; }
