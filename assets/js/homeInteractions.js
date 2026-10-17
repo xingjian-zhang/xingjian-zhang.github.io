@@ -76,9 +76,9 @@
       const rect = introStage.getBoundingClientRect();
       const x = Math.max(-1, Math.min(1, (pointerX - rect.left) / rect.width * 2 - 1));
       const y = Math.max(-1, Math.min(1, (pointerY - rect.top) / rect.height * 2 - 1));
-      intro.style.setProperty('--tilt-x', `${-y * 1.4}deg`);
-      intro.style.setProperty('--tilt-y', `${x * 1.1}deg`);
-      intro.style.setProperty('--shadow-x', `${-x * 5}px`);
+      intro.style.setProperty('--tilt-x', `${-y * 2.2}deg`);
+      intro.style.setProperty('--tilt-y', `${x * 1.8}deg`);
+      intro.style.setProperty('--shadow-x', `${-x * 8}px`);
       intro.classList.add('is-tilted');
     });
   });

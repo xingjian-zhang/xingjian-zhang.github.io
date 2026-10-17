@@ -90,12 +90,12 @@
 
 @media (min-width: 821px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   .intro.has-tilt {
-    transform: perspective(1600px) translateY(0) rotateX(0) rotateY(0) scale(1);
+    transform: perspective(1400px) translateY(0) rotateX(0) rotateY(0) scale(1);
     transform-origin: center;
     transition: transform 550ms cubic-bezier(.22, 1, .36, 1);
   }
   .intro.has-tilt.is-tilted {
-    transform: perspective(1600px) translateY(-2px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) scale(.99);
+    transform: perspective(1400px) translateY(-3px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) scale(.99);
     transition-duration: 180ms;
   }
   .intro.has-tilt::before {
@@ -103,7 +103,7 @@
     transition: box-shadow 400ms ease;
   }
   .intro.has-tilt.is-tilted::before {
-    box-shadow: var(--shadow-x, 0px) 12px 28px -16px rgba(22, 20, 15, .24),
+    box-shadow: var(--shadow-x, 0px) 20px 36px -14px rgba(22, 20, 15, .36),
                 inset 0 1px 0 rgba(255, 253, 248, .9);
   }
   .profile-icon i {
