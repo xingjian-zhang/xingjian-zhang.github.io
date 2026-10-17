@@ -7,6 +7,45 @@
   const icons = [...intro.querySelectorAll('.profile-icon')];
   intro.classList.add('has-tilt');
 
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const disclosures = new Map();
+  function finishDisclosure(details, state) {
+    state.animation?.cancel();
+    details.open = state.open;
+    details.style.removeProperty('height');
+    details.style.removeProperty('overflow');
+    disclosures.delete(details);
+  }
+  // Delegation also covers publication archives rebuilt by a filter change.
+  document.addEventListener('click', (event) => {
+    const summary = event.target.closest('.news-archive > summary, .publications-archive > summary');
+    if (!summary) return;
+    const details = summary.parentElement;
+    const previous = disclosures.get(details);
+    if (reducedMotion.matches || !details.animate) return;
+    event.preventDefault();
+    const open = previous ? !previous.open : !details.open;
+    const from = details.getBoundingClientRect().height;
+    previous?.animation.cancel();
+    details.style.removeProperty('height');
+    details.open = true;
+    const to = open ? details.getBoundingClientRect().height : summary.getBoundingClientRect().height;
+    details.style.overflow = 'hidden';
+    const animation = details.animate(
+      [{ height: `${from}px` }, { height: `${to}px` }],
+      { duration: 220, easing: 'cubic-bezier(.22, 1, .36, 1)' }
+    );
+    const state = { animation, open };
+    disclosures.set(details, state);
+    animation.onfinish = () => finishDisclosure(details, state);
+  });
+  const finishDisclosures = () => {
+    disclosures.forEach((state, details) => finishDisclosure(details, state));
+  };
+  window.addEventListener('resize', finishDisclosures);
+  window.addEventListener('beforeprint', finishDisclosures);
+  reducedMotion.addEventListener('change', finishDisclosures);
+
   // A stationary link target with a gently attracted glyph inside it.
   icons.forEach((link) => {
     link.dataset.label = link.getAttribute('title') || link.getAttribute('aria-label');

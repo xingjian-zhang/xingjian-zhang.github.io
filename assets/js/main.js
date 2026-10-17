@@ -230,7 +230,7 @@ function renderRow(pub) {
   const links = [];
   if (pub.code) links.push(`<a href="${pub.code}" target="_blank" rel="noopener">code</a>`);
   return `
-    <div class="t-pub" data-kind="${pub.kind}">
+    <div class="t-pub" data-kind="${pub.kind}" data-paper="${escapeHtml(pub.citationKey)}">
       <div>
         <div class="t-pub-title">${pub.url ? `<a href="${pub.url}" target="_blank" rel="noopener">${escapeHtml(pub.title || '')}</a>` : escapeHtml(pub.title || '')}</div>
         <div class="t-pub-authors">${formatAuthors(pub.author || '')}</div>
@@ -277,17 +277,72 @@ function escapeHtml(s) {
   })[c]);
 }
 
+function animatePublicationFilter(pubs) {
+  const container = document.getElementById('publications-list');
+  const bounds = container.getBoundingClientRect();
+  const previous = new Map([...container.querySelectorAll('.t-pub')]
+    .filter((row) => row.getBoundingClientRect().height > 0)
+    .map((row) => [row.dataset.paper, { row, top: row.getBoundingClientRect().top - bounds.top }]));
+  renderPublications(pubs);
+  const height = container.getBoundingClientRect().height;
+  const animations = [];
+  const departing = [];
+  const timing = { duration: 220, easing: 'cubic-bezier(.22, 1, .36, 1)' };
+  container.querySelectorAll('.t-pub').forEach((row) => {
+    if (!row.getBoundingClientRect().height) return;
+    const old = previous.get(row.dataset.paper);
+    const offset = old ? old.top - (row.getBoundingClientRect().top - bounds.top) : 6;
+    animations.push(row.animate([
+      { transform: `translateY(${offset}px)`, opacity: old ? 1 : 0 },
+      { transform: 'translateY(0)', opacity: 1 }
+    ], timing));
+    previous.delete(row.dataset.paper);
+  });
+  previous.forEach(({ row, top }) => {
+    row.classList.add('publication-exit');
+    row.style.top = `${top}px`;
+    row.inert = true;
+    row.setAttribute('aria-hidden', 'true');
+    container.append(row);
+    departing.push(row);
+    animations.push(row.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 120, fill: 'forwards' }));
+  });
+  container.style.overflow = 'clip';
+  const resize = container.animate([{ height: `${bounds.height}px` }, { height: `${height}px` }], timing);
+  animations.push(resize);
+  const cleanup = () => {
+    animations.forEach((animation) => animation.cancel());
+    departing.forEach((row) => row.remove());
+    container.style.removeProperty('overflow');
+  };
+  resize.onfinish = cleanup;
+  return cleanup;
+}
+
 function wireFilterBar() {
   const bar = document.querySelector('.t-filter');
   if (!bar || !window.__PUBS__) return;
+  let finishAnimation;
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  bar.querySelectorAll('button').forEach((button) => {
+    button.setAttribute('aria-pressed', button.classList.contains('active'));
+  });
+  reducedMotion.addEventListener('change', () => finishAnimation?.());
+  window.addEventListener('resize', () => finishAnimation?.());
   bar.addEventListener('click', (e) => {
     const btn = e.target.closest('button[data-filter]');
-    if (!btn) return;
+    if (!btn || btn.classList.contains('active')) return;
     const kind = btn.dataset.filter;
-    bar.querySelectorAll('button').forEach((b) => b.classList.toggle('active', b === btn));
+    bar.querySelectorAll('button').forEach((b) => {
+      b.classList.toggle('active', b === btn);
+      b.setAttribute('aria-pressed', b === btn);
+    });
     const filtered = kind === 'all' ? window.__PUBS__ : window.__PUBS__.filter((p) => p.kind === kind);
-    renderPublications(filtered);
     updateFilterCounts(kind, filtered.length);
+    finishAnimation?.();
+    if (document.body.dataset.page === 'home' && !reducedMotion.matches && Element.prototype.animate) {
+      finishAnimation = animatePublicationFilter(filtered);
+    } else renderPublications(filtered);
   });
 }
 

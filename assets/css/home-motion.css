@@ -1,4 +1,12 @@
 /* Homepage motion experiments. Keep the existing layout and hit areas stable. */
+#publications-list { position: relative; }
+#publications-list .publication-exit {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
 .motion-nav {
   position: relative;
 }
