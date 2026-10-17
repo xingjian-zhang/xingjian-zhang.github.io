@@ -73,7 +73,7 @@ h3 {
 .t-page {
   width: min(960px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 24px 0 48px;
+  padding: 16px 0 48px;
 }
 
 /* Header */
@@ -83,21 +83,8 @@ h3 {
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-  min-height: 47px;
+  min-height: 36px;
 }
-
-.t-top::after,
-.section-heading::before {
-  content: '';
-  position: absolute;
-  left: calc(-1 * var(--section-outset));
-  right: calc(-1 * var(--section-outset));
-  border-top: 1px solid var(--hairline);
-  pointer-events: none;
-}
-
-.t-top::after { bottom: 0; }
-.section-heading::before { top: 0; }
 
 .t-crumb {
   font-family: var(--font-mono);
@@ -117,7 +104,7 @@ h3 {
   gap: 22px;
   color: var(--ink);
   font-size: var(--text-secondary);
-  font-family: var(--font);
+  font-family: var(--font-mono);
 }
 
 .t-nav a { text-decoration: none; }
@@ -129,16 +116,16 @@ h3 {
   position: relative;
   isolation: isolate;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 96px;
+  grid-template-columns: minmax(0, 1fr) 192px;
   gap: 12px 32px;
-  padding: 44px 0 0;
+  padding: 28px 0 0;
 }
 
 .intro::before {
   content: '';
   position: absolute;
   z-index: -1;
-  inset: 28px calc(-1 * var(--section-outset)) -8px;
+  inset: 12px calc(-1 * var(--section-outset)) -8px;
   border-radius: var(--radius);
   background: rgba(255, 253, 248, 0.65);
   pointer-events: none;
@@ -177,11 +164,10 @@ h3 {
 .avatar-frame {
   position: relative;
   z-index: 1;
-  width: 96px;
-  height: 96px;
+  width: 192px;
+  height: 192px;
   margin-bottom: 0;
   overflow: visible;
-  border: 1.5px solid var(--line);
   border-radius: var(--radius);
 }
 
@@ -190,28 +176,65 @@ h3 {
   width: 100%;
   height: 100%;
   border-radius: inherit;
+  border: 1.5px solid var(--line);
   object-fit: cover;
   filter: saturate(0.9) contrast(1.04);
-  transform-origin: top right;
-  transition: transform 280ms cubic-bezier(0.2, 0.75, 0.25, 1),
-              filter 280ms ease;
-  will-change: transform;
+  transform-origin: center;
+  transition: transform 280ms cubic-bezier(0.2, 0.75, 0.25, 1);
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .avatar-frame:hover {
-    z-index: 5;
-  }
+.cat-annotation {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 125%;
+  opacity: 0;
+  color: var(--ink);
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
 
+.cat-annotation svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cat-annotation span {
+  position: absolute;
+  left: 4%;
+  top: 85%;
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  text-transform: none;
+}
+
+.avatar-frame:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 4px;
+}
+
+.avatar-frame:focus-visible .avatar { transform: rotate(-2deg); }
+.avatar-frame:focus-visible .cat-annotation { opacity: 1; }
+
+@media (hover: hover) and (pointer: fine) {
+  .avatar-frame:hover { z-index: 5; }
   .avatar-frame:hover .avatar {
-    filter: saturate(1) contrast(1.06);
-    box-shadow: 0 0 0 0.75px var(--line);
-    transform: scale(2) rotate(-2deg);
+    transform: rotate(-2deg);
   }
+  .avatar-frame:hover .cat-annotation { opacity: 1; }
 }
 
 .intro h1 {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
   margin: 0;
+  font-family: var(--font);
   color: var(--ink);
   font-size: 32px;
   font-weight: var(--weight-strong);
@@ -220,12 +243,25 @@ h3 {
 }
 
 .intro h1 span {
-  margin-left: 12px;
+  position: absolute;
+  left: calc(100% + 16px);
+  top: 50%;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(calc(-50% + 4px)) rotate(-3deg);
+  transition: opacity 180ms ease, transform 180ms ease;
+  pointer-events: none;
   color: var(--muted);
   font-family: var(--cjk);
   font-size: 0.75em;
   font-weight: var(--weight-strong);
   letter-spacing: 0;
+}
+
+.intro:has(.avatar-frame:hover) h1 span,
+.intro:has(.avatar-frame:focus-visible) h1 span {
+  opacity: 1;
+  transform: translateY(-50%) rotate(-3deg);
 }
 
 .intro-copy {
@@ -362,6 +398,15 @@ h3 {
   color: var(--green);
 }
 
+.profile-icon i {
+  display: inline-block;
+  transition: transform 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .profile-icon:hover i { transform: rotate(-8deg); }
+}
+
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
@@ -463,7 +508,7 @@ summary:focus-visible {
 .t-pub-title {
   color: var(--ink);
   font-family: var(--font);
-  font-size: var(--text-secondary);
+  font-size: var(--text-body);
   font-weight: var(--weight-strong);
   line-height: 1.45;
 }
@@ -504,7 +549,7 @@ summary:focus-visible {
   margin-top: 2px;
   color: var(--muted);
   font-family: var(--font);
-  font-size: var(--text-meta);
+  font-size: var(--text-secondary);
   line-height: 1.5;
 }
 
@@ -597,7 +642,7 @@ summary:focus-visible {
   margin: 7px 0 0;
   padding-left: 1.15rem;
   color: var(--ink);
-  font-size: var(--text-secondary);
+  font-size: var(--text-body);
   line-height: 1.55;
 }
 
@@ -649,7 +694,7 @@ summary:focus-visible {
   padding: 4px 0;
   grid-template-columns: 96px minmax(0, 1fr);
   align-items: baseline;
-  font-size: var(--text-secondary);
+  font-size: var(--text-body);
   line-height: 1.55;
 }
 
@@ -909,14 +954,14 @@ summary:focus-visible {
   .site-shell,
   .t-page {
     width: min(100% - 28px, 960px);
-    padding-top: 18px;
+    padding-top: 16px;
   }
 
   .t-top {
     align-items: flex-start;
     flex-direction: column;
-    gap: 12px;
-    padding-bottom: 14px;
+    gap: 8px;
+    padding-bottom: 0;
   }
 
   .t-nav {
@@ -926,19 +971,25 @@ summary:focus-visible {
   }
 
   .intro {
-    grid-template-columns: minmax(0, 1fr) 72px;
+    grid-template-columns: minmax(0, 1fr) 96px;
     gap: 16px;
-    padding-top: 28px;
+    padding-top: 20px;
   }
 
-  .intro::before { inset-block-start: 16px; }
+  .intro::before { inset-block-start: 8px; }
 
   .intro-photo { grid-row: 1; }
   .intro-heading { align-self: center; }
-  .intro .avatar-frame { width: 72px; height: 72px; }
+  .intro .avatar-frame { width: 96px; height: 96px; }
+  .intro-photo { padding-bottom: 28px; }
+  .cat-annotation span { left: -8px; }
   .intro-body { grid-column: 1 / -1; }
   .intro h1 { font-size: 24px; }
-  .intro h1 span { display: block; margin: 4px 0 0; }
+  .intro h1 span {
+    left: 0;
+    top: -12px;
+    font-size: var(--text-secondary);
+  }
   .intro-copy {
     font-size: var(--text-body);
     white-space: normal;
