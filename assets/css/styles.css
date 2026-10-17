@@ -139,6 +139,7 @@ h3 {
 
 /* Intro */
 .intro {
+  scroll-margin-top: 64px;
   font-family: var(--font-mono);
   position: relative;
   isolation: isolate;
@@ -178,7 +179,7 @@ h3 {
 }
 
 .intro-affiliation {
-  margin: 0;
+  margin: var(--space-sm) 0 0;
   color: var(--muted);
   font-size: var(--text-secondary);
   line-height: var(--leading-text);
@@ -298,7 +299,7 @@ h3 {
 .intro-copy {
   font-family: var(--font-mono);
   max-width: 68ch;
-  margin: 16px 0 0;
+  margin: 0;
   color: var(--ink);
   font-size: var(--text-body);
   line-height: var(--leading-text);
@@ -1026,6 +1027,7 @@ summary:focus-visible {
     padding-bottom: 0;
   }
 
+  .intro,
   .content-section { scroll-margin-top: 88px; }
 
   .t-nav {
@@ -1035,25 +1037,23 @@ summary:focus-visible {
   }
 
   .intro {
-    grid-template-columns: minmax(0, 1fr) 96px;
+    --intro-photo-size: 72px;
+    --intro-padding-top: 20px;
+    grid-template-columns: minmax(0, 1fr) var(--intro-photo-size);
     gap: 16px;
-    padding-top: 20px;
+    padding-top: var(--intro-padding-top);
   }
 
   .intro::before { inset-block-start: 8px; }
 
   .intro-photo { grid-row: 1; }
-  .intro-heading { align-self: center; }
-  .intro .avatar-frame { width: 96px; height: 96px; }
-  .intro-photo { padding-bottom: 28px; }
+  .intro-heading { align-self: start; }
+  .intro .avatar-frame { width: var(--intro-photo-size); height: var(--intro-photo-size); }
   .cat-annotation span { left: -8px; }
   .intro-body { grid-column: 1 / -1; }
   .intro h1 { font-size: 24px; }
-  .intro h1 span {
-    left: 0;
-    top: -12px;
-    font-size: var(--text-secondary);
-  }
+  /* The decorative name reveal needs space beside the heading. */
+  .intro h1 span { display: none; }
   .intro-copy {
     font-size: var(--text-body);
     white-space: normal;
