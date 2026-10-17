@@ -86,12 +86,30 @@ h3 {
 
 /* Header */
 .t-top {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  isolation: isolate;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-  min-height: 36px;
+  min-height: 44px;
+  padding: 4px 0;
+}
+
+.t-top::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -16px;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  background: var(--paper);
+  box-shadow: 0 0 0 100vmax var(--paper);
+  clip-path: inset(0 -100vmax);
+  pointer-events: none;
 }
 
 .t-crumb {
@@ -461,7 +479,7 @@ summary:focus-visible {
 /* Sections */
 .content-section {
   margin-top: var(--section-gap);
-  scroll-margin-top: 28px;
+  scroll-margin-top: 64px;
 }
 
 .section-heading {
@@ -1007,6 +1025,8 @@ summary:focus-visible {
     gap: 8px;
     padding-bottom: 0;
   }
+
+  .content-section { scroll-margin-top: 88px; }
 
   .t-nav {
     width: 100%;
