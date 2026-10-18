@@ -697,6 +697,11 @@ body[data-page="home"] .content-section + .content-section::before {
 .timeline-points a:hover,
 .text-link:hover { text-decoration: underline; }
 
+.mentoring-copy { margin: 0; }
+.mentoring-destination { color: var(--muted); }
+.mentoring-list { margin: var(--space-sm) 0 0; padding-left: 1.15rem; }
+.mentoring-list li + li { margin-top: var(--space-xs); }
+
 .timeline > article > span {
   text-align: right;
   text-transform: uppercase;
