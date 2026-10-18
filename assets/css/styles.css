@@ -1,7 +1,7 @@
 /* ============================================================
    Minimal Hunk-inspired academic site.
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&display=swap');
 
 :root {
   --paper: #f4f1ea;
@@ -15,7 +15,7 @@
   --green-dark: #145526;
   --red: #b7493f;
   --radius: 8px;
-  --font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   /* Complete type roles: components reuse these instead of mixing attributes. */
   --type-display: 600 28px/36px var(--font);
   --type-section: 600 20px/28px var(--font);
@@ -96,7 +96,7 @@ strong, b { font-weight: var(--weight-strong); }
 
 .site-shell,
 .t-page {
-  width: min(960px, calc(100% - 40px));
+  width: min(880px, calc(100% - 40px));
   margin: 0 auto;
   padding: 16px 0 48px;
 }
@@ -154,9 +154,8 @@ strong, b { font-weight: var(--weight-strong); }
   scroll-margin-top: 64px;
   position: relative;
   isolation: isolate;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 192px;
-  gap: var(--space-md) var(--space-lg);
+  display: flow-root;
+  --intro-photo-size: clamp(72px, 18vw, 192px);
   padding: 28px 0 0;
 }
 
@@ -171,40 +170,27 @@ strong, b { font-weight: var(--weight-strong); }
 }
 
 .intro-photo {
-  grid-column: 2;
-  grid-row: 1 / 3;
+  float: right;
+  width: var(--intro-photo-size);
+  margin: 0 0 40px var(--space-lg);
   color: var(--muted);
   text-transform: uppercase;
 }
 
 .intro-heading {
-  grid-column: 1;
-  grid-row: 1;
+  display: flow-root;
+  margin-bottom: var(--space-md);
 }
 
 .intro-body {
-  grid-column: 1;
-  min-width: 0;
-}
-
-.intro-affiliation {
-  margin: var(--space-sm) 0 0;
-  color: var(--muted);
-}
-
-.intro-affiliation span {
-  display: block;
-}
-
-.intro-affiliation abbr {
-  text-decoration: none;
+  display: contents;
 }
 
 .avatar-frame {
   position: relative;
   z-index: 1;
-  width: 192px;
-  height: 192px;
+  width: 100%;
+  aspect-ratio: 1;
   margin-bottom: 0;
   overflow: visible;
   border-radius: var(--radius);
@@ -276,12 +262,11 @@ strong, b { font-weight: var(--weight-strong); }
 }
 
 .intro h1 span {
-  position: absolute;
-  left: calc(100% + 16px);
-  top: 50%;
+  display: inline-block;
+  margin-left: var(--space-sm);
   white-space: nowrap;
   opacity: 0;
-  transform: translateY(calc(-50% + 4px)) rotate(-3deg);
+  transform: translateY(4px) rotate(-3deg);
   transition: opacity 180ms ease, transform 180ms ease;
   pointer-events: none;
   color: var(--muted);
@@ -291,11 +276,10 @@ strong, b { font-weight: var(--weight-strong); }
 .intro:has(.avatar-frame:hover) h1 span,
 .intro:has(.avatar-frame:focus-visible) h1 span {
   opacity: 1;
-  transform: translateY(-50%) rotate(-3deg);
+  transform: translateY(0) rotate(-3deg);
 }
 
 .intro-copy {
-  max-width: 68ch;
   margin: 0;
   color: var(--ink);
 }
@@ -431,6 +415,20 @@ body[data-page="home"] { --section-gap: 64px; }
 .content-section {
   margin-top: var(--section-gap);
   scroll-margin-top: 64px;
+}
+
+body[data-page="home"] .content-section {
+  position: relative;
+}
+
+body[data-page="home"] .content-section + .content-section::before {
+  content: '';
+  position: absolute;
+  top: calc(var(--section-gap) / -2);
+  inset-inline: 0;
+  height: 1px;
+  background: rgba(22, 20, 15, 0.1);
+  pointer-events: none;
 }
 
 .section-heading {
@@ -906,7 +904,7 @@ body[data-page="home"] { --section-gap: 64px; }
   :root { --section-outset: 8px; }
   .site-shell,
   .t-page {
-    width: min(100% - 28px, 960px);
+    width: min(100% - 28px, 880px);
     padding-top: 16px;
   }
 
@@ -926,26 +924,9 @@ body[data-page="home"] { --section-gap: 64px; }
     gap: 14px;
   }
 
-  .intro {
-    --intro-photo-size: 72px;
-    --intro-padding-top: 20px;
-    grid-template-columns: minmax(0, 1fr) var(--intro-photo-size);
-    gap: 16px;
-    padding-top: var(--intro-padding-top);
-  }
-
+  .intro { padding-top: 20px; }
   .intro::before { inset-block-start: 8px; }
-
-  .intro-photo { grid-row: 1; }
-  .intro-heading { align-self: start; }
-  .intro .avatar-frame { width: var(--intro-photo-size); height: var(--intro-photo-size); }
-  .cat-annotation span { left: -8px; }
-  .intro-body { grid-column: 1 / -1; }
-  /* The decorative name reveal needs space beside the heading. */
-  .intro h1 span { display: none; }
-  .intro-copy {
-    white-space: normal;
-  }
+  .intro-photo { margin-left: var(--space-md); }
 
   .timeline article,
   .t-exp {
