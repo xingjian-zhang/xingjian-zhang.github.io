@@ -4,7 +4,7 @@
   const introStage = intro.closest('.intro-stage');
 
   const pointerMotion = matchMedia('(min-width: 821px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
-  const icons = [...intro.querySelectorAll('.profile-icon')];
+  const iconSelector = '.profile-icon, .paper-button';
   intro.classList.add('has-tilt');
 
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -47,17 +47,19 @@
   reducedMotion.addEventListener('change', finishDisclosures);
 
   // A stationary link target with a gently attracted glyph inside it.
-  icons.forEach((link) => {
-    link.addEventListener('pointermove', (event) => {
-      if (!pointerMotion.matches || event.pointerType === 'touch') return;
-      const rect = link.getBoundingClientRect();
-      link.style.setProperty('--mag-x', `${(event.clientX - rect.left - rect.width / 2) * .25}px`);
-      link.style.setProperty('--mag-y', `${(event.clientY - rect.top - rect.height / 2) * .25}px`);
-    });
-    link.addEventListener('pointerleave', () => {
-      link.style.removeProperty('--mag-x');
-      link.style.removeProperty('--mag-y');
-    });
+  document.addEventListener('pointermove', (event) => {
+    if (!pointerMotion.matches || event.pointerType === 'touch') return;
+    const link = event.target.closest(iconSelector);
+    if (!link) return;
+    const rect = link.getBoundingClientRect();
+    link.style.setProperty('--mag-x', `${(event.clientX - rect.left - rect.width / 2) * .25}px`);
+    link.style.setProperty('--mag-y', `${(event.clientY - rect.top - rect.height / 2) * .25}px`);
+  });
+  document.addEventListener('pointerout', (event) => {
+    const link = event.target.closest(iconSelector);
+    if (!link || link.contains(event.relatedTarget)) return;
+    link.style.removeProperty('--mag-x');
+    link.style.removeProperty('--mag-y');
   });
 
   let tiltFrame = 0;
@@ -93,7 +95,7 @@
   window.addEventListener('blur', resetTilt);
   pointerMotion.addEventListener('change', () => {
     resetTilt();
-    icons.forEach((link) => {
+    document.querySelectorAll(iconSelector).forEach((link) => {
       link.style.removeProperty('--mag-x');
       link.style.removeProperty('--mag-y');
     });

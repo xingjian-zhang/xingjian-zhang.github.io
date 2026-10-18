@@ -85,6 +85,7 @@ h3, h4, h5, h6,
 strong, b { font-weight: var(--weight-strong); }
 /* Icon glyphs are graphical controls, not a sixth text role. */
 .profile-icon { font-size: 20px; line-height: 1; }
+.paper-button i { font-size: 14px; line-height: 1; }
 .publication-message { color: var(--muted); padding: 20px 0; }
 .publication-message.is-error { color: var(--red); }
 
@@ -401,17 +402,21 @@ strong, b { font-weight: var(--weight-strong); }
 }
 
 .profile-icon:hover,
-.profile-icon:focus-visible {
+.profile-icon:focus-visible,
+.paper-button:hover,
+.paper-button:focus-visible {
   color: var(--green);
 }
 
-.profile-icon i {
+.profile-icon i,
+.paper-button i {
   display: inline-block;
   transition: transform 180ms ease;
 }
 
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .profile-icon:hover i { transform: rotate(-8deg); }
+  .profile-icon:hover i,
+  .paper-button:hover i { transform: rotate(-8deg); }
 }
 
 a:focus-visible,
@@ -422,6 +427,7 @@ summary:focus-visible {
 }
 
 /* Sections */
+body[data-page="home"] { --section-gap: 64px; }
 .content-section {
   margin-top: var(--section-gap);
   scroll-margin-top: 64px;
@@ -491,21 +497,12 @@ summary:focus-visible {
 
 .t-pub-venue,
 .t-pub-year {
-  display: inline-block;
-  border: 1px solid var(--hairline);
-  border-radius: 6px;
-  background: rgba(255, 253, 248, 0.35);
   color: var(--muted);
-  padding: 1px 6px;
   white-space: nowrap;
 }
 
 .t-pub-title {
   color: var(--ink);
-}
-
-.t-pub-title a {
-  text-decoration: none;
 }
 
 .task-tags {
@@ -555,7 +552,30 @@ summary:focus-visible {
   text-decoration: none;
 }
 
-.t-pub-links a::after { content: ' ↗'; }
+.t-pub-links a:not(.paper-button)::after { content: ' ↗'; }
+
+.publication-actions {
+  display: inline-flex;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+
+.paper-button {
+  color: var(--muted);
+  text-decoration: none;
+  vertical-align: bottom;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
+
+/* Avoid the icon font's inline baseline offset inside the flex target. */
+.paper-button i::before {
+  display: block;
+}
 
 /* Timeline, lists, news */
 .timeline article,
@@ -572,16 +592,8 @@ summary:focus-visible {
   display: block;
 }
 
-.experience-heading {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: var(--space-xs) var(--space-md);
-}
-
-.experience-heading time {
-  white-space: nowrap;
+#internships .timeline time {
+  display: block;
 }
 
 .timeline h3,
@@ -602,7 +614,6 @@ summary:focus-visible {
 }
 
 .timeline-points {
-  max-width: 66ch;
   margin: var(--space-sm) 0 0;
   padding-left: 1.15rem;
   color: var(--ink);
@@ -648,13 +659,11 @@ summary:focus-visible {
 }
 
 .news-list li {
+  display: block;
   padding: 4px 0;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: baseline;
 }
 
 .news-list time {
-  text-align: right;
   white-space: nowrap;
 }
 
@@ -893,6 +902,7 @@ summary:focus-visible {
 }
 
 @media (max-width: 820px) {
+  body[data-page="home"] { --section-gap: 48px; }
   :root { --section-outset: 8px; }
   .site-shell,
   .t-page {
@@ -941,11 +951,6 @@ summary:focus-visible {
   .t-exp {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: var(--space-xs) var(--space-md);
-  }
-
-  .experience-heading {
-    flex-direction: column;
-    gap: 0;
   }
 
   .timeline article > div,

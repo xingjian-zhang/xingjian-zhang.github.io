@@ -228,15 +228,15 @@ function renderPublications(pubs) {
 
 function renderRow(pub) {
   const isHome = document.body.dataset.page === 'home';
-  const links = [];
-  if (!isHome && pub.code) links.push(`<a href="${pub.code}" target="_blank" rel="noopener">code</a>`);
+  const paperLink = pub.url ? `<a class="paper-button" href="${escapeHtml(pub.url)}" target="_blank" rel="noopener" aria-label="Read paper: ${escapeHtml(pub.title || '')}"><i class="bi bi-file-earmark-text-fill" aria-hidden="true"></i></a>` : '';
+  const codeLink = pub.code ? `<a class="paper-button" href="${escapeHtml(pub.code)}" target="_blank" rel="noopener" aria-label="View code: ${escapeHtml(pub.title || '')}"><i class="bi bi-github" aria-hidden="true"></i></a>` : '';
+  const titleLinks = paperLink || codeLink ? `&nbsp;<span class="publication-actions">${paperLink}${codeLink}</span>` : '';
   return `
     <div class="t-pub" data-kind="${pub.kind}" data-paper="${escapeHtml(pub.citationKey)}">
       <div>
-        <div class="t-pub-title">${pub.url ? `<a href="${pub.url}" target="_blank" rel="noopener">${escapeHtml(pub.title || '')}</a>` : escapeHtml(pub.title || '')}</div>
+        <div class="t-pub-title">${escapeHtml(pub.title || '')}${titleLinks}</div>
         <div class="t-pub-authors">${formatAuthors(pub.author || '')}</div>
         <div class="t-pub-details">
-          ${links.length ? `<div class="t-pub-links">${links.join('')}</div>` : ''}
           <div class="t-pub-meta">
             <span class="t-pub-venue">${escapeHtml(pub.venue)}</span>
             <span class="t-pub-year">${pub.year || ''}</span>

@@ -45,11 +45,13 @@
     box-shadow: var(--shadow-x, 0px) 20px 36px -14px rgba(22, 20, 15, .36),
                 inset 0 1px 0 rgba(255, 253, 248, .9);
   }
-  .profile-icon i {
+  .profile-icon i,
+  .paper-button i {
     transform: translate(var(--mag-x, 0px), var(--mag-y, 0px));
     transition: transform 420ms cubic-bezier(.22, 1.4, .36, 1);
   }
-  .profile-icon:hover i {
+  .profile-icon:hover i,
+  .paper-button:hover i {
     transform: translate(var(--mag-x, 0px), var(--mag-y, 0px)) rotate(-8deg);
     transition-duration: 100ms;
   }
