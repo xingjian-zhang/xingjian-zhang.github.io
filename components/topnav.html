@@ -4,5 +4,15 @@
         <a href="/#contact">News</a>
         <a href="/#internships">Experience</a>
         <a href="/#publications">Publications</a>
+        <div class="theme-control">
+            <button class="theme-toggle" type="button" aria-label="Color theme" title="Color theme">
+                <!-- Sun/moon morph inspired by web.dev/articles/building/a-theme-switch-component -->
+                <svg class="theme-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                    <defs><mask id="theme-moon-mask"><rect width="24" height="24" fill="white"/><circle class="theme-moon-cutout" cx="25" cy="7" r="6" fill="black"/></mask></defs>
+                    <circle class="theme-sun" cx="12" cy="12" r="5" fill="currentColor" mask="url(#theme-moon-mask)"/>
+                    <path class="theme-rays" d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
     </nav>
 </div>
