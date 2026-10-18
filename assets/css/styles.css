@@ -305,16 +305,8 @@ strong, b { font-weight: var(--weight-strong); }
   outline-offset: 4px;
 }
 
-.avatar-frame:focus-visible .avatar { transform: rotate(-2deg); }
-.avatar-frame:focus-visible .cat-annotation { opacity: 1; }
-
-@media (hover: hover) and (pointer: fine) {
-  .avatar-frame:hover { z-index: 5; }
-  .avatar-frame:hover .avatar {
-    transform: rotate(-2deg);
-  }
-  .avatar-frame:hover .cat-annotation { opacity: 1; }
-}
+.intro:has(:focus-visible) .avatar { transform: rotate(-2deg); }
+.intro:has(:focus-visible) .cat-annotation { opacity: 1; }
 
 .intro h1 {
   position: relative;
@@ -337,10 +329,19 @@ strong, b { font-weight: var(--weight-strong); }
   letter-spacing: 0;
 }
 
-.intro:has(.avatar-frame:hover) h1 span,
-.intro:has(.avatar-frame:focus-visible) h1 span {
+.intro:has(:focus-visible) h1 span {
   opacity: 1;
   transform: translateY(0) rotate(-3deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .intro:hover .avatar-frame { z-index: 5; }
+  .intro:hover .avatar { transform: rotate(-2deg); }
+  .intro:hover .cat-annotation { opacity: 1; }
+  .intro:hover h1 span {
+    opacity: 1;
+    transform: translateY(0) rotate(-3deg);
+  }
 }
 
 .intro-copy {
