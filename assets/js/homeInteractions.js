@@ -48,8 +48,6 @@
 
   // A stationary link target with a gently attracted glyph inside it.
   icons.forEach((link) => {
-    link.dataset.label = link.getAttribute('title') || link.getAttribute('aria-label');
-    link.removeAttribute('title');
     link.addEventListener('pointermove', (event) => {
       if (!pointerMotion.matches || event.pointerType === 'touch') return;
       const rect = link.getBoundingClientRect();

@@ -1,7 +1,7 @@
 /* ============================================================
    Minimal Hunk-inspired academic site.
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Noto+Serif+SC:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap');
 
 :root {
   --paper: #f4f1ea;
@@ -16,18 +16,13 @@
   --red: #b7493f;
   --radius: 8px;
   --font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
-  --cjk: 'Noto Serif SC', serif;
-  --text-body: 16px;
-  --text-secondary: 14px;
-  --text-meta: 12px;
-  --text-heading: 20px;
-  --weight-regular: 400;
+  /* Complete type roles: components reuse these instead of mixing attributes. */
+  --type-display: 600 28px/36px var(--font);
+  --type-section: 600 20px/28px var(--font);
+  --type-title: 600 16px/24px var(--font);
+  --type-body: 400 16px/24px var(--font);
+  --type-meta: 400 14px/20px var(--font);
   --weight-strong: 600;
-  --leading-text: 24px;
-  --leading-meta: 18px;
-  --leading-heading: 28px;
-  --leading-name: 40px;
   --space-xs: 4px;
   --space-sm: 8px;
   --space-md: 16px;
@@ -46,10 +41,6 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font);
-  font-size: var(--text-body);
-  font-weight: var(--weight-regular);
-  line-height: var(--leading-text);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -62,15 +53,40 @@ a {
 button,
 input { font: inherit; }
 
-button { font-family: var(--font); }
-
 h1,
 h2,
-h3 {
-  font-family: var(--font-mono);
-  font-weight: var(--weight-strong);
+h3,
+h4,
+h5,
+h6 {
   letter-spacing: 0;
 }
+
+/* Typography is assigned here; layout rules below must not redefine it.
+   Inline emphasis keeps its surrounding size and line height. */
+body { font: var(--type-body); }
+h1, .intro h1, .t-pagehead h2 { font: var(--type-display); }
+h2, .section-heading h2, .t-gate h2, .intro h1 span { font: var(--type-section); }
+h3, h4, h5, h6,
+.t-crumb, .timeline h3, .two-column h3,
+.t-exp-role, .t-project-title, .t-album-title, .t-game-title { font: var(--type-title); }
+.intro-copy, .timeline-points, .news-list p, .markdown-body, .t-pub-title { font: var(--type-body); }
+.t-nav, .intro-affiliation, .intro-photo, .cat-annotation span,
+.meta-list dt, .meta-detail, .inline-pointer, .plain-link,
+.cmd-button, .green-button, .t-filter button, .theme-row button,
+.timeline time, .timeline > article > span, .news-list time, .compact-list time,
+.t-pub-venue, .t-pub-year, .task-tags, .task-tag, .t-pub-authors, .t-pub-links,
+#internships .timeline p, .compact-list li,
+.news-archive summary, .publications-archive summary,
+.t-foot, .t-exp-org, .t-exp-date, .t-exp-type, .t-divider,
+.t-project-desc, .t-project-stars, .t-project-tag,
+.t-gate-prompt, .t-gate-msg, .t-gate-hint,
+.t-album-artist, .t-game-studio, .publication-message, small { font: var(--type-meta); }
+strong, b { font-weight: var(--weight-strong); }
+/* Icon glyphs are graphical controls, not a sixth text role. */
+.profile-icon { font-size: 20px; line-height: 1; }
+.publication-message { color: var(--muted); padding: 20px 0; }
+.publication-message.is-error { color: var(--red); }
 
 ::selection {
   background: var(--green);
@@ -113,10 +129,7 @@ h3 {
 }
 
 .t-crumb {
-  font-family: var(--font-mono);
   color: var(--ink);
-  font-size: var(--text-body);
-  font-weight: var(--weight-strong);
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
 }
@@ -129,8 +142,6 @@ h3 {
   align-items: center;
   gap: 22px;
   color: var(--ink);
-  font-size: var(--text-secondary);
-  font-family: var(--font-mono);
 }
 
 .t-nav a { text-decoration: none; }
@@ -140,7 +151,6 @@ h3 {
 /* Intro */
 .intro {
   scroll-margin-top: 64px;
-  font-family: var(--font-mono);
   position: relative;
   isolation: isolate;
   display: grid;
@@ -163,8 +173,6 @@ h3 {
   grid-column: 2;
   grid-row: 1 / 3;
   color: var(--muted);
-  font-size: var(--text-meta);
-  font-family: var(--font);
   text-transform: uppercase;
 }
 
@@ -181,8 +189,6 @@ h3 {
 .intro-affiliation {
   margin: var(--space-sm) 0 0;
   color: var(--muted);
-  font-size: var(--text-secondary);
-  line-height: var(--leading-text);
 }
 
 .intro-affiliation span {
@@ -240,8 +246,6 @@ h3 {
   position: absolute;
   left: 4%;
   top: 85%;
-  font-family: var(--font-mono);
-  font-size: var(--text-meta);
   text-transform: none;
 }
 
@@ -266,11 +270,7 @@ h3 {
   width: fit-content;
   max-width: 100%;
   margin: 0;
-  font-family: var(--font-mono);
   color: var(--ink);
-  font-size: 32px;
-  font-weight: var(--weight-strong);
-  line-height: var(--leading-name);
   letter-spacing: 0;
 }
 
@@ -284,9 +284,6 @@ h3 {
   transition: opacity 180ms ease, transform 180ms ease;
   pointer-events: none;
   color: var(--muted);
-  font-family: var(--cjk);
-  font-size: 0.75em;
-  font-weight: var(--weight-strong);
   letter-spacing: 0;
 }
 
@@ -297,48 +294,9 @@ h3 {
 }
 
 .intro-copy {
-  font-family: var(--font-mono);
   max-width: 68ch;
   margin: 0;
   color: var(--ink);
-  font-size: var(--text-body);
-  line-height: var(--leading-text);
-}
-
-.bio-type-source {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-
-.typing-char {
-  position: relative;
-  visibility: hidden;
-}
-
-.typing-char.is-visible { visibility: visible; }
-
-.intro-copy strong { font-weight: var(--weight-strong); }
-.intro-copy strong.is-pending { font-weight: inherit; }
-
-.typing-char.is-cursor::after {
-  content: '';
-  position: absolute;
-  left: 100%;
-  top: 0.1em;
-  height: 1em;
-  width: 0.45em;
-  background: var(--green);
-  animation: bio-cursor 900ms step-end infinite;
-}
-
-@keyframes bio-cursor {
-  50% { opacity: 0; }
 }
 
 .intro-copy p {
@@ -360,9 +318,6 @@ h3 {
 
 .meta-list dt {
   color: var(--muted);
-  font-size: var(--text-meta);
-  font-weight: var(--weight-strong);
-  font-family: var(--font);
   text-transform: uppercase;
 }
 
@@ -376,9 +331,6 @@ h3 {
   display: inline-block;
   margin-left: 5px;
   color: var(--green);
-  font-family: var(--font);
-  font-size: var(--text-meta);
-  font-weight: var(--weight-regular);
   text-decoration: none;
   white-space: nowrap;
 }
@@ -403,9 +355,6 @@ h3 {
   border-radius: var(--radius);
   box-shadow: 3px 4px 0 var(--line);
   padding: 0 15px;
-  font-size: var(--text-secondary);
-  font-weight: var(--weight-strong);
-  font-family: var(--font);
   text-decoration: none;
   transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
@@ -434,9 +383,6 @@ h3 {
 
 .plain-link {
   color: var(--ink);
-  font-size: var(--text-secondary);
-  font-family: var(--font);
-  font-weight: var(--weight-regular);
   text-decoration: none;
 }
 
@@ -451,8 +397,6 @@ h3 {
   flex: 0 1 36px;
   height: 44px;
   color: var(--muted);
-  font-size: 18px;
-  line-height: 1;
   text-decoration: none;
 }
 
@@ -492,8 +436,6 @@ summary:focus-visible {
 .section-heading h2 {
   margin: 0;
   color: var(--ink);
-  font-size: var(--text-heading);
-  line-height: var(--leading-heading);
   letter-spacing: 0;
 }
 
@@ -507,7 +449,6 @@ summary:focus-visible {
 
 .t-filter button,
 .theme-row button {
-  font-family: var(--font-mono);
   min-height: 30px;
   border: 1.5px solid var(--line);
   border-radius: 6px;
@@ -515,8 +456,6 @@ summary:focus-visible {
   color: var(--ink);
   padding: 0 11px;
   cursor: pointer;
-  font-size: var(--text-meta);
-  font-weight: var(--weight-regular);
 }
 
 .t-filter .active,
@@ -547,9 +486,6 @@ summary:focus-visible {
 .news-list time,
 .compact-list time {
   color: var(--muted);
-  font-family: var(--font);
-  font-size: var(--text-meta);
-  font-weight: var(--weight-regular);
   font-variant-numeric: tabular-nums;
 }
 
@@ -559,30 +495,17 @@ summary:focus-visible {
   border: 1px solid var(--hairline);
   border-radius: 6px;
   background: rgba(255, 253, 248, 0.35);
-  color: var(--muted-2);
+  color: var(--muted);
   padding: 1px 6px;
-  font-family: var(--font);
-  font-size: var(--text-meta);
-  font-weight: var(--weight-regular);
-  line-height: var(--leading-meta);
   white-space: nowrap;
 }
 
 .t-pub-title {
   color: var(--ink);
-  font-family: var(--font);
-  font-size: var(--text-body);
-  font-weight: var(--weight-strong);
-  line-height: var(--leading-text);
 }
 
 .t-pub-title a {
   text-decoration: none;
-}
-
-.t-pub-title a:hover {
-  color: var(--green);
-  text-decoration: underline;
 }
 
 .task-tags {
@@ -595,30 +518,22 @@ summary:focus-visible {
   display: inline-flex;
   align-items: center;
   color: var(--muted);
-  font-family: var(--font);
-  font-size: var(--text-meta);
-  font-weight: var(--weight-regular);
-  line-height: var(--leading-meta);
   white-space: nowrap;
 }
 
 .task-tag + .task-tag::before {
   content: '·';
   margin-right: 10px;
-  color: var(--muted-2);
+  color: var(--muted);
 }
 
 .t-pub-authors {
   margin-top: 0;
   color: var(--muted);
-  font-family: var(--font);
-  font-size: var(--text-secondary);
-  line-height: var(--leading-text);
 }
 
 .t-pub-authors .me {
   color: var(--ink);
-  font-weight: var(--weight-strong);
 }
 
 .t-pub-details {
@@ -637,9 +552,6 @@ summary:focus-visible {
 
 .t-pub-links a {
   color: var(--green);
-  font-family: var(--font);
-  font-size: var(--text-meta);
-  font-weight: var(--weight-regular);
   text-decoration: none;
 }
 
@@ -657,24 +569,19 @@ summary:focus-visible {
 }
 
 #internships .timeline article {
-  grid-template-columns: 144px minmax(0, 1fr);
-}
-
-.timeline-aside {
-  min-width: 0;
-}
-
-.internship-sketch {
-  width: 112px;
-  aspect-ratio: 1;
-  margin: 8px 0 0;
-}
-
-.internship-sketch img {
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+}
+
+.experience-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-xs) var(--space-md);
+}
+
+.experience-heading time {
+  white-space: nowrap;
 }
 
 .timeline h3,
@@ -687,7 +594,6 @@ summary:focus-visible {
 .timeline h3,
 .two-column h3 {
   color: var(--ink);
-  font-size: var(--text-body);
 }
 
 .timeline p,
@@ -695,23 +601,14 @@ summary:focus-visible {
   color: var(--muted);
 }
 
-#internships .timeline p {
-  font-family: var(--font);
-  font-size: var(--text-secondary);
-}
-
 .timeline-points {
   max-width: 66ch;
   margin: var(--space-sm) 0 0;
   padding-left: 1.15rem;
   color: var(--ink);
-  font-size: var(--text-body);
-  line-height: var(--leading-text);
 }
 
 .timeline-points li + li { margin-top: 0; }
-
-.timeline-points strong { font-weight: var(--weight-strong); }
 
 .timeline-points a,
 .text-link {
@@ -720,7 +617,6 @@ summary:focus-visible {
 }
 
 .timeline-points a {
-  font-family: var(--font);
   white-space: nowrap;
 }
 
@@ -748,17 +644,18 @@ summary:focus-visible {
   width: fit-content;
   padding: 8px 0;
   color: var(--green);
-  font-family: var(--font);
-  font-size: var(--text-meta);
   cursor: pointer;
 }
 
 .news-list li {
   padding: 4px 0;
-  grid-template-columns: 96px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: baseline;
-  font-size: var(--text-body);
-  line-height: var(--leading-text);
+}
+
+.news-list time {
+  text-align: right;
+  white-space: nowrap;
 }
 
 .news-list a,
@@ -781,8 +678,6 @@ summary:focus-visible {
   display: grid;
   grid-template-columns: 96px minmax(0, 1fr);
   gap: var(--column-gap);
-  font-size: var(--text-secondary);
-  line-height: var(--leading-text);
 }
 
 /* Footer and legacy pages */
@@ -795,8 +690,6 @@ summary:focus-visible {
   padding-top: 18px;
   border-top: 1px solid var(--hairline);
   color: var(--muted);
-  font-family: var(--font);
-  font-size: var(--text-meta);
   text-transform: uppercase;
 }
 
@@ -832,8 +725,6 @@ summary:focus-visible {
 
 .t-pagehead h2 {
   margin: 0;
-  font-size: clamp(32px, 5vw, 54px);
-  line-height: 1.05;
   letter-spacing: 0;
 }
 
@@ -850,10 +741,10 @@ summary:focus-visible {
   padding: var(--row-space) 0;
 }
 
-.t-exp-role { color: var(--ink); font-weight: var(--weight-strong); }
+.t-exp-role { color: var(--ink); }
 .t-exp-org,
 .t-exp-date,
-.t-exp-type { color: var(--muted); font-size: var(--text-meta); }
+.t-exp-type { color: var(--muted); }
 .t-exp-type { text-align: right; text-transform: uppercase; }
 
 .t-divider {
@@ -861,7 +752,6 @@ summary:focus-visible {
   border-top: 1px solid var(--hairline);
   padding-top: 12px;
   color: var(--muted);
-  font-size: var(--text-meta);
   text-transform: uppercase;
 }
 
@@ -883,11 +773,9 @@ summary:focus-visible {
   color: inherit;
   text-decoration: none;
 }
-
-.t-project-title { font-weight: var(--weight-strong); }
 .t-project-desc,
 .t-project-stars,
-.t-project-tag { color: var(--muted); font-size: var(--text-meta); }
+.t-project-tag { color: var(--muted); }
 .t-project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
 .t-project-tag::before { content: '#'; }
 
@@ -905,11 +793,10 @@ summary:focus-visible {
 .t-gate-prompt {
   margin: 0 0 10px;
   color: var(--green);
-  font-size: var(--text-meta);
   text-transform: uppercase;
 }
 
-.t-gate h2 { margin: 0; font-size: 28px; }
+.t-gate h2 { margin: 0; }
 .t-gate p { color: var(--muted); }
 .t-gate-row { display: flex; gap: 8px; }
 
@@ -931,9 +818,9 @@ summary:focus-visible {
   cursor: pointer;
 }
 
-.t-gate-msg { min-height: 18px; margin-top: 12px; color: var(--red); font-size: var(--text-meta); }
+.t-gate-msg { min-height: 18px; margin-top: 12px; color: var(--red); }
 .t-gate-msg[data-ok="true"] { color: var(--green); }
-.t-gate-hint { margin-top: 12px; color: var(--muted); font-size: var(--text-meta); text-transform: uppercase; }
+.t-gate-hint { margin-top: 12px; color: var(--muted); text-transform: uppercase; }
 .t-hidden { display: none !important; }
 
 .t-gallery-grid {
@@ -982,24 +869,17 @@ summary:focus-visible {
 
 .t-tile-album:hover .t-album-overlay,
 .t-tile-game:hover .t-game-overlay { transform: translateY(0); }
-
-.t-album-title,
-.t-game-title { font-weight: var(--weight-strong); line-height: 1.2; }
 .t-album-artist,
-.t-game-studio { color: rgba(255, 253, 248, 0.72); font-size: var(--text-meta); }
+.t-game-studio { color: rgba(255, 253, 248, 0.72); }
 
 .markdown-body {
   max-width: 760px;
   margin: 24px auto 80px;
   color: var(--ink);
-  font-size: var(--text-body);
-  line-height: 1.7;
 }
 
 .markdown-body a,
 .markdown-body h2 { color: var(--green); }
-.markdown-body pre,
-.markdown-body code { font-family: var(--font); }
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -1051,11 +931,9 @@ summary:focus-visible {
   .intro .avatar-frame { width: var(--intro-photo-size); height: var(--intro-photo-size); }
   .cat-annotation span { left: -8px; }
   .intro-body { grid-column: 1 / -1; }
-  .intro h1 { font-size: 24px; }
   /* The decorative name reveal needs space beside the heading. */
   .intro h1 span { display: none; }
   .intro-copy {
-    font-size: var(--text-body);
     white-space: normal;
   }
 
@@ -1065,12 +943,9 @@ summary:focus-visible {
     gap: var(--space-xs) var(--space-md);
   }
 
-  #internships .timeline article {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .internship-sketch {
-    display: none;
+  .experience-heading {
+    flex-direction: column;
+    gap: 0;
   }
 
   .timeline article > div,
@@ -1083,11 +958,6 @@ summary:focus-visible {
     grid-column: 2;
     grid-row: 1;
     text-align: right;
-  }
-
-  .news-list li {
-    grid-template-columns: 76px minmax(0, 1fr);
-    gap: var(--space-xs) var(--space-md);
   }
 
   .compact-list li {
@@ -1123,24 +993,8 @@ summary:focus-visible {
 }
 
 @media (max-width: 460px) {
-  :root { --leading-name: 32px; }
-  body { font-size: var(--text-body); }
   .cmd-button,
   .green-button { justify-content: center; }
   .t-gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .t-projects { grid-template-columns: 1fr; }
 }
-
-/* Text roles share a fixed vertical rhythm across homepage sections. */
-.t-nav,
-#internships .timeline p,
-.intro-affiliation,
-.t-pub-authors { line-height: var(--leading-text); }
-
-.timeline time,
-.news-list time,
-.inline-pointer,
-.t-pub-links,
-.task-tags,
-.news-archive summary,
-.publications-archive summary { line-height: var(--leading-meta); }

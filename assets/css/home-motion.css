@@ -27,67 +27,6 @@
   pointer-events: none;
 }
 
-.profile-icon[data-label] { position: relative; }
-
-.profile-icon[data-label]::after {
-  content: attr(data-label);
-  position: absolute;
-  top: calc(100% - 4px);
-  left: 50%;
-  font-family: var(--font-mono);
-  font-size: var(--text-meta);
-  font-weight: var(--weight-regular);
-  line-height: var(--leading-meta);
-  color: var(--green);
-  white-space: nowrap;
-  opacity: 0;
-  transform: translate(-50%, -3px);
-  transition: opacity 160ms ease, transform 200ms ease;
-  pointer-events: none;
-}
-
-.profile-icon[data-label]:first-child::after {
-  left: 9px;
-  transform: translateY(-3px);
-}
-
-.profile-icon[data-label]:focus-visible::after {
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
-
-.profile-icon[data-label]:first-child:focus-visible::after {
-  transform: translateY(0);
-}
-
-#publications .t-pub {
-  position: relative;
-  isolation: isolate;
-}
-
-#publications .t-pub::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  inset: 1px -8px;
-  border-radius: 6px;
-  background: linear-gradient(100deg, rgba(25, 107, 48, .055), rgba(255, 253, 248, .7));
-  opacity: 0;
-  transition: opacity 180ms ease;
-  pointer-events: none;
-}
-
-#publications .t-pub:focus-within::before { opacity: 1; }
-
-@media (hover: hover) and (pointer: fine) {
-  .profile-icon[data-label]:hover::after {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-  .profile-icon[data-label]:first-child:hover::after { transform: translateY(0); }
-  #publications .t-pub:hover::before { opacity: 1; }
-}
-
 @media (min-width: 821px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   .intro.has-tilt {
     transform: perspective(1400px) translateY(0) rotateX(0) rotateY(0) scale(1);
@@ -117,7 +56,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .motion-nav::after,
-  .profile-icon[data-label]::after,
-  #publications .t-pub::before { transition: none; }
+  .motion-nav::after { transition: none; }
 }

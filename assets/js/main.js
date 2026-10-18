@@ -146,7 +146,7 @@ async function loadPublications() {
   } catch (err) {
     console.error('Error loading publications:', err);
     container.innerHTML =
-      '<p style="color: var(--t-auburn); font-size: 12px;">// failed to load publications</p>';
+      '<p class="publication-message is-error">// failed to load publications</p>';
   }
 }
 
@@ -213,7 +213,7 @@ function renderPublications(pubs) {
   if (!container) return;
   if (pubs.length === 0) {
     container.innerHTML =
-      '<div style="font-size:12px;color:var(--t-muted);padding:20px 0;">// no entries match this filter</div>';
+      '<div class="publication-message">// no entries match this filter</div>';
     return;
   }
   const visibleCount = 6;
@@ -227,8 +227,9 @@ function renderPublications(pubs) {
 }
 
 function renderRow(pub) {
+  const isHome = document.body.dataset.page === 'home';
   const links = [];
-  if (pub.code) links.push(`<a href="${pub.code}" target="_blank" rel="noopener">code</a>`);
+  if (!isHome && pub.code) links.push(`<a href="${pub.code}" target="_blank" rel="noopener">code</a>`);
   return `
     <div class="t-pub" data-kind="${pub.kind}" data-paper="${escapeHtml(pub.citationKey)}">
       <div>
@@ -240,7 +241,7 @@ function renderRow(pub) {
             <span class="t-pub-venue">${escapeHtml(pub.venue)}</span>
             <span class="t-pub-year">${pub.year || ''}</span>
           </div>
-          ${renderTags(pub.tags)}
+          ${isHome ? '' : renderTags(pub.tags)}
         </div>
       </div>
     </div>`;
