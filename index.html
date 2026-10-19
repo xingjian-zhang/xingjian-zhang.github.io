@@ -25,8 +25,11 @@
         <div class="intro-stage">
         <section class="intro" id="top" aria-labelledby="intro-title">
             <div class="intro-photo">
-                <div class="avatar-frame" tabindex="0" role="group" aria-label="Photo of Xingjian Zhang with his cat Ginger">
-                    <img src="assets/images/profile-photo.jpg" alt="Xingjian Zhang with Ginger, his orange cat" class="avatar">
+                <div class="avatar-frame" tabindex="0" role="group" aria-label="Portrait of Xingjian Zhang with his cat Ginger">
+                    <div class="avatar-visual">
+                        <img src="assets/images/profile-illustration.jpg" alt="Xingjian Zhang with Ginger, his orange cat" class="avatar avatar-illustration" width="769" height="960">
+                        <img src="assets/images/profile-photo.jpg" alt="" aria-hidden="true" class="avatar avatar-photo" width="1059" height="1321">
+                    </div>
                     <div class="cat-annotation" aria-hidden="true">
                         <svg viewBox="0 0 192 240" fill="none">
                             <path d="M 76 214 Q 166 220 132 112 M 127 124 L 132 112 L 142 122" />
@@ -61,7 +64,7 @@
             </div>
             <ul class="news-list">
                 <li><p><time datetime="2026-10">(Oct 2026)</time> Joining MSL as a full-time Research Scientist! <span aria-hidden="true">🎉</span></p></li>
-                <li><p><time datetime="2026-10">(Oct 2026)</time> Completed my research internship at MSL, working on Muse post-training and agent evaluation.</p></li>
+                <li><p><time datetime="2026-10">(Oct 2026)</time> Completed my research internship at MSL, working on <a class="entity-link" href="https://ai.meta.com/muse/" target="_blank" rel="noopener"><span class="entity-start"><i class="entity-icon entity-icon-muse" aria-hidden="true"></i>&nbsp;Muse</span></a> post-training and agent evaluation.</p></li>
                 <li><p><time datetime="2026-09">(Sep 2026)</time> FlyAOC accepted to NeurIPS 2026.</p></li>
                 <li><p><time datetime="2026-05">(May 2026)</time> Joined MSL as a Research Intern.</p></li>
             </ul>
@@ -87,11 +90,11 @@
                 <article>
                     <div>
                         <h3>Meta Superintelligence Labs</h3>
-                        <p>Muse Product Post Training</p>
+                        <p><a class="entity-link" href="https://ai.meta.com/muse/" target="_blank" rel="noopener"><span class="entity-start"><i class="entity-icon entity-icon-muse" aria-hidden="true"></i>&nbsp;Muse</span></a> Product Post Training</p>
                         <time>May 2026 — Oct 2026</time>
                         <ul class="timeline-points">
-                            <li>Built personal productivity agent benchmarks grounded in real-world user tasks to evaluate the capabilities and reliability of the Muse model family (Spark &amp; Wonder).</li>
-                            <li>Synthesized high-quality SFT data and RL environments at scale to improve core agentic capabilities, contributing to Muse from early-stage dogfooding through product launch.</li>
+                            <li>Built personal productivity agent benchmarks grounded in real-world user tasks to evaluate the capabilities and reliability of the Muse model family (<a class="entity-link" href="https://ai.meta.com/blog/introducing-muse-spark-1-msl/" target="_blank" rel="noopener"><span class="entity-start"><i class="entity-icon entity-icon-meta" aria-hidden="true"></i>&nbsp;Spark</span></a> &amp; <a class="entity-link" href="https://research.meta.ai/blog/muse-wonder" target="_blank" rel="noopener"><span class="entity-start"><i class="entity-icon entity-icon-meta" aria-hidden="true"></i>&nbsp;Wonder</span></a>).</li>
+                            <li>Synthesized high-quality SFT data and RL environments at scale to improve core agentic capabilities, contributing to <a class="entity-link" href="https://ai.meta.com/muse/" target="_blank" rel="noopener"><span class="entity-start"><i class="entity-icon entity-icon-muse" aria-hidden="true"></i>&nbsp;Muse</span></a> from early-stage dogfooding through product launch.</li>
                         </ul>
                     </div>
                 </article>
@@ -102,7 +105,7 @@
                         <time>May 2025 — Aug 2025</time>
                         <ul class="timeline-points">
                             <li>Curated a benchmark linking YouTube Shorts to real-world events to evaluate video grounding through web search.</li>
-                            <li>Contributed agentic RL and multimodal-input support to <a href="https://github.com/google-deepmind/simply" target="_blank" rel="noopener">simply ↗</a>, a minimal JAX codebase used broadly within DeepMind with 500+ GitHub stars.</li>
+                            <li>Contributed agentic RL and multimodal-input support to <a class="entity-link" href="https://github.com/google-deepmind/simply" target="_blank" rel="noopener"><span class="entity-start"><i class="entity-icon bi bi-github" aria-hidden="true"></i>&nbsp;simply</span></a>, a minimal JAX codebase used broadly within DeepMind with 500+ GitHub stars.</li>
                         </ul>
                     </div>
                 </article>
@@ -113,7 +116,7 @@
                         <time>May 2023 — Aug 2023</time>
                         <ul class="timeline-points">
                             <li>Proposed GPU/TPU-friendly adaptive Transformer layer skipping based on input-sequence complexity.</li>
-                            <li>Matched full-compute performance on language and sequential user modeling at 60% compute; integrated the method into TensorFlow Recommenders.</li>
+                            <li>Matched full-compute performance on language and sequential user modeling at 60% compute; integrated the method into <a class="entity-link" href="https://www.tensorflow.org/recommenders" target="_blank" rel="noopener"><span class="entity-start"><svg class="entity-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M1.292 5.856L11.54 0v24l-4.095-2.378V7.603l-6.168 3.564.015-5.31zm21.43 5.311l-.014-5.31L12.46 0v24l4.095-2.378V14.87l3.092 1.788-.018-4.618-3.074-1.756V7.603l6.168 3.564z"/></svg>&nbsp;TensorFlow</span> Recommenders</a>.</li>
                         </ul>
                     </div>
                 </article>
