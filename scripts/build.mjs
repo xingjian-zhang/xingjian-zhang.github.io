@@ -3,7 +3,7 @@ import { resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { publicationEntries, publicationHtml } from './lib/publications.mjs';
 
-export async function build({ source = '.', destination = '_site', stage = '.build/source', components = true, publications = true, fonts = false } = {}) {
+export async function build({ source = '.', destination = '_site', stage = '.build/source', components = true, publications = true, fonts = true } = {}) {
   await rm(stage, { recursive: true, force: true });
   await mkdir(stage, { recursive: true });
   for (const path of ['index.html', 'pages', 'assets', 'components', '_layouts', 'ai-coding-setup.md', 'apple-touch-icon.png', 'CNAME', 'robots.txt', 'sitemap.xml']) {
@@ -23,6 +23,7 @@ export async function build({ source = '.', destination = '_site', stage = '.bui
         ? html.replace('assets/js/main.js', 'assets/js/publications.js')
         : html.replace(/^.*<script src="[^"]*main\.js"><\/script>\n/gm, '');
     }
+    if (components && /id="(?:header|topnav|footer)-placeholder"/.test(html)) throw new Error(`Unresolved component in ${path}`);
     if (fonts) html = html.replace('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css', '/assets/css/icons.css');
     await writeFile(`${stage}/${path}`, html);
   }
@@ -36,7 +37,9 @@ export async function build({ source = '.', destination = '_site', stage = '.bui
     await cp('assets/css/icons.css', `${stage}/assets/css/icons.css`);
     const styles = await readFile(`${source}/assets/css/styles.css`, 'utf8');
     const fontCss = await readFile('assets/css/source-sans.css', 'utf8');
-    await writeFile(`${stage}/assets/css/styles.css`, styles.replace(/@import url\([^;]+;/, fontCss));
+    const combined = styles.replace(/@import url\([^)]*\);/, () => fontCss);
+    if (!combined.includes('\n:root {') || combined.includes('@import') || combined.includes("600&display=swap');")) throw new Error('Invalid font CSS composition');
+    await writeFile(`${stage}/assets/css/styles.css`, combined);
   }
   const result = spawnSync('bundle', ['exec', 'jekyll', 'build', '--source', resolve(stage), '--destination', resolve(destination)], { stdio: 'inherit' });
   if (result.status !== 0) throw new Error(`Jekyll build failed: ${result.status}`, { cause: result.error });

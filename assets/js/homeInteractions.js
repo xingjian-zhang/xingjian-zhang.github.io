@@ -159,6 +159,5 @@
     update();
   }
 
-  document.addEventListener('components:loaded', initNavigation, { once: true });
   initNavigation();
 })();

@@ -1,0 +1,35 @@
+/*!
+ * Bootstrap Icons v1.11.3 (https://icons.getbootstrap.com/)
+ * Copyright 2019-2024 The Bootstrap Authors
+ * Licensed under MIT (https://github.com/twbs/icons/blob/main/LICENSE)
+ */
+
+@font-face {
+  font-display: block;
+  font-family: "bootstrap-icons";
+  src: url("../fonts/bootstrap-icons.woff2") format("woff2");
+}
+
+.bi::before,
+[class^="bi-"]::before,
+[class*=" bi-"]::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bi-box-arrow-up-right::before { content: "\f1c5"; }
+.bi-envelope-fill::before { content: "\f32c"; }
+.bi-file-earmark-person-fill::before { content: "\f378"; }
+.bi-file-earmark-text-fill::before { content: "\f38a"; }
+.bi-github::before { content: "\f3ed"; }
+.bi-linkedin::before { content: "\f472"; }
+.bi-mortarboard-fill::before { content: "\f6fd"; }
+.bi-twitter-x::before { content: "\f8db"; }

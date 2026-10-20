@@ -38,7 +38,6 @@
     if (preference === 'system') changeTheme();
   });
   document.addEventListener('DOMContentLoaded', apply, { once: true });
-  document.addEventListener('components:loaded', apply);
   window.addEventListener('storage', (event) => {
     if (event.key !== key && event.key !== null) return;
     preference = valid(event.newValue);
