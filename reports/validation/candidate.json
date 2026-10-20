@@ -1,0 +1,1487 @@
+{
+  "source": "output/linux/candidate-final.json",
+  "stats": {
+    "startTime": "2026-10-20T15:42:24.330Z",
+    "duration": 610604.157,
+    "expected": 132,
+    "skipped": 0,
+    "unexpected": 14,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "title": "contracts.spec.mjs > content and links /",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "contracts.spec.mjs > content and links /pages/research.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "contracts.spec.mjs > content and links /pages/experience.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "contracts.spec.mjs > content and links /pages/projects.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "contracts.spec.mjs > content and links /pages/misc.html",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "contracts.spec.mjs > content and links /ai-coding-setup/",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "contracts.spec.mjs > content and links /",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "contracts.spec.mjs > content and links /pages/research.html",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "contracts.spec.mjs > content and links /pages/experience.html",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "contracts.spec.mjs > content and links /pages/projects.html",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "contracts.spec.mjs > content and links /pages/misc.html",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "contracts.spec.mjs > content and links /ai-coding-setup/",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > home states light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > research filters light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > misc gate light",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "error": "AssertionError: gate-42: {\"pixels\":285}\n\n285 !== 0\n"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > home states dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > research filters dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > misc gate dark",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "error": "AssertionError: gate-42: {\"pixels\":242}\n\n242 !== 0\n"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > reduced motion and default system theme",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion bio light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion profile light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion entity light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion navigation light",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "error": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  -  0\n+ Received  + 26\n\n@@ -11,7 +11,33 @@\n          \"fill\": \"backwards\",\n          \"iterationStart\": 0,\n          \"iterations\": 1,\n        },\n      },\n+     Object {\n+       \"property\": \"transform\",\n+       \"timing\": Object {\n+         \"delay\": 0,\n+         \"direction\": \"normal\",\n+         \"duration\": 320,\n+         \"easing\": \"cubic-bezier(0.22, 1, 0.36, 1)\",\n+         \"endDelay\": 0,\n+         \"fill\": \"backwards\",\n+         \"iterationStart\": 0,\n+         \"iterations\": 1,\n+       },\n+     },\n+     Object {\n+       \"property\": \"width\",\n+       \"timing\": Object {\n+         \"delay\": 0,\n+         \"direction\": \"normal\",\n+         \"duration\": 320,\n+         \"easing\": \"cubic-bezier(0.22, 1, 0.36, 1)\",\n+         \"endDelay\": 0,\n+         \"fill\": \"backwards\",\n+         \"iterationStart\": 0,\n+         \"iterations\": 1,\n+       },\n+     },\n    ],\n  ]"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion news-open light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion news-close light",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "error": "AssertionError: news-close-0: {\"pixels\":2}\n\n2 !== 0\n"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion theme light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion bio dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion profile dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion entity dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion navigation dark",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "error": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  -  0\n+ Received  + 26\n\n@@ -11,7 +11,33 @@\n          \"fill\": \"backwards\",\n          \"iterationStart\": 0,\n          \"iterations\": 1,\n        },\n      },\n+     Object {\n+       \"property\": \"transform\",\n+       \"timing\": Object {\n+         \"delay\": 0,\n+         \"direction\": \"normal\",\n+         \"duration\": 320,\n+         \"easing\": \"cubic-bezier(0.22, 1, 0.36, 1)\",\n+         \"endDelay\": 0,\n+         \"fill\": \"backwards\",\n+         \"iterationStart\": 0,\n+         \"iterations\": 1,\n+       },\n+     },\n+     Object {\n+       \"property\": \"width\",\n+       \"timing\": Object {\n+         \"delay\": 0,\n+         \"direction\": \"normal\",\n+         \"duration\": 320,\n+         \"easing\": \"cubic-bezier(0.22, 1, 0.36, 1)\",\n+         \"endDelay\": 0,\n+         \"fill\": \"backwards\",\n+         \"iterationStart\": 0,\n+         \"iterations\": 1,\n+       },\n+     },\n    ],\n  ]"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion news-open dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion news-close dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion theme dark",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "error": "AssertionError: theme-0.75: {\"pixels\":1}\n\n1 !== 0\n"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > home states light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > research filters light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > misc gate light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > home states dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > research filters dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > misc gate dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > reduced motion and default system theme",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion bio light",
+      "project": "webkit",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "error": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 41\n+ Received  +  1\n\n  Array [\n-   Array [\n-     Object {\n-       \"property\": \"box-shadow\",\n-       \"timing\": Object {\n-         \"delay\": 0,\n-         \"direction\": \"normal\",\n-         \"duration\": 400,\n-         \"easing\": \"ease\",\n-         \"endDelay\": 0,\n-         \"fill\": \"backwards\",\n-         \"iterationStart\": 0,\n-         \"iterations\": 1,\n-       },\n-     },\n-     Object {\n-       \"property\": \"transform\",\n-       \"timing\": Object {\n-         \"delay\": 0,\n-         \"direction\": \"normal\",\n-         \"duration\": 280,\n-         \"easing\": \"cubic-bezier(0.2, 0.75, 0.25, 1)\",\n-         \"endDelay\": 0,\n-         \"fill\": \"backwards\",\n-         \"iterationStart\": 0,\n-         \"iterations\": 1,\n-       },\n-     },\n-     Object {\n-       \"property\": \"opacity\",\n-       \"timing\": Object {\n-         \"delay\": 0,\n-         \"direction\": \"normal\",\n-         \"duration\": 280,\n-         \"easing\": \"ease\",\n-         \"endDelay\": 0,\n-       "
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion profile light",
+      "project": "webkit",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "error": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 41\n+ Received  +  1\n\n  Array [\n-   Array [\n-     Object {\n-       \"property\": \"box-shadow\",\n-       \"timing\": Object {\n-         \"delay\": 0,\n-         \"direction\": \"normal\",\n-         \"duration\": 400,\n-         \"easing\": \"ease\",\n-         \"endDelay\": 0,\n-         \"fill\": \"backwards\",\n-         \"iterationStart\": 0,\n-         \"iterations\": 1,\n-       },\n-     },\n-     Object {\n-       \"property\": \"transform\",\n-       \"timing\": Object {\n-         \"delay\": 0,\n-         \"direction\": \"normal\",\n-         \"duration\": 280,\n-         \"easing\": \"cubic-bezier(0.2, 0.75, 0.25, 1)\",\n-         \"endDelay\": 0,\n-         \"fill\": \"backwards\",\n-         \"iterationStart\": 0,\n-         \"iterations\": 1,\n-       },\n-     },\n-     Object {\n-       \"property\": \"opacity\",\n-       \"timing\": Object {\n-         \"delay\": 0,\n-         \"direction\": \"normal\",\n-         \"duration\": 280,\n-         \"easing\": \"ease\",\n-         \"endDelay\": 0,\n-       "
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion entity light",
+      "project": "webkit",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "error": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 67\n+ Received  +  1\n\n  Array [\n-   Array [\n-     Object {\n-       \"property\": \"color\",\n-       \"timing\": Object {\n-         \"delay\": 0,\n-         \"direction\": \"normal\",\n-         \"duration\": 180,\n-         \"easing\": \"ease\",\n-         \"endDelay\": 0,\n-         \"fill\": \"backwards\",\n-         \"iterationStart\": 0,\n-         \"iterations\": 1,\n-       },\n-     },\n-     Object {\n-       \"property\": \"text-decoration-color\",\n-       \"timing\": Object {\n-         \"delay\": 0,\n-         \"direction\": \"normal\",\n-         \"duration\": 180,\n-         \"easing\": \"ease\",\n-         \"endDelay\": 0,\n-         \"fill\": \"backwards\",\n-         \"iterationStart\": 0,\n-         \"iterations\": 1,\n-       },\n-     },\n-     Object {\n-       \"property\": \"transform\",\n-       \"timing\": Object {\n-         \"delay\": 0,\n-         \"direction\": \"normal\",\n-         \"duration\": 180,\n-         \"easing\": \"ease\",\n-         \"endDelay\": 0,\n-         \"fill\": \"backward"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion navigation light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion news-open light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion news-close light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion theme light",
+      "project": "webkit",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "error": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  -  0\n+ Received  + 13\n\n@@ -37,7 +37,20 @@\n          \"fill\": \"backwards\",\n          \"iterationStart\": 0,\n          \"iterations\": 1,\n        },\n      },\n+     Object {\n+       \"property\": \"theme-fade-in\",\n+       \"timing\": Object {\n+         \"delay\": 0,\n+         \"direction\": \"normal\",\n+         \"duration\": 300,\n+         \"easing\": \"linear\",\n+         \"endDelay\": 0,\n+         \"fill\": \"both\",\n+         \"iterationStart\": 0,\n+         \"iterations\": 1,\n+       },\n+     },\n    ],\n  ]"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion bio dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion profile dark",
+      "project": "webkit",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "error": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 65\n+ Received  +  0\n\n@@ -1,21 +1,8 @@\n  Array [\n    Array [\n      Object {\n-       \"property\": \"transform\",\n-       \"timing\": Object {\n-         \"delay\": 0,\n-         \"direction\": \"normal\",\n-         \"duration\": 180,\n-         \"easing\": \"cubic-bezier(0.22, 1, 0.36, 1)\",\n-         \"endDelay\": 0,\n-         \"fill\": \"backwards\",\n-         \"iterationStart\": 0,\n-         \"iterations\": 1,\n-       },\n-     },\n-     Object {\n        \"property\": \"box-shadow\",\n        \"timing\": Object {\n          \"delay\": 0,\n          \"direction\": \"normal\",\n          \"duration\": 400,\n@@ -43,62 +30,10 @@\n        \"property\": \"opacity\",\n        \"timing\": Object {\n          \"delay\": 0,\n          \"direction\": \"normal\",\n          \"duration\": 280,\n-         \"easing\": \"ease\",\n-         \"endDelay\": 0,\n-         \"fill\": \"backwards\",\n-         \"iterationStart\": 0,\n-         \"iterations\": 1,\n-       },\n-     },\n-     Object {\n-       \"property\": \"opaci"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion entity dark",
+      "project": "webkit",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "error": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 26\n+ Received  +  0\n\n@@ -37,33 +37,7 @@\n          \"fill\": \"backwards\",\n          \"iterationStart\": 0,\n          \"iterations\": 1,\n        },\n      },\n-     Object {\n-       \"property\": \"text-decoration-color\",\n-       \"timing\": Object {\n-         \"delay\": 0,\n-         \"direction\": \"normal\",\n-         \"duration\": 180,\n-         \"easing\": \"ease\",\n-         \"endDelay\": 0,\n-         \"fill\": \"backwards\",\n-         \"iterationStart\": 0,\n-         \"iterations\": 1,\n-       },\n-     },\n-     Object {\n-       \"property\": \"transform\",\n-       \"timing\": Object {\n-         \"delay\": 0,\n-         \"direction\": \"normal\",\n-         \"duration\": 180,\n-         \"easing\": \"ease\",\n-         \"endDelay\": 0,\n-         \"fill\": \"backwards\",\n-         \"iterationStart\": 0,\n-         \"iterations\": 1,\n-       },\n-     },\n    ],\n  ]"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion navigation dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion news-open dark",
+      "project": "webkit",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "error": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  -  1\n+ Received  + 15\n\n  Array [\n-   Array [],\n+   Array [\n+     Object {\n+       \"property\": \"height\",\n+       \"timing\": Object {\n+         \"delay\": 0,\n+         \"direction\": \"normal\",\n+         \"duration\": 220,\n+         \"easing\": \"cubic-bezier(0.22, 1, 0.36, 1)\",\n+         \"endDelay\": 0,\n+         \"fill\": \"auto\",\n+         \"iterationStart\": 0,\n+         \"iterations\": 1,\n+       },\n+     },\n+   ],\n  ]"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion news-close dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion theme dark",
+      "project": "webkit",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "error": "Error: expect(received).toEqual(expected) // deep equality\n\n- Expected  - 4\n+ Received  + 4\n\n@@ -38,18 +38,18 @@\n          \"iterationStart\": 0,\n          \"iterations\": 1,\n        },\n      },\n      Object {\n-       \"property\": \"transform\",\n+       \"property\": \"theme-fade-in\",\n        \"timing\": Object {\n          \"delay\": 0,\n          \"direction\": \"normal\",\n-         \"duration\": 400,\n-         \"easing\": \"ease\",\n+         \"duration\": 300,\n+         \"easing\": \"linear\",\n          \"endDelay\": 0,\n-         \"fill\": \"backwards\",\n+         \"fill\": \"both\",\n          \"iterationStart\": 0,\n          \"iterations\": 1,\n        },\n      },\n    ],"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 390 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 390 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 607 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 607 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 1440 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 1440 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 390 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 390 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 607 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 607 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 1440 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 1440 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 390 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 390 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 607 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 607 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 1440 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 1440 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 390 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 390 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 607 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 607 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 1440 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 1440 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 390 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 390 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 607 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 607 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 1440 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 1440 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 390 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 390 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 607 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 607 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 1440 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 1440 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 375 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 375 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 460 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 460 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 461 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 461 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 820 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 820 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 821 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 821 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 390 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 390 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 607 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 607 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 1440 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 1440 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 390 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 390 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 607 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 607 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 1440 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 1440 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 390 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 390 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 607 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 607 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 1440 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 1440 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 390 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 390 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 607 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 607 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 1440 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 1440 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 390 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 390 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 607 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 607 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 1440 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 1440 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 390 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 390 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 607 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 607 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 1440 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 1440 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 375 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 375 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 460 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 460 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 461 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 461 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 820 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 820 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 821 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 821 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    }
+  ]
+}

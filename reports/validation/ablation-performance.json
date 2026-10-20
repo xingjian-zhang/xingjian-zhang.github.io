@@ -1,0 +1,559 @@
+{
+  "baseline": "78a774c0b354d0f9039057db1f04e0b366d69e3f",
+  "environment": {
+    "node": "v24.11.1",
+    "browser": "143.0.7499.4",
+    "platform": "linux",
+    "arch": "arm64",
+    "cpuThrottle": 4,
+    "latencyMs": 150,
+    "downloadBytesPerSecond": 200000,
+    "uploadBytesPerSecond": 93750,
+    "rounds": 7,
+    "cache": "new context, cache disabled, no-store responses per run",
+    "analytics": "local empty response excluded from counts",
+    "delivery": "real HTTP/gzip mirror with CDP throttling; exact font bytes; external font URLs mirrored to the same controlled origin; excludes live CDN, DNS and TLS variability",
+    "transferMetric": "Network.loadingFinished.encodedDataLength including response headers"
+  },
+  "summary": {
+    "reference": {
+      "requests": {
+        "median": 18,
+        "min": 18,
+        "max": 18,
+        "mad": 0
+      },
+      "transferred": {
+        "median": 653230,
+        "min": 653230,
+        "max": 653230,
+        "mad": 0
+      },
+      "jsBytes": {
+        "median": 25821,
+        "min": 25821,
+        "max": 25821,
+        "mad": 0
+      },
+      "runtimeDataRequests": {
+        "median": 3,
+        "min": 3,
+        "max": 3,
+        "mad": 0
+      },
+      "fcp": {
+        "median": 924,
+        "min": 896,
+        "max": 948,
+        "mad": 16
+      },
+      "lcp": {
+        "median": 924,
+        "min": 896,
+        "max": 948,
+        "mad": 16
+      },
+      "cls": {
+        "median": 0.1654994462217367,
+        "min": 0.1654994462217367,
+        "max": 0.1654994462217367,
+        "mad": 0
+      },
+      "scriptMs": {
+        "median": 19.560000000000002,
+        "min": 9.431000000000001,
+        "max": 23.57,
+        "mad": 3.488999999999997
+      }
+    },
+    "components": {
+      "requests": {
+        "median": 15,
+        "min": 15,
+        "max": 15,
+        "mad": 0
+      },
+      "transferred": {
+        "median": 651559,
+        "min": 651559,
+        "max": 651559,
+        "mad": 0
+      },
+      "jsBytes": {
+        "median": 23901,
+        "min": 23901,
+        "max": 23901,
+        "mad": 0
+      },
+      "runtimeDataRequests": {
+        "median": 1,
+        "min": 1,
+        "max": 1,
+        "mad": 0
+      },
+      "fcp": {
+        "median": 952,
+        "min": 932,
+        "max": 1020,
+        "mad": 20
+      },
+      "lcp": {
+        "median": 952,
+        "min": 932,
+        "max": 1020,
+        "mad": 20
+      },
+      "cls": {
+        "median": 0.1444233607729921,
+        "min": 0.1444233607729921,
+        "max": 0.1444233607729921,
+        "mad": 0
+      },
+      "scriptMs": {
+        "median": 21.718999999999998,
+        "min": 14.109,
+        "max": 33.079,
+        "mad": 4.6229999999999976
+      }
+    },
+    "publications": {
+      "requests": {
+        "median": 13,
+        "min": 13,
+        "max": 13,
+        "mad": 0
+      },
+      "transferred": {
+        "median": 646073,
+        "min": 646073,
+        "max": 646073,
+        "mad": 0
+      },
+      "jsBytes": {
+        "median": 8917,
+        "min": 8917,
+        "max": 8917,
+        "mad": 0
+      },
+      "runtimeDataRequests": {
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "mad": 0
+      },
+      "fcp": {
+        "median": 876,
+        "min": 816,
+        "max": 1136,
+        "mad": 44
+      },
+      "lcp": {
+        "median": 876,
+        "min": 816,
+        "max": 1136,
+        "mad": 44
+      },
+      "cls": {
+        "median": 0.1444233607729921,
+        "min": 0.1444233607729921,
+        "max": 0.1444233607729921,
+        "mad": 0
+      },
+      "scriptMs": {
+        "median": 19.931,
+        "min": 9.777,
+        "max": 26.07,
+        "mad": 5.976000000000001
+      }
+    },
+    "candidate": {
+      "requests": {
+        "median": 12,
+        "min": 12,
+        "max": 12,
+        "mad": 0
+      },
+      "transferred": {
+        "median": 632122,
+        "min": 632122,
+        "max": 632122,
+        "mad": 0
+      },
+      "jsBytes": {
+        "median": 8835,
+        "min": 8835,
+        "max": 8835,
+        "mad": 0
+      },
+      "runtimeDataRequests": {
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "mad": 0
+      },
+      "fcp": {
+        "median": 708,
+        "min": 624,
+        "max": 720,
+        "mad": 12
+      },
+      "lcp": {
+        "median": 708,
+        "min": 624,
+        "max": 720,
+        "mad": 12
+      },
+      "cls": {
+        "median": 0.1444233607729921,
+        "min": 0.1444233607729921,
+        "max": 0.1444233607729921,
+        "mad": 0
+      },
+      "scriptMs": {
+        "median": 21.19,
+        "min": 12.024999999999999,
+        "max": 23.147000000000002,
+        "mad": 1.9570000000000007
+      }
+    }
+  },
+  "regressions": [],
+  "samples": [
+    {
+      "round": 1,
+      "variant": "reference",
+      "requests": 18,
+      "transferred": 653230,
+      "jsBytes": 25821,
+      "runtimeDataRequests": 3,
+      "fcp": 948,
+      "lcp": 948,
+      "cls": 0.1654994462217367,
+      "scriptMs": 19.560000000000002
+    },
+    {
+      "round": 1,
+      "variant": "components",
+      "requests": 15,
+      "transferred": 651559,
+      "jsBytes": 23901,
+      "runtimeDataRequests": 1,
+      "fcp": 972,
+      "lcp": 972,
+      "cls": 0.1444233607729921,
+      "scriptMs": 14.109
+    },
+    {
+      "round": 1,
+      "variant": "publications",
+      "requests": 13,
+      "transferred": 646073,
+      "jsBytes": 8917,
+      "runtimeDataRequests": 0,
+      "fcp": 856,
+      "lcp": 856,
+      "cls": 0.1444233607729921,
+      "scriptMs": 13.955
+    },
+    {
+      "round": 1,
+      "variant": "candidate",
+      "requests": 12,
+      "transferred": 632122,
+      "jsBytes": 8835,
+      "runtimeDataRequests": 0,
+      "fcp": 720,
+      "lcp": 720,
+      "cls": 0.1444233607729921,
+      "scriptMs": 17.191000000000003
+    },
+    {
+      "round": 2,
+      "variant": "candidate",
+      "requests": 12,
+      "transferred": 632122,
+      "jsBytes": 8835,
+      "runtimeDataRequests": 0,
+      "fcp": 624,
+      "lcp": 624,
+      "cls": 0.1444233607729921,
+      "scriptMs": 12.024999999999999
+    },
+    {
+      "round": 2,
+      "variant": "publications",
+      "requests": 13,
+      "transferred": 646073,
+      "jsBytes": 8917,
+      "runtimeDataRequests": 0,
+      "fcp": 832,
+      "lcp": 832,
+      "cls": 0.1444233607729921,
+      "scriptMs": 9.777
+    },
+    {
+      "round": 2,
+      "variant": "components",
+      "requests": 15,
+      "transferred": 651559,
+      "jsBytes": 23901,
+      "runtimeDataRequests": 1,
+      "fcp": 932,
+      "lcp": 932,
+      "cls": 0.1444233607729921,
+      "scriptMs": 29.528
+    },
+    {
+      "round": 2,
+      "variant": "reference",
+      "requests": 18,
+      "transferred": 653230,
+      "jsBytes": 25821,
+      "runtimeDataRequests": 3,
+      "fcp": 924,
+      "lcp": 924,
+      "cls": 0.1654994462217367,
+      "scriptMs": 23.049
+    },
+    {
+      "round": 3,
+      "variant": "reference",
+      "requests": 18,
+      "transferred": 653230,
+      "jsBytes": 25821,
+      "runtimeDataRequests": 3,
+      "fcp": 932,
+      "lcp": 932,
+      "cls": 0.1654994462217367,
+      "scriptMs": 23.57
+    },
+    {
+      "round": 3,
+      "variant": "components",
+      "requests": 15,
+      "transferred": 651559,
+      "jsBytes": 23901,
+      "runtimeDataRequests": 1,
+      "fcp": 1004,
+      "lcp": 1004,
+      "cls": 0.1444233607729921,
+      "scriptMs": 21.718999999999998
+    },
+    {
+      "round": 3,
+      "variant": "publications",
+      "requests": 13,
+      "transferred": 646073,
+      "jsBytes": 8917,
+      "runtimeDataRequests": 0,
+      "fcp": 1136,
+      "lcp": 1136,
+      "cls": 0.1444233607729921,
+      "scriptMs": 22.105
+    },
+    {
+      "round": 3,
+      "variant": "candidate",
+      "requests": 12,
+      "transferred": 632122,
+      "jsBytes": 8835,
+      "runtimeDataRequests": 0,
+      "fcp": 688,
+      "lcp": 688,
+      "cls": 0.1444233607729921,
+      "scriptMs": 21.416999999999998
+    },
+    {
+      "round": 4,
+      "variant": "candidate",
+      "requests": 12,
+      "transferred": 632122,
+      "jsBytes": 8835,
+      "runtimeDataRequests": 0,
+      "fcp": 712,
+      "lcp": 712,
+      "cls": 0.1444233607729921,
+      "scriptMs": 23.147000000000002
+    },
+    {
+      "round": 4,
+      "variant": "publications",
+      "requests": 13,
+      "transferred": 646073,
+      "jsBytes": 8917,
+      "runtimeDataRequests": 0,
+      "fcp": 964,
+      "lcp": 964,
+      "cls": 0.1444233607729921,
+      "scriptMs": 26.07
+    },
+    {
+      "round": 4,
+      "variant": "components",
+      "requests": 15,
+      "transferred": 651559,
+      "jsBytes": 23901,
+      "runtimeDataRequests": 1,
+      "fcp": 1020,
+      "lcp": 1020,
+      "cls": 0.1444233607729921,
+      "scriptMs": 33.079
+    },
+    {
+      "round": 4,
+      "variant": "reference",
+      "requests": 18,
+      "transferred": 653230,
+      "jsBytes": 25821,
+      "runtimeDataRequests": 3,
+      "fcp": 908,
+      "lcp": 908,
+      "cls": 0.1654994462217367,
+      "scriptMs": 12.766
+    },
+    {
+      "round": 5,
+      "variant": "reference",
+      "requests": 18,
+      "transferred": 653230,
+      "jsBytes": 25821,
+      "runtimeDataRequests": 3,
+      "fcp": 936,
+      "lcp": 936,
+      "cls": 0.1654994462217367,
+      "scriptMs": 18.669999999999998
+    },
+    {
+      "round": 5,
+      "variant": "components",
+      "requests": 15,
+      "transferred": 651559,
+      "jsBytes": 23901,
+      "runtimeDataRequests": 1,
+      "fcp": 952,
+      "lcp": 952,
+      "cls": 0.1444233607729921,
+      "scriptMs": 23.172
+    },
+    {
+      "round": 5,
+      "variant": "publications",
+      "requests": 13,
+      "transferred": 646073,
+      "jsBytes": 8917,
+      "runtimeDataRequests": 0,
+      "fcp": 876,
+      "lcp": 876,
+      "cls": 0.1444233607729921,
+      "scriptMs": 22.993
+    },
+    {
+      "round": 5,
+      "variant": "candidate",
+      "requests": 12,
+      "transferred": 632122,
+      "jsBytes": 8835,
+      "runtimeDataRequests": 0,
+      "fcp": 676,
+      "lcp": 676,
+      "cls": 0.1444233607729921,
+      "scriptMs": 14.158999999999999
+    },
+    {
+      "round": 6,
+      "variant": "candidate",
+      "requests": 12,
+      "transferred": 632122,
+      "jsBytes": 8835,
+      "runtimeDataRequests": 0,
+      "fcp": 712,
+      "lcp": 712,
+      "cls": 0.1444233607729921,
+      "scriptMs": 21.558
+    },
+    {
+      "round": 6,
+      "variant": "publications",
+      "requests": 13,
+      "transferred": 646073,
+      "jsBytes": 8917,
+      "runtimeDataRequests": 0,
+      "fcp": 816,
+      "lcp": 816,
+      "cls": 0.1444233607729921,
+      "scriptMs": 10.364
+    },
+    {
+      "round": 6,
+      "variant": "components",
+      "requests": 15,
+      "transferred": 651559,
+      "jsBytes": 23901,
+      "runtimeDataRequests": 1,
+      "fcp": 952,
+      "lcp": 952,
+      "cls": 0.1444233607729921,
+      "scriptMs": 19.116999999999997
+    },
+    {
+      "round": 6,
+      "variant": "reference",
+      "requests": 18,
+      "transferred": 653230,
+      "jsBytes": 25821,
+      "runtimeDataRequests": 3,
+      "fcp": 896,
+      "lcp": 896,
+      "cls": 0.1654994462217367,
+      "scriptMs": 9.431000000000001
+    },
+    {
+      "round": 7,
+      "variant": "reference",
+      "requests": 18,
+      "transferred": 653230,
+      "jsBytes": 25821,
+      "runtimeDataRequests": 3,
+      "fcp": 908,
+      "lcp": 908,
+      "cls": 0.1654994462217367,
+      "scriptMs": 19.581
+    },
+    {
+      "round": 7,
+      "variant": "components",
+      "requests": 15,
+      "transferred": 651559,
+      "jsBytes": 23901,
+      "runtimeDataRequests": 1,
+      "fcp": 936,
+      "lcp": 936,
+      "cls": 0.1444233607729921,
+      "scriptMs": 17.096
+    },
+    {
+      "round": 7,
+      "variant": "publications",
+      "requests": 13,
+      "transferred": 646073,
+      "jsBytes": 8917,
+      "runtimeDataRequests": 0,
+      "fcp": 912,
+      "lcp": 912,
+      "cls": 0.1444233607729921,
+      "scriptMs": 19.931
+    },
+    {
+      "round": 7,
+      "variant": "candidate",
+      "requests": 12,
+      "transferred": 632122,
+      "jsBytes": 8835,
+      "runtimeDataRequests": 0,
+      "fcp": 708,
+      "lcp": 708,
+      "cls": 0.1444233607729921,
+      "scriptMs": 21.19
+    }
+  ]
+}

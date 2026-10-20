@@ -1,0 +1,933 @@
+{
+  "source": "output/linux/aa-static-final.json",
+  "stats": {
+    "startTime": "2026-10-20T16:01:11.445Z",
+    "duration": 345930.572,
+    "expected": 92,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "title": "visual.spec.mjs > / 390 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 390 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 607 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 607 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 1440 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 1440 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 390 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 390 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 607 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 607 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 1440 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 1440 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 390 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 390 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 607 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 607 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 1440 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 1440 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 390 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 390 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 607 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 607 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 1440 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 1440 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 390 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 390 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 607 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 607 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 1440 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 1440 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 390 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 390 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 607 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 607 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 1440 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 1440 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 375 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 375 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 460 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 460 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 461 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 461 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 820 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 820 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 821 light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 821 dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 390 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 390 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 607 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 607 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 1440 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > / 1440 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 390 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 390 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 607 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 607 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 1440 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/research.html 1440 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 390 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 390 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 607 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 607 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 1440 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/experience.html 1440 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 390 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 390 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 607 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 607 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 1440 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/projects.html 1440 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 390 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 390 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 607 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 607 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 1440 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /pages/misc.html 1440 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 390 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 390 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 607 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 607 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 1440 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > /ai-coding-setup/ 1440 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 375 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 375 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 460 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 460 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 461 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 461 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 820 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 820 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 821 light",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "visual.spec.mjs > home breakpoint 821 dark",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    }
+  ]
+}

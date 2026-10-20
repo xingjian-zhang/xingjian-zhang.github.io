@@ -1,0 +1,18 @@
+{
+  "stats": {
+    "startTime": "2026-10-20T15:33:54.415Z",
+    "duration": 39893.349,
+    "expected": 2,
+    "skipped": 39,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "failures": [
+    {
+      "title": "misc gate light",
+      "project": "chromium",
+      "error": "AssertionError: gate-42: {\"pixels\":285}\n\n285 !== 0\n"
+    }
+  ],
+  "note": "Compact A/A failure summary. Original images are preserved alongside this file."
+}

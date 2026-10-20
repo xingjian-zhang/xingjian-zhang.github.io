@@ -1,0 +1,367 @@
+{
+  "source": "output/linux/aa-motion-canonical.json",
+  "stats": {
+    "startTime": "2026-10-20T16:30:33.139Z",
+    "duration": 146578.329,
+    "expected": 11,
+    "skipped": 37,
+    "unexpected": 2,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "title": "interactions.spec.mjs > home states light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > research filters light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > misc gate light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > home states dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > research filters dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > misc gate dark",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > reduced motion and default system theme",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion bio light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion profile light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion entity light",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "error": "Error: expect(received).toBeGreaterThan(expected)\n\nExpected: > 0\nReceived:   0"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion navigation light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion news-open light",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion news-close light",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "error": "Error: expect(received).toBeGreaterThan(expected)\n\nExpected: > 0\nReceived:   0"
+        }
+      ]
+    },
+    {
+      "title": "interactions.spec.mjs > motion publications-open light",
+      "project": "chromium",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion publications-close light",
+      "project": "chromium",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion theme light",
+      "project": "chromium",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion bio dark",
+      "project": "chromium",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion profile dark",
+      "project": "chromium",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion entity dark",
+      "project": "chromium",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion navigation dark",
+      "project": "chromium",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion news-open dark",
+      "project": "chromium",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion news-close dark",
+      "project": "chromium",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion publications-open dark",
+      "project": "chromium",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion publications-close dark",
+      "project": "chromium",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion theme dark",
+      "project": "chromium",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > home states light",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > research filters light",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > misc gate light",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > home states dark",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > research filters dark",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > misc gate dark",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > reduced motion and default system theme",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion bio light",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion profile light",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion entity light",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion navigation light",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion news-open light",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion news-close light",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion publications-open light",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion publications-close light",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion theme light",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion bio dark",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion profile dark",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion entity dark",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion navigation dark",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion news-open dark",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion news-close dark",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion publications-open dark",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion publications-close dark",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    },
+    {
+      "title": "interactions.spec.mjs > motion theme dark",
+      "project": "webkit",
+      "status": "skipped",
+      "results": []
+    }
+  ]
+}

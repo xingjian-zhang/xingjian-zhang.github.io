@@ -1,0 +1,344 @@
+{
+  "baseline": "78a774c0b354d0f9039057db1f04e0b366d69e3f",
+  "environment": {
+    "node": "v24.11.1",
+    "browser": "143.0.7499.4",
+    "platform": "linux",
+    "arch": "arm64",
+    "cpuThrottle": 4,
+    "latencyMs": 150,
+    "downloadBytesPerSecond": 200000,
+    "uploadBytesPerSecond": 93750,
+    "rounds": 7,
+    "cache": "new context, cache disabled, no-store responses per run",
+    "analytics": "local empty response excluded from counts",
+    "delivery": "real HTTP/gzip mirror with CDP throttling; exact font bytes; external font URLs mirrored to the same controlled origin; excludes live CDN, DNS and TLS variability",
+    "transferMetric": "Network.loadingFinished.encodedDataLength including response headers",
+    "jsMetric": "jsBytes = decoded first-party external scripts; inlineJsBytes = executed inline script source; totalJsBytes = both, excluding test/third-party scripts"
+  },
+  "summary": {
+    "reference": {
+      "requests": {
+        "median": 18,
+        "min": 18,
+        "max": 18,
+        "mad": 0
+      },
+      "transferred": {
+        "median": 653230,
+        "min": 653230,
+        "max": 653230,
+        "mad": 0
+      },
+      "jsBytes": {
+        "median": 25821,
+        "min": 25821,
+        "max": 25821,
+        "mad": 0
+      },
+      "inlineJsBytes": {
+        "median": 160,
+        "min": 160,
+        "max": 160,
+        "mad": 0
+      },
+      "totalJsBytes": {
+        "median": 25981,
+        "min": 25981,
+        "max": 25981,
+        "mad": 0
+      },
+      "runtimeDataRequests": {
+        "median": 3,
+        "min": 3,
+        "max": 3,
+        "mad": 0
+      },
+      "fcp": {
+        "median": 980,
+        "min": 904,
+        "max": 1124,
+        "mad": 36
+      },
+      "lcp": {
+        "median": 980,
+        "min": 904,
+        "max": 1124,
+        "mad": 36
+      },
+      "cls": {
+        "median": 0.1654994462217367,
+        "min": 0.1654994462217367,
+        "max": 0.1654994462217367,
+        "mad": 0
+      },
+      "scriptMs": {
+        "median": 29.014000000000003,
+        "min": 13.171999999999999,
+        "max": 55.396,
+        "mad": 8.151999999999994
+      }
+    },
+    "candidate": {
+      "requests": {
+        "median": 12,
+        "min": 12,
+        "max": 12,
+        "mad": 0
+      },
+      "transferred": {
+        "median": 632122,
+        "min": 632122,
+        "max": 632122,
+        "mad": 0
+      },
+      "jsBytes": {
+        "median": 8835,
+        "min": 8835,
+        "max": 8835,
+        "mad": 0
+      },
+      "inlineJsBytes": {
+        "median": 160,
+        "min": 160,
+        "max": 160,
+        "mad": 0
+      },
+      "totalJsBytes": {
+        "median": 8995,
+        "min": 8995,
+        "max": 8995,
+        "mad": 0
+      },
+      "runtimeDataRequests": {
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "mad": 0
+      },
+      "fcp": {
+        "median": 708,
+        "min": 660,
+        "max": 844,
+        "mad": 32
+      },
+      "lcp": {
+        "median": 708,
+        "min": 660,
+        "max": 844,
+        "mad": 32
+      },
+      "cls": {
+        "median": 0.1444233607729921,
+        "min": 0.1444233607729921,
+        "max": 0.1444233607729921,
+        "mad": 0
+      },
+      "scriptMs": {
+        "median": 25.321,
+        "min": 10.522,
+        "max": 56.005,
+        "mad": 6.013999999999999
+      }
+    }
+  },
+  "regressions": [],
+  "samples": [
+    {
+      "round": 1,
+      "variant": "reference",
+      "requests": 18,
+      "transferred": 653230,
+      "jsBytes": 25821,
+      "inlineJsBytes": 160,
+      "totalJsBytes": 25981,
+      "runtimeDataRequests": 3,
+      "fcp": 1016,
+      "lcp": 1016,
+      "cls": 0.1654994462217367,
+      "scriptMs": 34.441
+    },
+    {
+      "round": 1,
+      "variant": "candidate",
+      "requests": 12,
+      "transferred": 632122,
+      "jsBytes": 8835,
+      "inlineJsBytes": 160,
+      "totalJsBytes": 8995,
+      "runtimeDataRequests": 0,
+      "fcp": 740,
+      "lcp": 740,
+      "cls": 0.1444233607729921,
+      "scriptMs": 33.747
+    },
+    {
+      "round": 2,
+      "variant": "candidate",
+      "requests": 12,
+      "transferred": 632122,
+      "jsBytes": 8835,
+      "inlineJsBytes": 160,
+      "totalJsBytes": 8995,
+      "runtimeDataRequests": 0,
+      "fcp": 664,
+      "lcp": 664,
+      "cls": 0.1444233607729921,
+      "scriptMs": 23.137999999999998
+    },
+    {
+      "round": 2,
+      "variant": "reference",
+      "requests": 18,
+      "transferred": 653230,
+      "jsBytes": 25821,
+      "inlineJsBytes": 160,
+      "totalJsBytes": 25981,
+      "runtimeDataRequests": 3,
+      "fcp": 1040,
+      "lcp": 1040,
+      "cls": 0.1654994462217367,
+      "scriptMs": 29.014000000000003
+    },
+    {
+      "round": 3,
+      "variant": "reference",
+      "requests": 18,
+      "transferred": 653230,
+      "jsBytes": 25821,
+      "inlineJsBytes": 160,
+      "totalJsBytes": 25981,
+      "runtimeDataRequests": 3,
+      "fcp": 904,
+      "lcp": 904,
+      "cls": 0.1654994462217367,
+      "scriptMs": 13.171999999999999
+    },
+    {
+      "round": 3,
+      "variant": "candidate",
+      "requests": 12,
+      "transferred": 632122,
+      "jsBytes": 8835,
+      "inlineJsBytes": 160,
+      "totalJsBytes": 8995,
+      "runtimeDataRequests": 0,
+      "fcp": 724,
+      "lcp": 724,
+      "cls": 0.1444233607729921,
+      "scriptMs": 19.307000000000002
+    },
+    {
+      "round": 4,
+      "variant": "candidate",
+      "requests": 12,
+      "transferred": 632122,
+      "jsBytes": 8835,
+      "inlineJsBytes": 160,
+      "totalJsBytes": 8995,
+      "runtimeDataRequests": 0,
+      "fcp": 844,
+      "lcp": 844,
+      "cls": 0.1444233607729921,
+      "scriptMs": 25.321
+    },
+    {
+      "round": 4,
+      "variant": "reference",
+      "requests": 18,
+      "transferred": 653230,
+      "jsBytes": 25821,
+      "inlineJsBytes": 160,
+      "totalJsBytes": 25981,
+      "runtimeDataRequests": 3,
+      "fcp": 972,
+      "lcp": 972,
+      "cls": 0.1654994462217367,
+      "scriptMs": 37.166
+    },
+    {
+      "round": 5,
+      "variant": "reference",
+      "requests": 18,
+      "transferred": 653230,
+      "jsBytes": 25821,
+      "inlineJsBytes": 160,
+      "totalJsBytes": 25981,
+      "runtimeDataRequests": 3,
+      "fcp": 952,
+      "lcp": 952,
+      "cls": 0.1654994462217367,
+      "scriptMs": 25.834
+    },
+    {
+      "round": 5,
+      "variant": "candidate",
+      "requests": 12,
+      "transferred": 632122,
+      "jsBytes": 8835,
+      "inlineJsBytes": 160,
+      "totalJsBytes": 8995,
+      "runtimeDataRequests": 0,
+      "fcp": 660,
+      "lcp": 660,
+      "cls": 0.1444233607729921,
+      "scriptMs": 29.608
+    },
+    {
+      "round": 6,
+      "variant": "candidate",
+      "requests": 12,
+      "transferred": 632122,
+      "jsBytes": 8835,
+      "inlineJsBytes": 160,
+      "totalJsBytes": 8995,
+      "runtimeDataRequests": 0,
+      "fcp": 708,
+      "lcp": 708,
+      "cls": 0.1444233607729921,
+      "scriptMs": 56.005
+    },
+    {
+      "round": 6,
+      "variant": "reference",
+      "requests": 18,
+      "transferred": 653230,
+      "jsBytes": 25821,
+      "inlineJsBytes": 160,
+      "totalJsBytes": 25981,
+      "runtimeDataRequests": 3,
+      "fcp": 1124,
+      "lcp": 1124,
+      "cls": 0.1654994462217367,
+      "scriptMs": 55.396
+    },
+    {
+      "round": 7,
+      "variant": "reference",
+      "requests": 18,
+      "transferred": 653230,
+      "jsBytes": 25821,
+      "inlineJsBytes": 160,
+      "totalJsBytes": 25981,
+      "runtimeDataRequests": 3,
+      "fcp": 980,
+      "lcp": 980,
+      "cls": 0.1654994462217367,
+      "scriptMs": 17.544
+    },
+    {
+      "round": 7,
+      "variant": "candidate",
+      "requests": 12,
+      "transferred": 632122,
+      "jsBytes": 8835,
+      "inlineJsBytes": 160,
+      "totalJsBytes": 8995,
+      "runtimeDataRequests": 0,
+      "fcp": 688,
+      "lcp": 688,
+      "cls": 0.1444233607729921,
+      "scriptMs": 10.522
+    }
+  ]
+}
