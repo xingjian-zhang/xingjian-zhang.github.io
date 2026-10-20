@@ -1,47 +1,40 @@
-# CLAUDE.md
+# Personal website maintenance
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This is Xingjian (Jimmy) Zhang's static academic website at xingjianz.com.
+Preserve existing content, routes, links, visual rendering and interaction timing.
+Use HTML, CSS and vanilla JavaScript; do not introduce a frontend framework.
 
-## Project Overview
+## Build and preview
 
-This is Xingjian (Jimmy) Zhang's personal academic website, deployed to GitHub Pages at xingjianz.com. It's a static site with no build system - pure HTML, CSS, and vanilla JavaScript.
+Use the pinned Node/Ruby versions and lockfiles. Run `npm ci`, `bundle install`,
+then `npm run build`. The Node prebuild inserts shared components and publication
+HTML before locked Jekyll renders `_site`. `npm run dev` rebuilds and serves on
+port 4000; `npm run preview` serves the last build. Do not use `file://` previews
+or plain `jekyll serve`, which bypass the prebuild.
 
-## Development
+## Ownership
 
-**Local preview:**
-```bash
-jekyll serve
-```
-Then visit http://localhost:4000
+- Page content: `index.html`, `pages/*.html`, `ai-coding-setup.md`.
+- Shared markup: `components/`; document wrapper: `_layouts/default.html`.
+- Paper content: `assets/data/publications.bib` only. Build metadata (venue/kind/
+  tags) lives in `scripts/lib/publication-meta.json`; renderer/parser in
+  `scripts/lib/publications.mjs`. Never restore a hand-maintained paper duplicate.
+- CSS: `assets/css/styles.css` followed by homepage `home-motion.css`. Keep
+  declaration values, cascade order and specificity unchanged during cleanup.
+- Fonts: exact local Source Sans 3 and Bootstrap Icons files; preserve metrics.
+- Runtime JS: `theme.js`, `homeInteractions.js`, and legacy-page `publications.js`.
+- Absolute component/asset URLs work at every page depth.
 
-**Deployment:** Push to GitHub - the site auto-deploys via GitHub Pages. Jekyll builds the site into `_site/`.
+## Verification and publishing
 
-## Architecture
+Follow README.md and tests/README.md. Build the immutable Git reference before
+A/A and candidate tests. Require exactly zero decoded RGBA differences: no masks,
+perceptual tolerance or antialiasing exclusions. Compare each browser with its own
+reference in the same environment. Keep performance tests separate from visuals.
 
-### Page Structure
-- `index.html` - Main homepage with bio, selected papers, news, honors, and service
-- `pages/research.html` - Full publication list loaded dynamically from BibTeX
-- `pages/experience.html` - Education, internships, and teaching
-- `pages/misc.html` - Personal interests (albums, games, books) with a "42" quiz gate
+`npm test`, `npm run check`, `npm run test:aa`, `npm run test:visual` and
+`npm run test:performance` are the maintenance commands. Keep generated output,
+reports and Node dependencies out of the published artifact. Preserve analytics.
 
-### Component System
-- `components/header.html` - Shared navigation header with Google Analytics
-- `assets/js/loadComponents.js` - Injects header into `#header-placeholder` on all pages
-
-### CSS Organization
-Modular CSS in `assets/css/` using `@import` in `main.css`:
-- `base/` - Variables (design tokens), reset, typography
-- `components/` - Styles for header, profile, news, publications, experience, gallery, footer
-- `layout/` - Grid system, responsive breakpoints
-- `utilities/` - Animations, helper classes
-
-Design tokens are defined in `assets/css/base/_variables.css` using CSS custom properties.
-
-### Publications
-- `assets/data/publications.bib` - BibTeX source for all publications
-- `assets/js/main.js` - Parses BibTeX and renders publications on the research page, auto-categorizes by venue type (journal/conference/workshop/preprint)
-
-### Key Patterns
-- Header component uses absolute paths (`/components/header.html`, `/assets/...`) so it works from any page depth
-- Pages in `pages/` use relative paths (`../assets/...`) for their own resources
-- Author name "Xingjian Zhang" is auto-bolded in publication listings
+Local commits, pushes and successful live deployments are separate states.
+Do not push or change Pages settings unless the user requests publication.

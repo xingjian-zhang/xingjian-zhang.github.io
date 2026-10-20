@@ -1,0 +1,76 @@
+name: Test, prebuild, and deploy Pages
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      strict:
+        description: 'Also require full A/A, animation keyframes, and performance comparisons'
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1.3'
+          bundler: '2.5.15'
+          bundler-cache: true
+      - run: npm ci
+      - run: npm run reference && npm run build
+      - run: npm test && npm run check
+      - name: Pull pinned browser environment
+        run: docker pull mcr.microsoft.com/playwright:v1.57.0-noble@sha256:3bed4b1a12f2338642f3d8cba28e291deef3c66bd4a964bbeb3e57bbff511dbd
+      - name: Require functional checks
+        run: npm run test:container -- npx playwright test tests/functional.spec.mjs
+        env:
+          REPORT: output/release.json
+      - name: Optional full reference repeatability gate including static pixels
+        if: inputs.strict == true
+        run: AA=1 npm run test:container
+        env:
+          REPORT: output/aa.json
+      - name: Optional full interaction pixel gate
+        if: inputs.strict == true
+        run: npm run test:container
+        env:
+          REPORT: output/candidate.json
+      - name: Optional seven interleaved cold runs
+        if: inputs.strict == true
+        run: npm run test:container -- node scripts/performance.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification
+          path: output/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy the verified artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

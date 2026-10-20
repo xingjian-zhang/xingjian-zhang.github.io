@@ -8,8 +8,13 @@
     "test": "node --test tests/*.test.mjs",
     "test:visual": "playwright test",
     "test:aa": "AA=1 playwright test",
-    "check": "git diff --check",
-    "dev": "node scripts/dev.mjs"
+    "check": "npm run format:check && node scripts/check.mjs",
+    "dev": "node scripts/dev.mjs",
+    "test:performance": "node scripts/performance.mjs",
+    "test:all": "npm run reference && npm run build && npm test && npm run check && npm run test:aa && npm run test:visual && npm run test:performance",
+    "test:container": "node scripts/container.mjs",
+    "format": "prettier --write \"scripts/**/*.mjs\" \"tests/*.mjs\" playwright.config.mjs package.json scripts/lib/publication-meta.json",
+    "format:check": "prettier --check \"scripts/**/*.mjs\" \"tests/*.mjs\" playwright.config.mjs package.json scripts/lib/publication-meta.json"
   },
   "repository": {
     "type": "git",
@@ -25,6 +30,10 @@
   "description": "",
   "devDependencies": {
     "@playwright/test": "1.57.0",
-    "pngjs": "7.0.0"
+    "pngjs": "7.0.0",
+    "prettier": "3.6.2"
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }

@@ -22,9 +22,29 @@ only, to avoid reporting automated visits and introducing third-party timing noi
 The deployed analytics configuration is retained.
 
 Stable captures wait for fonts, image decoding, component/publication readiness,
-and settled scrolling. Finite transitions are completed for stable-state captures.
+and settled scrolling. Stable-state captures finish finite animations through the browser API, including finish callbacks.
 Motion captures pause actual CSS/Web Animations at 0/25/50/75/100 percent using
-their original durations and easing. Deferred rAF-created animations are included.
+their original durations and easing. Deferred rAF-created animations are included. Motion trajectories run sequentially in a single foreground page, without a preceding full-page screenshot that would resize the viewport.
 The page's own CSS, colors, geometry, and rendered regions are not replaced.
+`functional.spec.mjs` separately checks visible interaction outcomes without
+claiming animation keyframe equivalence: mouse attraction, portrait/name labels,
+disclosures, sticky navigation, theme persistence/system preference, reduced
+motion, research filters and the misc gate.
 
 Environment changes require another A/A run, not a relaxed image threshold.
+
+Every capture must first produce two consecutive identical decoded RGBA images.
+This is a synchronization condition, not a relaxed comparison: reference and
+candidate still require exactly zero changed pixels, including alpha and antialiasing.
+
+## Current acceptance status
+
+Steady states pass the complete 92-case candidate matrix and content/link contracts
+pass all 12 cases. Interaction A/A is still unstable; candidate interaction failures
+therefore remain unclassified, not accepted as harmless noise. See
+`reports/cleanup.md` and its saved A/A images. The user subsequently accepted the
+practical stopping point and authorized publication. The normal release gate
+checks builds, unit/resource checks and functional outcomes; full A/A
+and animation comparisons remain available as an explicit `strict` workflow input.
+Do not add masks or update the frozen reference to make either check green.
+The Linux container is pinned by digest in `scripts/container.mjs` and the workflow.

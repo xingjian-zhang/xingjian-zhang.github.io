@@ -2,98 +2,61 @@
   "ma2022fast": {
     "venue": "WSDM",
     "kind": "conference",
-    "tags": [
-      "Ranking",
-      "Network Modeling"
-    ]
+    "tags": ["Ranking", "Network Modeling"]
   },
   "ma2022graph": {
     "venue": "LoG",
     "kind": "conference",
-    "tags": [
-      "Graph",
-      "Benchmark"
-    ]
+    "tags": ["Graph", "Benchmark"]
   },
   "huang2023can": {
     "venue": "TMLR",
     "kind": "journal",
-    "tags": [
-      "Graph",
-      "Reasoning"
-    ]
+    "tags": ["Graph", "Reasoning"]
   },
   "zhangconditional": {
     "venue": "ICLR",
     "kind": "workshop",
-    "tags": [
-      "Post-Training",
-      "Efficient Training"
-    ]
+    "tags": ["Post-Training", "Efficient Training"]
   },
   "huang2024dca": {
     "venue": "KDD",
     "kind": "conference",
-    "tags": [
-      "Agentic",
-      "Benchmark"
-    ]
+    "tags": ["Agentic", "Benchmark"]
   },
   "zhang2024massw": {
     "venue": "NAACL",
     "kind": "conference",
-    "tags": [
-      "AI4Science",
-      "Benchmark"
-    ]
+    "tags": ["AI4Science", "Benchmark"]
   },
   "deng2024texttt": {
     "venue": "NeurIPS",
     "kind": "conference",
-    "tags": [
-      "Data Attribution",
-      "ML Systems"
-    ]
+    "tags": ["Data Attribution", "ML Systems"]
   },
   "zhang2024map2text": {
     "venue": "KDD",
     "kind": "conference",
-    "tags": [
-      "AI4Science",
-      "Visualization"
-    ]
+    "tags": ["AI4Science", "Visualization"]
   },
   "zhang2024leveraging": {
     "venue": "NeurIPS",
     "kind": "workshop",
-    "tags": [
-      "Causal Inference",
-      "LLM"
-    ]
+    "tags": ["Causal Inference", "LLM"]
   },
   "zhang2026thru": {
     "venue": "TMLR",
     "kind": "journal",
-    "tags": [
-      "LLM-as-a-Judge",
-      "Reasoning"
-    ]
+    "tags": ["LLM-as-a-Judge", "Reasoning"]
   },
   "zhang2025flyaoc": {
     "venue": "NeurIPS",
     "kind": "conference",
-    "tags": [
-      "Agentic",
-      "AI4Science",
-      "Benchmark"
-    ]
+    "tags": ["Agentic", "AI4Science", "Benchmark"]
   },
   "wang2025reasoning": {
     "venue": "ACL",
     "kind": "conference",
-    "tags": [
-      "Reasoning",
-      "Benchmark"
-    ]
+    "tags": ["Reasoning", "Benchmark"]
   }
 }
