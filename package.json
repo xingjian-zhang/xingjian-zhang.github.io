@@ -2,13 +2,14 @@
   "name": "personal-website",
   "version": "1.0.0",
   "scripts": {
-    "build": "jekyll build",
+    "build": "node scripts/build.mjs",
     "reference": "node scripts/reference.mjs",
     "preview": "node scripts/serve.mjs _site 4000",
     "test": "node --test tests/*.test.mjs",
     "test:visual": "playwright test",
     "test:aa": "AA=1 playwright test",
-    "check": "git diff --check"
+    "check": "git diff --check",
+    "dev": "node scripts/dev.mjs"
   },
   "repository": {
     "type": "git",

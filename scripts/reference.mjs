@@ -8,7 +8,7 @@ export async function reference() {
   if (archive.status !== 0) throw new Error(archive.stderr.toString());
   const extract = spawnSync('tar', ['-x', '-C', '.build/reference-source'], { input: archive.stdout });
   if (extract.status !== 0) throw new Error(extract.stderr.toString());
-  const result = spawnSync('jekyll', ['build', '--source', '.build/reference-source', '--destination', '.build/reference'], { stdio: 'inherit' });
+  const result = spawnSync('bundle', ['exec', 'jekyll', 'build', '--source', '.build/reference-source', '--destination', '.build/reference'], { stdio: 'inherit' });
   if (result.status !== 0) throw new Error('Reference build failed');
 }
 if (process.argv[1] === new URL(import.meta.url).pathname) await reference();
