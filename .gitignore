@@ -1,6 +1,5 @@
 # Dependencies
 node_modules/
-package-lock.json
 yarn.lock
 
 # Build output
@@ -8,6 +7,9 @@ dist/
 build/
 out/
 _site/
+.build/
+output/
+playwright-report/
 
 # Environment variables
 .env

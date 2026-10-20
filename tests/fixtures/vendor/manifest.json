@@ -1,0 +1,46 @@
+{
+  "chromium": {
+    "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css": {
+      "file": "f0d89529cd886929",
+      "contentType": "text/css; charset=utf-8",
+      "bytes": 98255
+    },
+    "https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&display=swap": {
+      "file": "8b129e21b4639fbe",
+      "contentType": "text/css; charset=utf-8",
+      "bytes": 5124
+    },
+    "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6": {
+      "file": "e837c4d1eca8ba00",
+      "contentType": "font/woff2",
+      "bytes": 130396
+    },
+    "https://fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3w8aZejf5Hc.woff2": {
+      "file": "5e696b61a46f8488",
+      "contentType": "font/woff2",
+      "bytes": 28804
+    }
+  },
+  "webkit": {
+    "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css": {
+      "file": "f0d89529cd886929",
+      "contentType": "text/css; charset=utf-8",
+      "bytes": 98255
+    },
+    "https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&display=swap": {
+      "file": "8b129e21b4639fbe",
+      "contentType": "text/css; charset=utf-8",
+      "bytes": 5124
+    },
+    "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6": {
+      "file": "e837c4d1eca8ba00",
+      "contentType": "font/woff2",
+      "bytes": 130396
+    },
+    "https://fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3w8aZejf5Hc.woff2": {
+      "file": "5e696b61a46f8488",
+      "contentType": "font/woff2",
+      "bytes": 28804
+    }
+  }
+}
