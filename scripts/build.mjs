@@ -3,7 +3,7 @@ import { resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { publicationEntries, publicationHtml } from './lib/publications.mjs';
 
-export async function build({ source = '.', destination = '_site', stage = '.build/source', components = true, publications = false, fonts = false } = {}) {
+export async function build({ source = '.', destination = '_site', stage = '.build/source', components = true, publications = true, fonts = false } = {}) {
   await rm(stage, { recursive: true, force: true });
   await mkdir(stage, { recursive: true });
   for (const path of ['index.html', 'pages', 'assets', 'components', '_layouts', 'ai-coding-setup.md', 'apple-touch-icon.png', 'CNAME', 'robots.txt', 'sitemap.xml']) {
