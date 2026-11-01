@@ -1064,7 +1064,6 @@ a.entity-link:focus-visible {
     flex-wrap: nowrap;
     gap: 10px;
     margin-left: auto;
-    font-size: 13px;
   }
   .theme-control { margin-left: 0; }
   .theme-toggle { width: 36px; height: 36px; }
@@ -1125,10 +1124,19 @@ a.entity-link:focus-visible {
 
 @media (max-width: 460px) {
   .t-top { gap: 8px; }
-  .t-nav { gap: 6px; font-size: 12px; }
+  .t-nav { gap: 6px; }
   .theme-toggle { width: 32px; height: 32px; }
   .cmd-button,
   .green-button { justify-content: center; }
   .t-gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .t-projects { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 340px) {
+  .t-crumb { display: none; }
+  .t-nav {
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 0;
+  }
 }
