@@ -1046,26 +1046,28 @@ a.entity-link:focus-visible {
   :root { --section-outset: 8px; }
   .site-shell,
   .t-page {
-    width: min(100% - 28px, 880px);
+    width: min(100% - 40px, 880px);
     padding-top: 16px;
   }
 
   .t-top {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 8px;
-    padding-bottom: 0;
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
   }
 
   .intro,
-  .content-section { scroll-margin-top: 88px; }
+  .content-section { scroll-margin-top: 64px; }
 
   .t-nav {
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 14px;
+    width: auto;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-left: auto;
+    font-size: 13px;
   }
-  .theme-control { margin-left: auto; }
+  .theme-control { margin-left: 0; }
+  .theme-toggle { width: 36px; height: 36px; }
 
   .intro { padding-top: 20px; }
   .intro::before { inset-block-start: 8px; }
@@ -1122,7 +1124,9 @@ a.entity-link:focus-visible {
 }
 
 @media (max-width: 460px) {
-  .t-nav { gap: 8px; }
+  .t-top { gap: 8px; }
+  .t-nav { gap: 6px; font-size: 12px; }
+  .theme-toggle { width: 32px; height: 32px; }
   .cmd-button,
   .green-button { justify-content: center; }
   .t-gallery-grid { grid-template-columns: repeat(2, 1fr); }
