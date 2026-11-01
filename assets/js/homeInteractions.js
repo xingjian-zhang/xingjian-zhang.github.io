@@ -8,6 +8,32 @@
   intro.classList.add('has-tilt');
 
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const touchBio = matchMedia('(max-width: 820px), (hover: none)');
+  const portrait = intro.querySelector('.avatar-frame');
+  if (portrait) {
+    const label = portrait.getAttribute('aria-label');
+    function updatePortraitControl() {
+      intro.classList.remove('is-revealed');
+      portrait.setAttribute('role', touchBio.matches ? 'button' : 'group');
+      portrait.setAttribute('aria-label', touchBio.matches ? 'Show original portrait' : label);
+      if (touchBio.matches) portrait.setAttribute('aria-pressed', 'false');
+      else portrait.removeAttribute('aria-pressed');
+    }
+    function togglePortrait() {
+      if (!touchBio.matches) return;
+      const revealed = intro.classList.toggle('is-revealed');
+      portrait.setAttribute('aria-pressed', String(revealed));
+      portrait.setAttribute('aria-label', revealed ? 'Show illustrated portrait' : 'Show original portrait');
+    }
+    portrait.addEventListener('click', togglePortrait);
+    portrait.addEventListener('keydown', (event) => {
+      if (!touchBio.matches || !['Enter', ' '].includes(event.key) || event.repeat) return;
+      event.preventDefault();
+      togglePortrait();
+    });
+    touchBio.addEventListener('change', updatePortraitControl);
+    updatePortraitControl();
+  }
   const disclosures = new Map();
   function finishDisclosure(details, state) {
     state.animation?.cancel();

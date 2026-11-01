@@ -57,6 +57,23 @@
   }
 }
 
+@media (max-width: 820px), (hover: none) {
+  .avatar-frame { cursor: pointer; }
+  .intro.is-revealed .avatar-visual { transform: rotate(-2deg); }
+  .intro.is-revealed .avatar-photo,
+  .intro.is-revealed .cat-annotation { opacity: 1; }
+  .intro.is-revealed h1 span {
+    opacity: 1;
+    transform: translateY(0) rotate(-3deg);
+  }
+  /* On touch layouts, focus and emulated hover must not override the toggle. */
+  .intro:not(.is-revealed) .avatar-visual { transform: none; }
+  .intro:not(.is-revealed) .avatar-photo,
+  .intro:not(.is-revealed) .cat-annotation,
+  .intro:not(.is-revealed) h1 span { opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .motion-nav::after { transition: none; }
+  .avatar-visual, .avatar, .cat-annotation, .intro h1 span { transition: none; }
 }
