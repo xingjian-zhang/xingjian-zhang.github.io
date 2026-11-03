@@ -18,7 +18,7 @@
   --bio-surface: rgba(255, 255, 255, 0.8);
   --portrait-border: rgba(107, 102, 93, .15);
   --ginger: #a66b2e;
-  --bio-shadow: 0 2px 5px rgba(22, 20, 15, .025), 0 8px 24px rgba(22, 20, 15, .045);
+  --bio-shadow: 0 16px 32px -14px var(--tilt-shadow), inset 0 1px 0 var(--tilt-highlight);
   --separator: rgba(22, 20, 15, 0.1);
   --tilt-shadow: rgba(22, 20, 15, .36);
   --tilt-highlight: rgba(255, 253, 248, .9);
@@ -57,7 +57,7 @@
   --bio-surface: #282520;
   --portrait-border: rgba(238, 234, 225, .12);
   --ginger: #d4a365;
-  --bio-shadow: 0 2px 5px rgba(0, 0, 0, .12), 0 8px 24px rgba(0, 0, 0, .2);
+  --bio-shadow: 0 16px 32px -14px var(--tilt-shadow), inset 0 1px 0 var(--tilt-highlight);
   --separator: rgba(238, 234, 225, .12);
   --tilt-shadow: rgba(0, 0, 0, .65);
   --tilt-highlight: rgba(238, 234, 225, .1);

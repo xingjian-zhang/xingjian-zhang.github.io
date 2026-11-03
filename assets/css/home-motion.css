@@ -1,9 +1,15 @@
 /* Homepage motion experiments. Keep the existing layout and hit areas stable. */
 body[data-page="home"] { position: relative; isolation: isolate; }
 /* Let the corner artwork continue behind navigation until the header sticks. */
+body[data-page="home"] .t-top::before {
+  opacity: 1;
+  transition: opacity 320ms ease;
+}
 body[data-page="home"] .t-top:not(.is-scrolled)::before {
-  background: none;
-  box-shadow: none;
+  opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="home"] .t-top::before { transition: none; }
 }
 /* The canvas reaches the page edges; the orbital geometry stays in one corner. */
 .page-orbits {
@@ -74,12 +80,12 @@ body[data-page="home"] .t-top:not(.is-scrolled)::before {
 
 @media (min-width: 821px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   .intro.has-tilt {
-    transform: perspective(1400px) translateY(0) rotateX(0) rotateY(0) scale(1);
+    transform: perspective(1400px) translateY(-2px) rotateX(0) rotateY(0);
     transform-origin: center;
     transition: transform 550ms cubic-bezier(.22, 1, .36, 1);
   }
   .intro.has-tilt.is-tilted {
-    transform: perspective(1400px) translateY(-3px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) scale(.99);
+    transform: perspective(1400px) translateY(-2px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
     transition-duration: 180ms;
   }
   .intro.has-tilt::before {
@@ -87,7 +93,7 @@ body[data-page="home"] .t-top:not(.is-scrolled)::before {
     transition: box-shadow 400ms ease;
   }
   .intro.has-tilt.is-tilted::before {
-    box-shadow: var(--shadow-x, 0px) 20px 36px -14px var(--tilt-shadow),
+    box-shadow: var(--shadow-x, 0px) 18px 34px -14px var(--tilt-shadow),
                 inset 0 1px 0 var(--tilt-highlight);
   }
   .profile-icon i,
