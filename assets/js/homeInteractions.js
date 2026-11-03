@@ -139,6 +139,7 @@
 
     function update() {
       frame = 0;
+      header.classList.toggle('is-scrolled', window.scrollY > 16);
       const readingEdge = header.getBoundingClientRect().bottom + 80;
       let current = null;
       sections.forEach((section, index) => {
