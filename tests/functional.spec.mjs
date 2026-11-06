@@ -100,6 +100,34 @@ test('system theme and reduced-motion preference remain supported', async ({
   ).toBe('none');
 });
 
+test('toggling back to the system theme resumes following the system', async ({
+  page,
+  context,
+  browserName,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 890 });
+  await prepare(context, browserName, 'light');
+  await page.goto(origin + '/');
+  await ready(page);
+  await page.evaluate(() => localStorage.removeItem('site-theme'));
+  await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
+  await page.reload();
+  await ready(page);
+  const html = page.locator('html');
+  const saved = () => page.evaluate(() => localStorage.getItem('site-theme'));
+
+  await page.locator('.theme-toggle').click();
+  await expect(html).toHaveAttribute('data-theme', 'dark');
+  expect(await saved()).toBe('dark');
+
+  await page.locator('.theme-toggle').click();
+  await expect(html).toHaveAttribute('data-theme', 'light');
+  expect(await saved()).toBeNull();
+
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await expect(html).toHaveAttribute('data-theme', 'dark');
+});
+
 test('research filters keep counts, order, and archive contents', async ({
   page,
   context,

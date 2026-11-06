@@ -45,9 +45,15 @@
   });
   document.addEventListener('click', (event) => {
     if (!event.target.closest('.theme-toggle')) return;
-    const current = preference === 'system' ? (system.matches ? 'dark' : 'light') : preference;
-    preference = current === 'dark' ? 'light' : 'dark';
-    try { localStorage.setItem(key, preference); } catch (_) { /* Storage may be disabled. */ }
+    const systemTheme = system.matches ? 'dark' : 'light';
+    const current = preference === 'system' ? systemTheme : preference;
+    const next = current === 'dark' ? 'light' : 'dark';
+    // Choosing the system's theme goes back to following the system.
+    preference = next === systemTheme ? 'system' : next;
+    try {
+      if (preference === 'system') localStorage.removeItem(key);
+      else localStorage.setItem(key, preference);
+    } catch (_) { /* Storage may be disabled. */ }
     changeTheme();
   });
 })();
