@@ -152,11 +152,12 @@
   const lerp = (a, b, k) => a + (b - a) * k;
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const GRAVITY = 17, POP_PEAK = 3.2 * 3.2 / (2 * GRAVITY); // a click hops the head this high, about 8px
   const world = { night: false, lastMove: performance.now(), mx: null, my: null, rect: null, wantAwake: 1, track: false };
   const cats = LOOKS.map((look, index) => ({
     look, index, label: word(look.name), awake: 1, yaw: 0, pitch: 0, roll: 0, pop: 0, popV: 0, happy: 0, trust: look.bold,
     blink: 0, nextBlink: 1 + Math.random() * 3, over: false, tag: 0, heart: 0, petT: 0, twitch: [0, 0],
-    nextTwitch: 2 + Math.random() * 4, phase: index * 2.4,
+    nextTwitch: 2 + Math.random() * 4, phase: index * 2.4, wag: 0,
   }));
 
   function update(cat, dt, t) {
@@ -175,7 +176,9 @@
     if (cat.petT > 1.6) { cat.heart = 1.4; cat.petT = 0; }
     cat.trust = clamp(cat.trust + (cat.over ? dt * 1.5 : -dt * .06), look.bold, 1); // petting brings Kiki all the way up
     cat.roll = lerp(cat.roll, lerp(look.tailSide * -.24, Math.sin(t * 9) * .07 * cat.happy, awake), Math.min(1, dt * 6));
-    cat.pop += cat.popV * dt; cat.popV -= 17 * dt;
+    // The tail keeps its own clock, so slowing down for sleep eases the swing instead of jumping its phase.
+    if (!reducedMotion.matches) cat.wag += dt * (1 + awake * 1.2);
+    cat.pop += cat.popV * dt; cat.popV -= GRAVITY * dt;
     if (cat.pop < 0) { cat.pop = 0; cat.popV = 0; }
     cat.nextBlink -= dt;
     if (cat.nextBlink < 0) { cat.blink = .13; cat.nextBlink = 2 + Math.random() * 4; }
@@ -198,7 +201,7 @@
     cast(chest, look.fur, false, true, id);
     ball(chest, look.chest, [0, .12, .72], look.bib);
     for (let i = 0; i < 11; i++) {
-      const s = i / 10, swing = Math.sin(t * (1 + awake * 1.2) + cat.phase - s * 2.2) * .42 * lerp(.5, 1, awake);
+      const s = i / 10, swing = Math.sin(cat.wag + cat.phase - s * 2.2) * .42 * lerp(.5, 1, awake);
       ball(body, look.tail(i), [look.tailSide * (2.3 + Math.sin(s * 3.4) * .3 * s) + Math.sin(swing) * s * .9, -.4 + s * 1.6 - s * s * s * .28, -.6], .19 - i * .005);
     }
     ball(head, look.fur, [0, 0, 0], [1.06, .92, .95]);
@@ -267,7 +270,8 @@
   window.addEventListener('pointerdown', (event) => {
     const cat = catAt(event.clientX, event.clientY);
     if (!cat) return;
-    if (!reducedMotion.matches) cat.popV = 3.2;
+    // A click mid-hop only tops the hop back up to its usual peak, so fast clicks cannot stack.
+    if (!reducedMotion.matches) cat.popV = Math.sqrt(2 * GRAVITY * Math.max(0, POP_PEAK - cat.pop));
     cat.heart = 1.4; cat.trust = 1; world.lastMove = performance.now();
     wake();
   }, { passive: true });

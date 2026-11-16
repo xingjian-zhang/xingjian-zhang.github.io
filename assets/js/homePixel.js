@@ -133,11 +133,21 @@
     const night = root.dataset.theme === 'dark';
     const key = `${n}:${night}`;
     if (canvas.dataset.key === key) return;
+    const small = shrink(img, n).getContext('2d').getImageData(0, 0, n, n);
+    const px = small.data;
+    // WebKit can call an image complete before it has decoded it, and drawing it
+    // then leaves the canvas empty. Keep the photo showing and report the miss
+    // instead of dithering nothing into a solid dark square.
+    let drawn = false;
+    for (let i = 3; i < px.length && !drawn; i += 4) drawn = px[i] > 0;
+    if (!drawn) {
+      canvas.hidden = true;
+      delete canvas.dataset.key;
+      return false;
+    }
     canvas.dataset.key = key;
     canvas.width = canvas.height = n;
     canvas.style.width = canvas.style.height = `${n * CELL}px`;
-    const small = shrink(img, n).getContext('2d').getImageData(0, 0, n, n);
-    const px = small.data;
     for (let y = 0; y < n; y++) {
       for (let x = 0; x < n; x++) {
         const i = (y * n + x) * 4;
@@ -159,7 +169,10 @@
     canvas.className = 'avatar-pixels';
     canvas.setAttribute('aria-hidden', 'true');
     img.after(canvas);
-    const draw = () => drawPortrait(img, canvas);
+    const draw = () => {
+      if (drawPortrait(img, canvas) !== false || !img.decode) return;
+      img.decode().then(() => drawPortrait(img, canvas), () => {});
+    };
     (img.decode ? img.decode().catch(() => {}) : Promise.resolve()).then(draw);
     img.addEventListener('load', draw);
     new ResizeObserver(draw).observe(canvas.parentElement);

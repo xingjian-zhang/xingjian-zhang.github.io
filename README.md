@@ -46,7 +46,7 @@ Refresh the browser after rebuilds. Source files are build inputs, not a support
   sprites and the kittens' scroll glance.
 - `assets/js/publications.js`: legacy research-page filters over prebuilt rows.
 - `assets/css/styles.css`, `home-motion.css`: existing cascade and motion rules.
-- `assets/css/home-pixel.css`: homepage pixel card, portrait frame and icon
+- `assets/css/home-pixel.css`: homepage pixel card, portrait frame and toggle
   sprites, scoped under the `.pixel` class on the homepage `<html>`.
 - `assets/css/source-sans.css`, `icons.css`, `assets/fonts/`: exact vendored fonts
   and the referenced Bootstrap glyph rules. Do not substitute or re-subset fonts
