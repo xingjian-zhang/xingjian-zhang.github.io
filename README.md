@@ -42,8 +42,8 @@ Refresh the browser after rebuilds. Source files are build inputs, not a support
 - `assets/js/theme.js`: early system/saved theme setup and toggle persistence.
 - `assets/js/homeInteractions.js`: homepage tilt, disclosures and navigation.
 - `assets/js/homeCats.js`: the two pixel kittens on the homepage bio card.
-- `assets/js/homePixel.js`: homepage dithered portrait, pixel theme-toggle
-  sprites and the kittens' scroll glance.
+- `assets/js/homePixel.js`: homepage pixel theme-toggle sprites and the
+  kittens' scroll glance.
 - `assets/js/publications.js`: legacy research-page filters over prebuilt rows.
 - `assets/css/styles.css`, `home-motion.css`: existing cascade and motion rules.
 - `assets/css/home-pixel.css`: homepage pixel card, portrait frame and toggle

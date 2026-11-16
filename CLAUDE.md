@@ -25,7 +25,7 @@ or plain `jekyll serve`, which bypass the prebuild.
   order and specificity unchanged during cleanup.
 - Fonts: exact local Source Sans 3 and Bootstrap Icons files; preserve metrics.
 - Runtime JS: `theme.js`, `homeInteractions.js`, homepage `homeCats.js` (kittens)
-  and `homePixel.js` (dithered portrait, toggle sprites), and legacy-page
+  and `homePixel.js` (toggle sprites, kittens' scroll glance), and legacy-page
   `publications.js`. Homepage profile icons are Bootstrap Icons font glyphs.
 - Absolute component/asset URLs work at every page depth.
 

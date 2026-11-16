@@ -1,6 +1,6 @@
 /*
  * Homepage pixel style, matching the kittens' sprites: outlined bio card with
- * a hard shadow, dithered portrait, 12x12 toggle sprites. Loaded after
+ * a hard shadow, stepped portrait frame, 12x12 toggle sprites. Loaded after
  * home-motion.css and scoped under the .pixel class that index.html sets on
  * <html>, so no other page is affected.
  */
@@ -74,22 +74,16 @@ html.pixel { overflow-x: clip; }
   .pixel .intro::after { inset-block-start: 8px; }
 }
 
-/* The 3D tilt reads as "glass"; the card takes a two-pixel lift instead. */
+/* The 3D tilt reads as "glass"; the pixel card stays still on hover. */
 .pixel .intro.has-tilt,
 .pixel .intro.has-tilt.is-tilted {
   transform: none;
-  transition: transform 120ms steps(2, end);
+  transition: none;
 }
 .pixel .intro.has-tilt::before,
 .pixel .intro.has-tilt.is-tilted::before {
   box-shadow: none;
   transition: none;
-}
-.pixel .intro::after { transition: transform 120ms steps(2, end); }
-
-@media (min-width: 821px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .pixel .intro.has-tilt:hover { transform: translate(-2px, -2px); }
-  .pixel .intro:hover::after { transform: translate(6px, 6px); }
 }
 
 /* ---- Card gaps: with a hard outline the corners show any mismatch, so the
@@ -109,35 +103,13 @@ html.pixel { overflow-x: clip; }
   .pixel .intro-heading { margin-top: -7px; }
 }
 
-/* ---- Portrait: dithered sprite by default, real photo on reveal ---- */
+/* ---- Portrait: the photo in a stepped frame ---- */
 
 .pixel .avatar-frame { border-radius: 0; }
 .pixel .avatar-visual {
   border: 2px solid var(--px-line);
   border-radius: 0;
   clip-path: var(--px-step-1);
-}
-.pixel .avatar-pixels {
-  position: absolute;
-  top: 0;
-  left: 0;
-  image-rendering: pixelated;
-  pointer-events: none;
-  opacity: 1;
-  transition: opacity 240ms steps(4, end);
-}
-.pixel .intro:has(:focus-visible) .avatar-pixels,
-.pixel .intro.is-revealed .avatar-pixels { opacity: 0; }
-
-@media (hover: hover) and (pointer: fine) {
-  .pixel .intro:hover .avatar-pixels { opacity: 0; }
-}
-/* Same touch rule as the name reveal: only the tap toggle reveals. */
-@media (max-width: 820px), (hover: none) {
-  .pixel .intro:not(.is-revealed) .avatar-pixels { opacity: 1; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .pixel .avatar-pixels { transition: none; }
 }
 
 /* ---- Icons: font glyphs with a stepped hover; 12x12 sprites on the toggle ---- */
