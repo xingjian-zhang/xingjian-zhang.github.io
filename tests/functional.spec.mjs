@@ -24,9 +24,7 @@ for (const width of [390, 1440]) {
     if (width > 820) {
       await page.locator('.intro-copy').hover({ position: { x: 30, y: 40 } });
       await expect(page.locator('.intro')).toHaveClass(/is-tilted/);
-      await expect(page.locator('.avatar-photo')).toHaveCSS('opacity', '1');
       await expect(page.locator('#intro-title span')).toHaveCSS('opacity', '1');
-      await expect(page.locator('.cat-annotation')).toHaveCSS('opacity', '1');
       const icon = page.locator('.profile-icon').first();
       await icon.hover({ position: { x: 5, y: 8 } });
       await expect

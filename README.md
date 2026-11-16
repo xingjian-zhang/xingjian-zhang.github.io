@@ -41,8 +41,13 @@ Refresh the browser after rebuilds. Source files are build inputs, not a support
 - `scripts/lib/publications.mjs`: build-only parsing, validation and HTML rendering.
 - `assets/js/theme.js`: early system/saved theme setup and toggle persistence.
 - `assets/js/homeInteractions.js`: homepage tilt, disclosures and navigation.
+- `assets/js/homeCats.js`: the two pixel kittens on the homepage bio card.
+- `assets/js/homePixel.js`: homepage dithered portrait, pixel theme-toggle
+  sprites and the kittens' scroll glance.
 - `assets/js/publications.js`: legacy research-page filters over prebuilt rows.
 - `assets/css/styles.css`, `home-motion.css`: existing cascade and motion rules.
+- `assets/css/home-pixel.css`: homepage pixel card, portrait frame and icon
+  sprites, scoped under the `.pixel` class on the homepage `<html>`.
 - `assets/css/source-sans.css`, `icons.css`, `assets/fonts/`: exact vendored fonts
   and the referenced Bootstrap glyph rules. Do not substitute or re-subset fonts
   without proving identical glyphs and metrics. See `THIRD_PARTY_NOTICES.md`.

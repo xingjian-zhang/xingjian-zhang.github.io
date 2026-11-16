@@ -102,7 +102,7 @@ h3, h4, h5, h6,
 .t-crumb, .timeline h3, .two-column h3,
 .t-exp-role, .t-project-title, .t-album-title, .t-game-title { font: var(--type-title); }
 .intro-copy, .timeline-points, .news-list p, .markdown-body, .t-pub-title { font: var(--type-body); }
-.t-nav, .intro-affiliation, .intro-photo, .cat-annotation span,
+.t-nav, .intro-affiliation, .intro-photo,
 .meta-list dt, .meta-detail, .inline-pointer, .plain-link,
 .cmd-button, .green-button, .t-filter button, .theme-row button,
 .timeline time, .timeline > article > span, .news-list time, .compact-list time,
@@ -284,60 +284,12 @@ strong, b { font-weight: var(--weight-strong); }
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: opacity 280ms ease;
-}
-
-.avatar-illustration {
-  /* Register the drawn eyes and paws with the original photo's center crop. */
-  object-position: center 32%;
-}
-
-:root[data-theme="dark"] .avatar-illustration {
-  filter: saturate(.35) brightness(.68) contrast(.94);
-}
-
-.avatar-photo {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  filter: saturate(0.9) contrast(1.04);
-}
-
-.cat-annotation {
-  position: absolute;
-  inset: 0 0 auto;
-  height: 125%;
-  opacity: 0;
-  color: var(--ginger);
-  pointer-events: none;
-  transition: opacity 180ms ease;
-}
-
-.cat-annotation svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.cat-annotation span {
-  position: absolute;
-  left: 4%;
-  top: 85%;
-  text-transform: none;
 }
 
 .avatar-frame:focus-visible {
   outline: 2px solid var(--green);
   outline-offset: 4px;
 }
-
-.intro:has(:focus-visible) .avatar-photo { opacity: 1; }
-.intro:has(:focus-visible) .cat-annotation { opacity: 1; }
 
 .intro h1 {
   position: relative;
@@ -367,8 +319,6 @@ strong, b { font-weight: var(--weight-strong); }
 
 @media (hover: hover) and (pointer: fine) {
   .intro:hover .avatar-frame { z-index: 5; }
-  .intro:hover .avatar-photo { opacity: 1; }
-  .intro:hover .cat-annotation { opacity: 1; }
   .intro:hover h1 span {
     opacity: 1;
     transform: translateY(0) rotate(-3deg);

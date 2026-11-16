@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="pixel">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
     <script src="assets/js/theme.js"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/home-motion.css">
+    <link rel="stylesheet" href="assets/css/home-pixel.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
     <meta name="description" content="Xingjian (Jimmy) Zhang is a final-year Ph.D. candidate at the University of Michigan and will join Meta Superintelligence Labs as a full-time Research Scientist. His research focuses on training and evaluating LLM agents on hard-to-verify tasks.">
@@ -16,10 +17,6 @@
     <meta name="author" content="Xingjian Zhang">
 </head>
 <body data-page="home">
-    <div class="page-orbits" aria-hidden="true">
-        <canvas id="dust"></canvas>
-        <canvas id="moons"></canvas>
-    </div>
     <div id="header-placeholder"></div>
 
     <main class="site-shell">
@@ -27,17 +24,11 @@
 
         <div class="intro-stage">
         <section class="intro" id="top" aria-labelledby="intro-title">
+            <canvas id="cats" class="intro-cats" aria-hidden="true"></canvas>
             <div class="intro-photo">
-                <div class="avatar-frame" tabindex="0" role="group" aria-label="Portrait of Xingjian Zhang with his cat Ginger">
+                <div class="avatar-frame" tabindex="0" role="group" aria-label="Portrait of Xingjian Zhang">
                     <div class="avatar-visual">
-                        <img src="assets/images/profile-illustration.jpg" alt="Xingjian Zhang with Ginger, his orange cat" class="avatar avatar-illustration" width="769" height="960">
-                        <img src="assets/images/profile-photo.jpg" alt="" aria-hidden="true" class="avatar avatar-photo" width="1059" height="1321">
-                    </div>
-                    <div class="cat-annotation" aria-hidden="true">
-                        <svg viewBox="0 0 192 240" fill="none">
-                            <path d="M 60 214 Q 166 220 132 112 M 127 124 L 132 112 L 142 122" />
-                        </svg>
-                        <span>Ginger</span>
+                        <img src="assets/images/profile-photo.jpg" alt="Xingjian Zhang" class="avatar" width="886" height="886">
                     </div>
                 </div>
             </div>
@@ -50,23 +41,16 @@
                 </div>
 
                 <div class="button-row" aria-label="Profile links">
-                    <a class="profile-icon" href="/assets/files/xingjian-zhang-resume.pdf" target="_blank" rel="noopener" aria-label="CV (PDF)"><i class="bi bi-file-earmark-person-fill" aria-hidden="true"></i></a>
-                    <a class="profile-icon" href="https://scholar.google.com/citations?user=9oE_hEsAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i></a>
-                    <a class="profile-icon" href="mailto:jimmyzxj@umich.edu" aria-label="Email"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a>
-                    <a class="profile-icon" href="https://www.linkedin.com/in/xingjian-jimmy-zhang/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                    <a class="profile-icon" href="https://github.com/xingjian-zhang" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
-                    <a class="profile-icon" href="https://twitter.com/_Jimmy_Zhang_" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+                    <a class="profile-icon" href="/assets/files/xingjian-zhang-resume.pdf" target="_blank" rel="noopener" aria-label="CV (PDF)"><i class="bi bi-file-earmark-person-fill" aria-hidden="true"><svg class="px-glyph" viewBox="0 0 12 12" width="24" height="24" shape-rendering="crispEdges"><path d="M2 0h5v1h-5zM2 1h6v1h-6zM2 2h7v1h-7zM2 3h8v1h-8zM2 4h3v1h-3zM7 4h3v1h-3zM2 5h3v1h-3zM7 5h3v1h-3zM2 6h8v1h-8zM2 7h2v1h-2zM8 7h2v1h-2zM2 8h2v1h-2zM8 8h2v1h-2zM2 9h8v1h-8zM2 10h8v1h-8z"/></svg></i></a>
+                    <a class="profile-icon" href="https://scholar.google.com/citations?user=9oE_hEsAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="bi bi-mortarboard-fill" aria-hidden="true"><svg class="px-glyph" viewBox="0 0 12 12" width="24" height="24" shape-rendering="crispEdges"><path d="M5 1h2v1h-2zM3 2h6v1h-6zM1 3h10v1h-10zM0 4h12v1h-12zM1 5h10v1h-10zM2 6h8v1h-8zM11 6h1v1h-1zM2 7h1v1h-1zM4 7h4v1h-4zM9 7h1v1h-1zM11 7h1v1h-1zM2 8h8v1h-8zM11 8h1v1h-1zM3 9h6v1h-6zM11 9h1v1h-1z"/></svg></i></a>
+                    <a class="profile-icon" href="mailto:jimmyzxj@umich.edu" aria-label="Email"><i class="bi bi-envelope-fill" aria-hidden="true"><svg class="px-glyph" viewBox="0 0 12 12" width="24" height="24" shape-rendering="crispEdges"><path d="M0 2h12v1h-12zM0 3h1v1h-1zM2 3h8v1h-8zM11 3h1v1h-1zM0 4h2v1h-2zM3 4h6v1h-6zM10 4h2v1h-2zM0 5h3v1h-3zM4 5h4v1h-4zM9 5h3v1h-3zM0 6h4v1h-4zM5 6h2v1h-2zM8 6h4v1h-4zM0 7h5v1h-5zM7 7h5v1h-5zM0 8h12v1h-12zM0 9h12v1h-12z"/></svg></i></a>
+                    <a class="profile-icon" href="https://www.linkedin.com/in/xingjian-jimmy-zhang/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"><svg class="px-glyph" viewBox="0 0 12 12" width="24" height="24" shape-rendering="crispEdges"><path d="M1 0h10v1h-10zM0 1h12v1h-12zM0 2h2v1h-2zM4 2h8v1h-8zM0 3h2v1h-2zM4 3h8v1h-8zM0 4h12v1h-12zM0 5h2v1h-2zM4 5h1v1h-1zM10 5h2v1h-2zM0 6h2v1h-2zM4 6h1v1h-1zM7 6h1v1h-1zM10 6h2v1h-2zM0 7h2v1h-2zM4 7h1v1h-1zM7 7h1v1h-1zM10 7h2v1h-2zM0 8h2v1h-2zM4 8h1v1h-1zM7 8h1v1h-1zM10 8h2v1h-2zM0 9h2v1h-2zM4 9h1v1h-1zM7 9h1v1h-1zM10 9h2v1h-2zM0 10h12v1h-12zM1 11h10v1h-10z"/></svg></i></a>
+                    <a class="profile-icon" href="https://github.com/xingjian-zhang" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"><svg class="px-glyph" viewBox="0 0 12 12" width="24" height="24" shape-rendering="crispEdges"><path d="M4 0h4v1h-4zM2 1h8v1h-8zM1 2h2v1h-2zM4 2h4v1h-4zM9 2h2v1h-2zM1 3h2v1h-2zM9 3h2v1h-2zM0 4h2v1h-2zM10 4h2v1h-2zM0 5h2v1h-2zM10 5h2v1h-2zM0 6h2v1h-2zM10 6h2v1h-2zM0 7h3v1h-3zM9 7h3v1h-3zM1 8h4v1h-4zM7 8h4v1h-4zM1 9h1v1h-1zM3 9h2v1h-2zM7 9h4v1h-4zM2 10h3v1h-3zM7 10h3v1h-3zM4 11h1v1h-1zM7 11h1v1h-1z"/></svg></i></a>
+                    <a class="profile-icon" href="https://twitter.com/_Jimmy_Zhang_" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="bi bi-twitter-x" aria-hidden="true"><svg class="px-glyph" viewBox="0 0 12 12" width="24" height="24" shape-rendering="crispEdges"><path d="M0 1h3v1h-3zM10 1h1v1h-1zM1 2h3v1h-3zM9 2h1v1h-1zM2 3h3v1h-3zM8 3h1v1h-1zM3 4h3v1h-3zM7 4h1v1h-1zM4 5h3v1h-3zM5 6h3v1h-3zM4 7h1v1h-1zM6 7h3v1h-3zM3 8h1v1h-1zM7 8h3v1h-3zM2 9h1v1h-1zM8 9h3v1h-3zM1 10h1v1h-1zM9 10h3v1h-3z"/></svg></i></a>
                 </div>
             </div>
         </section>
         </div>
-        <a class="orbit-credit" href="https://0010.art/" target="_blank" rel="noopener" aria-label="Animation inspired by 0010">
-            <span class="orbit-credit-caption">inspired by 0010 ↗</span>
-            <svg viewBox="0 0 200 100" aria-hidden="true">
-                <defs><path id="orbit-credit-arc" d="M 8 -2.14 A 495.04 504.9408 0 0 0 194 85.11" /></defs>
-                <text><textPath href="#orbit-credit-arc" startOffset="26%">inspired by 0010 ↗</textPath></text>
-            </svg>
-        </a>
 
         <section class="content-section" id="contact" aria-labelledby="news-title">
             <div class="section-heading">
@@ -161,6 +145,7 @@
     </main>
 
     <script src="assets/js/homeInteractions.js"></script>
-    <script src="/assets/js/homeOrbits.js" defer></script>
+    <script src="/assets/js/homeCats.js" defer></script>
+    <script src="/assets/js/homePixel.js" defer></script>
 </body>
 </html>

@@ -19,10 +19,14 @@ or plain `jekyll serve`, which bypass the prebuild.
 - Paper content: `assets/data/publications.bib` only. Build metadata (venue/kind/
   tags) lives in `scripts/lib/publication-meta.json`; renderer/parser in
   `scripts/lib/publications.mjs`. Never restore a hand-maintained paper duplicate.
-- CSS: `assets/css/styles.css` followed by homepage `home-motion.css`. Keep
-  declaration values, cascade order and specificity unchanged during cleanup.
+- CSS: `assets/css/styles.css` followed by homepage `home-motion.css`, then
+  `home-pixel.css` (pixel card, portrait frame and icon sprites, scoped under the
+  `.pixel` class on the homepage `<html>`). Keep declaration values, cascade
+  order and specificity unchanged during cleanup.
 - Fonts: exact local Source Sans 3 and Bootstrap Icons files; preserve metrics.
-- Runtime JS: `theme.js`, `homeInteractions.js`, and legacy-page `publications.js`.
+- Runtime JS: `theme.js`, `homeInteractions.js`, homepage `homeCats.js` (kittens)
+  and `homePixel.js` (dithered portrait, toggle sprites), and legacy-page
+  `publications.js`. Homepage profile icons are inline 12x12 SVG sprites.
 - Absolute component/asset URLs work at every page depth.
 
 ## Verification and publishing

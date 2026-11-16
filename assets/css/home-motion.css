@@ -1,6 +1,6 @@
 /* Homepage motion experiments. Keep the existing layout and hit areas stable. */
 body[data-page="home"] { position: relative; isolation: isolate; }
-/* Let the corner artwork continue behind navigation until the header sticks. */
+/* The header backdrop fades in only once the header sticks. */
 body[data-page="home"] .t-top::before {
   opacity: 1;
   transition: opacity 320ms ease;
@@ -11,54 +11,25 @@ body[data-page="home"] .t-top:not(.is-scrolled)::before {
 @media (prefers-reduced-motion: reduce) {
   body[data-page="home"] .t-top::before { transition: none; }
 }
-/* The canvas reaches the page edges; the orbital geometry stays in one corner. */
-.page-orbits {
+
+/* Nomi and Kiki peek over the top edge of the bio card (assets/js/homeCats.js). */
+.intro-cats {
   position: absolute;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 546px;
-  overflow: hidden;
+  z-index: 2;
+  /* The canvas holds 62px of cat above the card edge and 16px of paws below it. */
+  top: -50px;
+  left: calc(38% - 110px);
+  width: 252px;
+  height: 78px;
+  image-rendering: pixelated;
   pointer-events: none;
 }
-.page-orbits canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
-.page-orbits #dust { opacity: 0.4; }
-.page-orbits #moons { opacity: 1; }
-:root[data-theme="dark"] .page-orbits #moons { filter: brightness(0.62); }
-.orbit-credit {
-  position: absolute;
-  /* Same center and ellipse ratio as the dust, 30 art units beyond its edge. */
-  top: 320px;
-  right: 16px;
-  display: block;
-  width: 200px;
-  height: 100px;
-  color: color-mix(in srgb, var(--muted-2) 48%, var(--paper));
-  font: 400 11px/1 var(--font);
-  text-decoration: none;
-}
-.orbit-credit svg { display: block; width: 100%; height: 100%; fill: currentColor; }
-.orbit-credit-caption { display: none; }
-.orbit-credit:hover,
-.orbit-credit:focus-visible { color: var(--green); }
-.orbit-credit:focus-visible { outline: 1px solid currentColor; outline-offset: 3px; border-radius: 4px; }
-@media (max-width: 1240px) {
-  .orbit-credit {
-    position: static;
-    width: fit-content;
-    height: auto;
-    margin: 14px 0 0 auto;
-    line-height: 24px;
-    color: color-mix(in srgb, var(--muted-2) 50%, transparent);
-  }
-  .orbit-credit svg { display: none; }
-  .orbit-credit-caption { display: inline; }
-}
 @media (max-width: 820px) {
-  .page-orbits { height: 338px; }
+  /* The navigation fills the header row here, so the cats get a strip of their own. */
+  .intro:has(.intro-cats) { margin-top: 44px; }
+  .intro-cats { top: -54px; left: calc(50% - 126px); }
 }
-@media print { .page-orbits { display: none; } }
+@media print { .intro-cats { display: none; } }
 
 #publications-list { position: relative; }
 #publications-list .publication-exit {
@@ -120,20 +91,16 @@ body[data-page="home"] .t-top:not(.is-scrolled)::before {
 
 @media (max-width: 820px), (hover: none) {
   .avatar-frame { cursor: pointer; }
-  .intro.is-revealed .avatar-photo,
-  .intro.is-revealed .cat-annotation { opacity: 1; }
   .intro.is-revealed h1 span {
     opacity: 1;
     transform: translateY(0) rotate(-3deg);
   }
   /* On touch layouts, focus and emulated hover must not override the toggle. */
   .intro:not(.is-revealed) .avatar-visual { transform: none; }
-  .intro:not(.is-revealed) .avatar-photo,
-  .intro:not(.is-revealed) .cat-annotation,
   .intro:not(.is-revealed) h1 span { opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .motion-nav::after { transition: none; }
-  .avatar-visual, .avatar, .cat-annotation, .intro h1 span { transition: none; }
+  .avatar-visual, .intro h1 span { transition: none; }
 }

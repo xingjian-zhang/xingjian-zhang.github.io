@@ -15,7 +15,7 @@
     function updatePortraitControl() {
       intro.classList.remove('is-revealed');
       portrait.setAttribute('role', touchBio.matches ? 'button' : 'group');
-      portrait.setAttribute('aria-label', touchBio.matches ? 'Show original portrait' : label);
+      portrait.setAttribute('aria-label', touchBio.matches ? 'Show Chinese name' : label);
       if (touchBio.matches) portrait.setAttribute('aria-pressed', 'false');
       else portrait.removeAttribute('aria-pressed');
     }
@@ -23,7 +23,7 @@
       if (!touchBio.matches) return;
       const revealed = intro.classList.toggle('is-revealed');
       portrait.setAttribute('aria-pressed', String(revealed));
-      portrait.setAttribute('aria-label', revealed ? 'Show illustrated portrait' : 'Show original portrait');
+      portrait.setAttribute('aria-label', revealed ? 'Hide Chinese name' : 'Show Chinese name');
     }
     portrait.addEventListener('click', togglePortrait);
     portrait.addEventListener('keydown', (event) => {
